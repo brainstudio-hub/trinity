@@ -5,8 +5,9 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { enrollInCourse } from "@/lib/actions/enrollment";
 import { Loader2 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-export function EnrollButton({ courseId, userId }: { courseId: string; userId?: string }) {
+export function EnrollButton({ courseId, userId, className }: { courseId: string; userId?: string; className?: string }) {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
@@ -32,7 +33,15 @@ export function EnrollButton({ courseId, userId }: { courseId: string; userId?: 
   };
 
   return (
-    <Button size="lg" onClick={handleEnroll} disabled={loading} className="w-full md:w-auto">
+    <Button
+      size="lg"
+      onClick={handleEnroll}
+      disabled={loading}
+      className={cn(
+        "w-full py-6 rounded-lg bg-gradient-to-r from-primary to-primary-container text-white font-headline font-bold text-lg hover:opacity-90 transition-opacity shadow-[0_4px_14px_rgba(0,42,88,0.2)]",
+        className
+      )}
+    >
       {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
       Inscribirse Ahora
     </Button>
