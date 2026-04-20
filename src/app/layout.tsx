@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Sidebar } from "@/components/sidebar";
 import { auth } from "@/auth";
 
-const inter = Inter({ subsets: ["latin"] });
+const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Seminario Anglicano Trinity - LMS",
@@ -22,7 +22,7 @@ export default async function RootLayout({
 
   return (
     <html lang="es">
-      <body className={inter.className}>
+      <body className={plusJakartaSans.className}>
         <div className="min-h-screen">
           <Header />
           <div className="flex pt-16">

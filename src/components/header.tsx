@@ -1,41 +1,66 @@
 import { auth, signOut } from "@/auth";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Search, Bell, Settings, User } from "lucide-react";
 
 export async function Header() {
   const session = await auth();
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-      <div className="container flex h-16 items-center justify-between px-4 md:px-8 mx-auto">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="text-xl font-bold text-primary tracking-tight">Seminario Anglicano Trinity</span>
-        </Link>
+    <header className="fixed top-0 z-50 w-full border-b-0 bg-[#f8f9fb]/90 dark:bg-[#191c1e]/90 backdrop-blur-xl supports-[backdrop-filter]:bg-[#f8f9fb]/60 shadow-[0_12px_40px_rgba(0,42,88,0.08)]">
+      <div className="flex h-16 items-center justify-between px-8 mx-auto">
+        <div className="flex items-center gap-8">
+            <Link href="/" className="flex items-center gap-2">
+                <span className="text-xl font-headline font-black text-primary tracking-tight">Trinity Anglican Seminary</span>
+            </Link>
 
-        <nav className="flex items-center gap-6">
-          <Link href="/courses" className="text-sm font-medium hover:text-primary transition-colors">
-            Cursos
-          </Link>
+            <nav className="hidden md:flex items-center gap-6">
+                <Link href="/courses" className="text-[#002a58] font-headline uppercase tracking-widest text-sm font-bold border-b-2 border-[#002a58] pb-1 transition-all duration-300 ease-in-out hover:opacity-80">
+                    Catálogo
+                </Link>
+                <Link href="/dashboard" className="text-[#424750] font-headline uppercase tracking-widest text-sm font-medium hover:text-[#002a58] transition-all duration-300 ease-in-out hover:opacity-80">
+                    Dashboard
+                </Link>
+                <Link href="#" className="text-[#424750] font-headline uppercase tracking-widest text-sm font-medium hover:text-[#002a58] transition-all duration-300 ease-in-out hover:opacity-80">
+                    Biblioteca
+                </Link>
+            </nav>
+        </div>
+
+        <div className="flex items-center gap-4">
+          <button className="text-[#002a58] scale-95 active:scale-100 transition-transform p-2 rounded-full hover:bg-surface-container-low">
+            <Search className="h-5 w-5" />
+          </button>
+
           {session ? (
             <div className="flex items-center gap-4">
-              {session.user?.role === "ADMIN" && (
-                <Link href="/admin" className="text-sm font-medium text-primary hover:opacity-80">
-                  Panel Admin
-                </Link>
-              )}
-              <div className="h-8 w-px bg-border" />
-              <div className="flex items-center gap-4">
-                <span className="hidden sm:inline-block text-sm text-muted-foreground font-medium">
-                  {session.user?.name}
-                </span>
+              <button className="text-[#002a58] scale-95 active:scale-100 transition-transform p-2 rounded-full hover:bg-surface-container-low relative">
+                <Bell className="h-5 w-5" />
+                <span className="absolute top-1 right-1 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+              </button>
+
+              <Link href="/admin/settings">
+                <button className="text-[#002a58] scale-95 active:scale-100 transition-transform p-2 rounded-full hover:bg-surface-container-low">
+                    <Settings className="h-5 w-5" />
+                </button>
+              </Link>
+
+              <div className="flex items-center gap-4 ml-2">
+                <div className="h-8 w-8 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant/20">
+                    {session.user?.image ? (
+                         <img src={session.user.image} alt={session.user.name || "User"} className="h-full w-full object-cover" />
+                    ) : (
+                         <User className="h-4 w-4 text-on-surface-variant" />
+                    )}
+                </div>
                 <form
                   action={async () => {
                     "use server";
                     await signOut();
                   }}
                 >
-                  <Button variant="outline" size="sm" className="h-8">
-                    Cerrar Sesión
+                  <Button variant="ghost" size="sm" className="h-8 text-xs font-bold uppercase tracking-wider">
+                    Salir
                   </Button>
                 </form>
               </div>
@@ -43,14 +68,14 @@ export async function Header() {
           ) : (
             <div className="flex items-center gap-3">
               <Link href="/login">
-                <Button variant="ghost" size="sm">Entrar</Button>
+                <Button variant="ghost" size="sm" className="font-bold uppercase tracking-wider text-xs">Entrar</Button>
               </Link>
               <Link href="/register">
-                <Button size="sm">Registrarse</Button>
+                <Button size="sm" className="font-bold uppercase tracking-wider text-xs px-4">Unirse</Button>
               </Link>
             </div>
           )}
-        </nav>
+        </div>
       </div>
     </header>
   );

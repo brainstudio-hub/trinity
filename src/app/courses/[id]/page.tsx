@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { EnrollButton } from "@/components/enroll-button";
 import { VideoPlayer } from "@/components/video-player";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BookOpen, CheckCircle2, GraduationCap, History, Languages, Layout, MessageSquare, PlayCircle, Book, User, Clock, Video, Award, ChevronDown, Lock } from "lucide-react";
+import { BookOpen, CheckCircle2, History, Languages, MessageSquare, PlayCircle, Book, User, Clock, Video, Award, ChevronDown, Lock } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
@@ -34,7 +34,7 @@ export default async function CoursePage({ params }: { params: { id: string } })
   const introVideoUrl = course.lessons[0]?.videoUrl;
 
   return (
-    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 relative pb-16">
+    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 relative pb-16 pt-4">
       {/* Left Column: Course Content */}
       <div className="lg:col-span-8 space-y-12">
         {/* Hero Section (Bento Style) */}
@@ -52,7 +52,7 @@ export default async function CoursePage({ params }: { params: { id: string } })
                 {course.title}
               </h1>
               <p className="font-body text-lg text-on-surface-variant leading-relaxed">
-                {course.description}
+                {course.description || "Un análisis profundo de los principios doctrinales de la Iglesia Anglicana, desde la Reforma Inglesa hasta los Treinta y Nueve Artículos."}
               </p>
               <div className="flex items-center gap-4 pt-4">
                 <div className="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant/20">
@@ -89,30 +89,30 @@ export default async function CoursePage({ params }: { params: { id: string } })
                     <h2 className="font-headline text-2xl font-bold text-on-surface">Sobre este curso</h2>
                     <div className="prose prose-lg text-on-surface-variant max-w-none font-body leading-relaxed space-y-4">
                         <p>
-                            Este curso ofrece una inmersión rigurosa en los fundamentos del anglicanismo. No es un mero recuento histórico, sino una exploración teológica profunda.
+                            Este curso ofrece una inmersión rigurosa en los documentos fundacionales del anglicanismo. No es un mero recuento histórico, sino una exploración teológica de cómo se forjó la 'Vía Media'.
                         </p>
                         <p>
-                           Los estudiantes desarrollarán una comprensión matizada de la identidad anglicana y su relevancia pastoral en el mundo contemporáneo.
+                            A través de la lectura atenta del Libro de Oración Común, los Treinta y Nueve Artículos y las Homilías, los estudiantes desarrollarán una comprensión matizada de la identidad anglicana y su relevancia pastoral en el mundo contemporáneo.
                         </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6">
                         <div className="bg-surface-container-low p-6 rounded-lg">
                             <h3 className="font-headline text-lg font-bold text-on-surface mb-3 flex items-center gap-2">
-                                <History className="h-5 w-5 text-primary" />
+                                <CheckCircle2 className="h-5 w-5 text-primary" />
                                 Objetivos de Aprendizaje
                             </h3>
                             <ul className="space-y-3 font-body text-on-surface-variant text-sm">
                                 <li className="flex items-start gap-2">
-                                    <CheckCircle2 className="h-4 w-4 mt-0.5 text-on-secondary-container" />
-                                    Analizar críticamente los textos fundacionales.
+                                    <CheckCircle2 className="h-4 w-4 mt-0.5 text-secondary" />
+                                    Analizar críticamente los textos fundacionales de la Reforma Inglesa.
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <CheckCircle2 className="h-4 w-4 mt-0.5 text-on-secondary-container" />
-                                    Articular la teología sacramental expresada.
+                                    <CheckCircle2 className="h-4 w-4 mt-0.5 text-secondary" />
+                                    Articular la teología sacramental expresada en el Libro de Oración Común.
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <CheckCircle2 className="h-4 w-4 mt-0.5 text-on-secondary-container" />
-                                    Comprender el contexto histórico y doctrinal.
+                                    <CheckCircle2 className="h-4 w-4 mt-0.5 text-secondary" />
+                                    Comprender el contexto histórico de los Treinta y Nueve Artículos.
                                 </li>
                             </ul>
                         </div>
@@ -123,12 +123,12 @@ export default async function CoursePage({ params }: { params: { id: string } })
                             </h3>
                             <ul className="space-y-3 font-body text-on-surface-variant text-sm">
                                 <li className="flex items-start gap-2">
-                                    <BookOpen className="h-4 w-4 mt-0.5 text-on-secondary-container" />
-                                    Textos seleccionados de teología histórica.
+                                    <BookOpen className="h-4 w-4 mt-0.5 text-secondary" />
+                                    MacCulloch, Diarmaid. Thomas Cranmer: A Life.
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <BookOpen className="h-4 w-4 mt-0.5 text-on-secondary-container" />
-                                    Documentos confesionales y litúrgicos.
+                                    <BookOpen className="h-4 w-4 mt-0.5 text-secondary" />
+                                    The Book of Common Prayer (1662 Edition).
                                 </li>
                             </ul>
                         </div>
@@ -212,14 +212,19 @@ export default async function CoursePage({ params }: { params: { id: string } })
                             <PlayCircle className="h-16 w-16 text-primary/40" />
                         </div>
                     )}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                        <button className="w-16 h-16 bg-surface-container-lowest/90 backdrop-blur-md rounded-full flex items-center justify-center text-primary hover:scale-110 transition-transform shadow-lg">
+                             <PlayCircle className="h-10 w-10 fill-current" />
+                        </button>
+                    </div>
                 </div>
                 <div className="space-y-4 mb-6">
                     <p className="font-headline text-3xl font-extrabold text-on-surface">Gratuito</p>
-                    <p className="font-body text-sm text-on-surface-variant">Para estudiantes matriculados en el seminario.</p>
+                    <p className="font-body text-sm text-on-surface-variant">Para estudiantes matriculados en el programa de M.Div.</p>
                 </div>
 
                 {isEnrolled ? (
-                    <Link href={`/courses/${id}/lessons/${course.lessons[0]?.id}`}>
+                    <Link href={`/courses/${id}/lessons/${course.lessons[0]?.id}`} className="w-full">
                         <Button className="w-full py-6 rounded-lg bg-gradient-to-r from-primary to-primary-container text-white font-headline font-bold text-lg hover:opacity-90 transition-opacity shadow-[0_4px_14px_rgba(0,42,88,0.2)]">
                             Continuar Aprendiendo
                         </Button>
@@ -252,7 +257,7 @@ export default async function CoursePage({ params }: { params: { id: string } })
                         </div>
                         <div>
                             <p className="font-body text-xs text-on-surface-variant uppercase tracking-wider">Lecciones</p>
-                            <p className="font-body font-semibold text-on-surface">{course.lessons.length} Módulos</p>
+                            <p className="font-body font-semibold text-on-surface">{course.lessons.length} Módulos en video</p>
                         </div>
                     </li>
                     <li className="flex items-center gap-3">
@@ -261,7 +266,7 @@ export default async function CoursePage({ params }: { params: { id: string } })
                         </div>
                         <div>
                             <p className="font-body text-xs text-on-surface-variant uppercase tracking-wider">Idioma</p>
-                            <p className="font-body font-semibold text-on-surface">Español</p>
+                            <p className="font-body font-semibold text-on-surface">Español (Subtítulos en Inglés)</p>
                         </div>
                     </li>
                     <li className="flex items-center gap-3">
