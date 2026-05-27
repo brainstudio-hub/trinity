@@ -50,8 +50,14 @@ export default function LessonClientPage({
   };
 
   const handleSeek = (seconds: number) => {
-    playerRef.current?.seekTo(seconds);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    try {
+      if (playerRef.current) {
+        playerRef.current.seekTo(seconds);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    } catch (error) {
+      console.error("Error seeking video:", error);
+    }
   };
 
   return (
@@ -147,9 +153,16 @@ export default function LessonClientPage({
               <TabsContent value="notes" className="mt-0 focus-visible:ring-0">
                 <LessonNotes
                   lessonId={lesson.id}
-                  notes={notes}
+                  notes={notes || []}
                   setNotes={setNotes}
-                  getCurrentTime={() => playerRef.current?.getCurrentTime() || 0}
+                  getCurrentTime={() => {
+                    try {
+                      return playerRef.current?.getCurrentTime() || 0;
+                    } catch (error) {
+                      console.error("Error getting player time:", error);
+                      return 0;
+                    }
+                  }}
                   onSeek={handleSeek}
                 />
               </TabsContent>

@@ -38,36 +38,55 @@ export function LessonNotes({
   // For simplicity and performance, we'll capture it when they start typing or via a small interval.
 
   const handleFocus = () => {
-    setCurrentTimeDisplay(Math.floor(getCurrentTime()));
+    try {
+      const time = getCurrentTime();
+      setCurrentTimeDisplay(Math.floor(time || 0));
+    } catch (error) {
+      console.error("Error capturing focus time:", error);
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!content.trim()) return;
 
-    const timestamp = Math.floor(getCurrentTime());
-    setIsSubmitting(true);
+    try {
+      const time = getCurrentTime();
+      const timestamp = Math.floor(time || 0);
+      setIsSubmitting(true);
 
-    const result = await createLessonNote({
-      lessonId,
-      content,
-      timestamp,
-    });
+      const result = await createLessonNote({
+        lessonId,
+        content,
+        timestamp,
+      });
 
-    if (result.success && result.note) {
-      // Cast to match our interface since Prisma returns full objects
-      setNotes([...notes, result.note as any].sort((a, b) => a.timestamp - b.timestamp));
-      setContent("");
+      if (result.success && result.note) {
+        // Cast to match our interface since Prisma returns full objects
+        const updatedNotes = [...(notes || []), result.note as any].sort((a, b) => a.timestamp - b.timestamp);
+        setNotes(updatedNotes);
+        setContent("");
+      }
+    } catch (error) {
+      console.error("Error creating note:", error);
+    } finally {
+      setIsSubmitting(false);
     }
-    setIsSubmitting(false);
   };
 
   const handleDelete = async (noteId: string) => {
-    const result = await deleteLessonNote(noteId, lessonId);
-    if (result.success) {
-      setNotes(notes.filter((n) => n.id !== noteId));
+    try {
+      const result = await deleteLessonNote(noteId, lessonId);
+      if (result.success) {
+        setNotes((prevNotes) => (prevNotes || []).filter((n) => n.id !== noteId));
+      }
+    } catch (error) {
+      console.error("Error deleting note:", error);
     }
   };
+
+  const safeNotes = notes || [];
+  const displayTime = currentTimeDisplay || 0;
 
   return (
     <div className="space-y-6">
@@ -82,7 +101,7 @@ export function LessonNotes({
           <div className="absolute bottom-3 right-3 flex items-center gap-2">
             <div className="flex items-center gap-1.5 px-2 py-1 bg-surface-container-highest rounded-md text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">
               <Clock className="h-3 w-3" />
-              {formatTime(currentTimeDisplay || Math.floor(getCurrentTime()))}
+              {formatTime(displayTime)}
             </div>
           </div>
         </div>
@@ -99,36 +118,36 @@ export function LessonNotes({
       </form>
 
       <div className="space-y-4 pt-4">
-        <h3 className="font-headline font-bold text-on-surface">Mis Notas ({notes.length})</h3>
-        {notes.length === 0 ? (
+        <h3 className="font-headline font-bold text-on-surface">Mis Notas ({safeNotes.length})</h3>
+        {safeNotes.length === 0 ? (
           <div className="text-center py-12 bg-surface-container-lowest rounded-xl border border-dashed border-outline-variant/50">
             <p className="text-on-surface-variant font-body text-sm">No has tomado notas en esta lección.</p>
           </div>
         ) : (
           <div className="grid gap-4">
-            {notes.map((note) => (
+            {safeNotes.map((note) => (
               <div
-                key={note.id}
+                key={note?.id}
                 className="bg-surface-container-low p-4 rounded-xl border border-outline-variant/10 group transition-all hover:border-primary/20"
               >
                 <div className="flex justify-between items-start mb-2">
                   <button
-                    onClick={() => onSeek(note.timestamp)}
+                    onClick={() => note?.timestamp !== undefined && onSeek(note.timestamp)}
                     className="flex items-center gap-1.5 px-2 py-0.5 bg-primary/10 text-primary rounded text-xs font-bold hover:bg-primary hover:text-white transition-colors"
                   >
                     <Clock className="h-3 w-3" />
-                    {formatTime(note.timestamp)}
+                    {formatTime(note?.timestamp || 0)}
                   </button>
                   <button
-                    onClick={() => handleDelete(note.id)}
+                    onClick={() => note?.id && handleDelete(note.id)}
                     className="text-on-surface-variant hover:text-error opacity-0 group-hover:opacity-100 transition-all"
                   >
                     <Trash2 className="h-4 w-4" />
                   </button>
                 </div>
-                <p className="text-on-surface font-body text-sm leading-relaxed">{note.content}</p>
+                <p className="text-on-surface font-body text-sm leading-relaxed">{note?.content}</p>
                 <span className="text-[10px] text-on-surface-variant mt-2 block uppercase tracking-widest opacity-60">
-                   {new Date(note.createdAt).toLocaleDateString()}
+                   {note?.createdAt ? new Date(note.createdAt).toLocaleDateString() : ""}
                 </span>
               </div>
             ))}
