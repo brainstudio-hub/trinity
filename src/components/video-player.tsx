@@ -1,38 +1,65 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, forwardRef, useImperativeHandle } from "react";
+import ReactPlayer from "react-player";
 
-export function VideoPlayer({ url }: { url: string }) {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsMounted(true);
-    }, 0);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (!isMounted) return <div className="aspect-video bg-slate-200 animate-pulse rounded-xl" />;
-
-  // Basic parser for YouTube/Vimeo
-  let embedUrl = url;
-  if (url.includes("youtube.com/watch?v=")) {
-    embedUrl = url.replace("watch?v=", "embed/");
-  } else if (url.includes("youtu.be/")) {
-    embedUrl = url.replace("youtu.be/", "youtube.com/embed/");
-  } else if (url.includes("vimeo.com/")) {
-    const vimeoId = url.split("/").pop();
-    embedUrl = `https://player.vimeo.com/video/${vimeoId}`;
-  }
-
-  return (
-    <div className="relative aspect-video overflow-hidden rounded-xl bg-black">
-      <iframe
-        src={embedUrl}
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        className="h-full w-full border-0"
-      />
-    </div>
-  );
+export interface VideoPlayerRef {
+  getCurrentTime: () => number;
+  seekTo: (seconds: number) => void;
 }
+
+interface VideoPlayerProps {
+  url: string;
+  onProgress?: (state: { playedSeconds: number }) => void;
+  onReady?: () => void;
+}
+
+export const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
+  ({ url, onProgress, onReady }, ref) => {
+    const [isMounted, setIsMounted] = useState(false);
+    const playerRef = useRef<ReactPlayer>(null);
+
+    useEffect(() => {
+      setIsMounted(true);
+    }, []);
+
+    useImperativeHandle(ref, () => ({
+      getCurrentTime: () => {
+        return playerRef.current?.getCurrentTime() || 0;
+      },
+      seekTo: (seconds: number) => {
+        playerRef.current?.seekTo(seconds, "seconds");
+      },
+    }));
+
+    if (!isMounted) {
+      return (
+        <div className="aspect-video bg-surface-container-high animate-pulse rounded-xl" />
+      );
+    }
+
+    return (
+      <div className="relative aspect-video overflow-hidden rounded-xl bg-black shadow-2xl border border-outline-variant/10">
+        <ReactPlayer
+          ref={playerRef}
+          url={url}
+          width="100%"
+          height="100%"
+          controls
+          onProgress={onProgress}
+          onReady={onReady}
+          config={{
+            youtube: {
+              playerVars: { showinfo: 1 },
+            },
+            vimeo: {
+              playerOptions: { responsive: true },
+            },
+          }}
+        />
+      </div>
+    );
+  }
+);
+
+VideoPlayer.displayName = "VideoPlayer";

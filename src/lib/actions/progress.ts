@@ -28,7 +28,7 @@ export async function toggleLessonProgress(lessonId: string, isCompleted: boolea
       },
     });
 
-    revalidatePath(`/courses/[id]/lessons/${lessonId}`, "page");
+    revalidatePath("/courses/[id]/lessons/[lessonId]", "page");
     return { success: true };
   } catch {
     return { error: "Error al actualizar progreso" };
