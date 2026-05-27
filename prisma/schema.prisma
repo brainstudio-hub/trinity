@@ -31,6 +31,7 @@ model User {
   updatedAt     DateTime  @updatedAt
   enrollments   Enrollment[]
   userProgress  UserProgress[]
+  notes         LessonNote[]
 }
 
 model Course {
@@ -43,8 +44,21 @@ model Course {
   isPublished Boolean      @default(false)
   createdAt   DateTime     @default(now())
   updatedAt   DateTime     @updatedAt
-  lessons     Lesson[]
+  modules     Module[]
   enrollments Enrollment[]
+}
+
+model Module {
+  id          String    @id @default(cuid())
+  title       String
+  order       Int
+  courseId    String
+  course      Course    @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  lessons     Lesson[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([courseId])
 }
 
 model Lesson {
@@ -52,15 +66,33 @@ model Lesson {
   title       String
   description String?      @db.Text
   videoUrl    String
+  duration    Int          @default(0) // Duration in seconds
+  transcript  String?      @db.Text
   order       Int
   isPublished Boolean      @default(false)
-  courseId    String
-  course      Course       @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  moduleId    String
+  module      Module       @relation(fields: [moduleId], references: [id], onDelete: Cascade)
   createdAt   DateTime     @default(now())
   updatedAt   DateTime     @updatedAt
   userProgress UserProgress[]
+  notes        LessonNote[]
 
-  @@index([courseId])
+  @@index([moduleId])
+}
+
+model LessonNote {
+  id        String   @id @default(cuid())
+  content   String   @db.Text
+  timestamp Int      // Time in seconds where the note was taken
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonId  String
+  lesson    Lesson   @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([lessonId])
 }
 
 model Enrollment {
@@ -76,14 +108,15 @@ model Enrollment {
 }
 
 model UserProgress {
-  id          String   @id @default(cuid())
-  userId      String
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  lessonId    String
-  lesson      Lesson   @relation(fields: [lessonId], references: [id], onDelete: Cascade)
-  isCompleted Boolean  @default(false)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id             String   @id @default(cuid())
+  userId         String
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonId       String
+  lesson         Lesson   @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  isCompleted    Boolean  @default(false)
+  watchedSeconds Int      @default(0)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 
   @@unique([userId, lessonId])
   @@index([lessonId])

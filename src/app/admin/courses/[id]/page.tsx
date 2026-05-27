@@ -3,8 +3,6 @@ import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { CourseEditForm } from "@/components/admin/course-edit-form";
-import { LessonCreateForm } from "@/components/admin/lesson-create-form";
-import { LessonList } from "@/components/admin/lesson-list";
 
 export default async function EditCoursePage({
   params,
@@ -15,8 +13,13 @@ export default async function EditCoursePage({
   const course = await db.course.findUnique({
     where: { id },
     include: {
-      lessons: {
+      modules: {
         orderBy: { order: "asc" },
+        include: {
+          lessons: {
+            orderBy: { order: "asc" },
+          },
+        },
       },
     },
   });
@@ -38,16 +41,20 @@ export default async function EditCoursePage({
 
         <div className="flex-1 space-y-6">
            <div className="flex items-center justify-between">
-             <h2 className="text-xl font-bold">Lecciones</h2>
+             <h2 className="text-xl font-bold">Estructura del Curso (Módulos)</h2>
            </div>
 
            <div className="space-y-4">
-             <LessonList lessons={course.lessons} courseId={id} />
+             {course.modules.length === 0 && (
+               <p className="text-sm text-muted-foreground italic">No hay módulos creados. La gestión de módulos se implementará en el siguiente ticket.</p>
+             )}
 
-             <div className="pt-4">
-                <h3 className="text-lg font-bold mb-4 border-t pt-4">Añadir Lección</h3>
-                <LessonCreateForm courseId={id} nextOrder={course.lessons.length + 1} />
-             </div>
+             {course.modules.map((module) => (
+               <div key={module.id} className="border p-4 rounded-lg bg-gray-50">
+                 <h3 className="font-bold">{module.title}</h3>
+                 <p className="text-sm text-muted-foreground">{module.lessons.length} lecciones</p>
+               </div>
+             ))}
            </div>
         </div>
       </div>

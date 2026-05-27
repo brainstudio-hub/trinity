@@ -18,8 +18,10 @@ export default async function DashboardPage() {
     include: {
       course: {
         include: {
-          _count: {
-            select: { lessons: true }
+          modules: {
+            include: {
+              lessons: true
+            }
           }
         }
       }
@@ -75,39 +77,42 @@ export default async function DashboardPage() {
               </Link>
             </div>
             <div className="flex flex-col gap-4">
-              {enrollments.length > 0 ? enrollments.map((enr, index) => (
-                <div key={enr.course.id} className="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10 flex flex-col sm:flex-row gap-6 items-start sm:items-center group hover:-translate-y-1 transition-all duration-300">
-                    <div className="w-20 h-20 rounded-lg bg-surface-container flex-shrink-0 overflow-hidden relative border border-outline-variant/10">
-                    {enr.course.image ? (
-                        <img src={enr.course.image} alt={enr.course.title} className="w-full h-full object-cover" />
-                    ) : (
-                        <div className="w-full h-full bg-primary/10 flex items-center justify-center">
-                            <span className="text-primary font-bold">{enr.course.title[0]}</span>
-                        </div>
-                    )}
-                    </div>
-                    <div className="flex-1 w-full">
-                    <div className="flex justify-between items-start mb-2">
-                        <div>
-                        <span className="text-xs font-headline font-bold text-primary uppercase tracking-widest mb-1 block">{enr.course.category || 'COURSE'} {300 + index}</span>
-                        <h3 className="text-lg font-headline font-bold text-on-surface leading-tight">{enr.course.title}</h3>
-                        </div>
-                    </div>
-                    <p className="text-on-surface-variant font-body text-sm mb-4">Module 04: Next steps in {enr.course.title}</p>
-                    <div className="flex items-center gap-4 w-full">
-                        <div className="flex-1 h-[4px] bg-secondary-container rounded-full overflow-hidden">
-                        <div className="h-full bg-primary w-[65%] rounded-full"></div>
-                        </div>
-                        <span className="text-xs font-body font-medium text-on-surface-variant w-10 text-right">65%</span>
-                    </div>
-                    </div>
-                    <Link href={`/courses/${enr.course.id}`}>
-                        <button className="mt-4 sm:mt-0 w-full sm:w-auto bg-surface-container-low text-primary hover:bg-surface-container p-3 rounded-xl transition-colors flex items-center justify-center">
-                            <PlayCircle className="h-6 w-6 fill-current" />
-                        </button>
-                    </Link>
-                </div>
-              )) : (
+              {enrollments.length > 0 ? enrollments.map((enr, index) => {
+                const lessonCount = enr.course.modules.reduce((acc, m) => acc + m.lessons.length, 0);
+                return (
+                  <div key={enr.course.id} className="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10 flex flex-col sm:flex-row gap-6 items-start sm:items-center group hover:-translate-y-1 transition-all duration-300">
+                      <div className="w-20 h-20 rounded-lg bg-surface-container flex-shrink-0 overflow-hidden relative border border-outline-variant/10">
+                      {enr.course.image ? (
+                          <img src={enr.course.image} alt={enr.course.title} className="w-full h-full object-cover" />
+                      ) : (
+                          <div className="w-full h-full bg-primary/10 flex items-center justify-center">
+                              <span className="text-primary font-bold">{enr.course.title[0]}</span>
+                          </div>
+                      )}
+                      </div>
+                      <div className="flex-1 w-full">
+                      <div className="flex justify-between items-start mb-2">
+                          <div>
+                          <span className="text-xs font-headline font-bold text-primary uppercase tracking-widest mb-1 block">{enr.course.category || 'COURSE'} {300 + index}</span>
+                          <h3 className="text-lg font-headline font-bold text-on-surface leading-tight">{enr.course.title}</h3>
+                          </div>
+                      </div>
+                      <p className="text-on-surface-variant font-body text-sm mb-4">{lessonCount} lecciones disponibles</p>
+                      <div className="flex items-center gap-4 w-full">
+                          <div className="flex-1 h-[4px] bg-secondary-container rounded-full overflow-hidden">
+                          <div className="h-full bg-primary w-[65%] rounded-full"></div>
+                          </div>
+                          <span className="text-xs font-body font-medium text-on-surface-variant w-10 text-right">65%</span>
+                      </div>
+                      </div>
+                      <Link href={`/courses/${enr.course.id}`}>
+                          <button className="mt-4 sm:mt-0 w-full sm:w-auto bg-surface-container-low text-primary hover:bg-surface-container p-3 rounded-xl transition-colors flex items-center justify-center">
+                              <PlayCircle className="h-6 w-6 fill-current" />
+                          </button>
+                      </Link>
+                  </div>
+                );
+              }) : (
                 <div className="bg-surface-container-lowest p-12 rounded-xl shadow-sm border border-outline-variant/10 text-center">
                     <p className="text-on-surface-variant mb-6">Aún no te has inscrito en ningún curso.</p>
                     <Link href="/courses">

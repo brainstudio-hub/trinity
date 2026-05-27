@@ -21,11 +21,19 @@ export async function enrollInCourse(courseId: string) {
       },
     });
 
-    // Get first lesson to return its ID for redirection
-    const firstLesson = await db.lesson.findFirst({
-      where: { courseId, isPublished: true },
-      orderBy: { order: "asc" },
+    // Get first lesson via modules to return its ID for redirection
+    const firstModule = await db.module.findFirst({
+      where: { courseId },
+      orderBy: { order: "asc" }
     });
+
+    let firstLesson = null;
+    if (firstModule) {
+      firstLesson = await db.lesson.findFirst({
+        where: { moduleId: firstModule.id, isPublished: true },
+        orderBy: { order: "asc" },
+      });
+    }
 
     revalidatePath(`/courses/${courseId}`);
 

@@ -36,13 +36,22 @@ export default async function LessonPage({
   }
 
   const lesson = await db.lesson.findUnique({
-    where: { id: lessonId, courseId },
+    where: { id: lessonId },
     include: {
-      course: {
+      module: {
         include: {
-          lessons: {
-            where: { isPublished: true },
-            orderBy: { order: "asc" },
+          course: {
+            include: {
+              modules: {
+                orderBy: { order: "asc" },
+                include: {
+                  lessons: {
+                    where: { isPublished: true },
+                    orderBy: { order: "asc" },
+                  }
+                }
+              },
+            },
           },
         },
       },
@@ -52,11 +61,12 @@ export default async function LessonPage({
     },
   });
 
-  if (!lesson) {
+  if (!lesson || lesson.module.courseId !== courseId) {
     redirect(`/courses/${courseId}`);
   }
 
   const isCompleted = lesson.userProgress[0]?.isCompleted ?? false;
+  const course = lesson.module.course;
 
   return (
     <div className="flex flex-col lg:flex-row gap-8">
@@ -75,7 +85,7 @@ export default async function LessonPage({
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b pb-6">
           <div>
             <h1 className="text-2xl font-bold">{lesson.title}</h1>
-            <p className="text-muted-foreground">{lesson.course.title}</p>
+            <p className="text-muted-foreground">{course.title}</p>
           </div>
           <CourseProgressButton
             lessonId={lessonId}
@@ -97,22 +107,29 @@ export default async function LessonPage({
             <h3 className="font-bold text-primary">Contenido del Curso</h3>
           </div>
           <div className="divide-y">
-            {lesson.course.lessons.map((l) => (
-              <Link
-                key={l.id}
-                href={`/courses/${courseId}/lessons/${l.id}`}
-                className={cn(
-                  "flex items-center gap-3 p-4 hover:bg-gray-50 transition-colors text-sm",
-                  l.id === lessonId ? "bg-accent text-primary font-medium" : "text-muted-foreground"
-                )}
-              >
-                {l.id === lessonId ? (
-                   <PlayCircle className="h-4 w-4 text-primary shrink-0" />
-                ) : (
-                   <div className="h-4 w-4 rounded-full border border-muted-foreground shrink-0" />
-                )}
-                <span className="line-clamp-2 flex-1">{l.title}</span>
-              </Link>
+            {course.modules.map((m) => (
+              <div key={m.id} className="space-y-0">
+                <div className="px-4 py-2 bg-gray-50 text-xs font-bold text-gray-500 uppercase tracking-wider border-b">
+                  {m.title}
+                </div>
+                {m.lessons.map((l) => (
+                  <Link
+                    key={l.id}
+                    href={`/courses/${courseId}/lessons/${l.id}`}
+                    className={cn(
+                      "flex items-center gap-3 p-4 hover:bg-gray-50 transition-colors text-sm",
+                      l.id === lessonId ? "bg-accent text-primary font-medium" : "text-muted-foreground"
+                    )}
+                  >
+                    {l.id === lessonId ? (
+                      <PlayCircle className="h-4 w-4 text-primary shrink-0" />
+                    ) : (
+                      <div className="h-4 w-4 rounded-full border border-muted-foreground shrink-0" />
+                    )}
+                    <span className="line-clamp-2 flex-1">{l.title}</span>
+                  </Link>
+                ))}
+              </div>
             ))}
           </div>
         </div>
