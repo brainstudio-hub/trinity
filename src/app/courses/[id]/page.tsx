@@ -16,9 +16,14 @@ export default async function CoursePage({ params }: { params: { id: string } })
   const course = await db.course.findUnique({
     where: { id, isPublished: true },
     include: {
-      lessons: {
-        where: { isPublished: true },
+      modules: {
         orderBy: { order: "asc" },
+        include: {
+          lessons: {
+            where: { isPublished: true },
+            orderBy: { order: "asc" },
+          }
+        }
       },
       enrollments: userId ? {
         where: { userId }
@@ -30,8 +35,9 @@ export default async function CoursePage({ params }: { params: { id: string } })
     notFound();
   }
 
+  const allLessons = course.modules.flatMap(m => m.lessons);
   const isEnrolled = !!(course.enrollments && course.enrollments.length > 0);
-  const introVideoUrl = course.lessons[0]?.videoUrl;
+  const introVideoUrl = allLessons[0]?.videoUrl;
 
   return (
     <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 relative pb-16 pt-4">
@@ -139,31 +145,38 @@ export default async function CoursePage({ params }: { params: { id: string } })
             <TabsContent value="curriculum" className="animate-fade-in mt-0">
                  <div className="bg-surface-container-lowest rounded-xl p-8 space-y-6 border border-outline-variant/10">
                     <h2 className="font-headline text-2xl font-bold text-on-surface">Estructura del Currículo</h2>
-                    <div className="space-y-4">
-                        {course.lessons.map((lesson, index) => (
-                             <div key={lesson.id} className="border border-outline-variant/20 rounded-lg p-5 hover:bg-surface-container-low transition-colors group cursor-pointer">
-                                <div className="flex justify-between items-center">
-                                    <div className="flex items-center gap-4">
-                                        {isEnrolled ? (
-                                             <div className="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-headline font-bold">
-                                                {(index + 1).toString().padStart(2, '0')}
-                                            </div>
-                                        ) : (
-                                             <div className="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant font-headline font-bold">
-                                                <Lock className="h-4 w-4" />
-                                            </div>
-                                        )}
-                                        <div>
-                                            <h4 className="font-headline font-bold text-on-surface group-hover:text-primary transition-colors">{lesson.title}</h4>
-                                            <p className="font-body text-sm text-on-surface-variant line-clamp-1">{lesson.description || "Lección del curso"}</p>
-                                        </div>
-                                    </div>
-                                    <ChevronDown className="h-5 w-5 text-outline-variant group-hover:text-primary transition-colors" />
-                                </div>
-                             </div>
+                    <div className="space-y-8">
+                        {course.modules.map((module) => (
+                          <div key={module.id} className="space-y-4">
+                            <h3 className="font-headline font-bold text-lg text-primary">{module.title}</h3>
+                            <div className="space-y-4">
+                              {module.lessons.map((lesson, index) => (
+                                  <div key={lesson.id} className="border border-outline-variant/20 rounded-lg p-5 hover:bg-surface-container-low transition-colors group cursor-pointer">
+                                      <div className="flex justify-between items-center">
+                                          <div className="flex items-center gap-4">
+                                              {isEnrolled ? (
+                                                  <div className="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-headline font-bold">
+                                                      {(index + 1).toString().padStart(2, '0')}
+                                                  </div>
+                                              ) : (
+                                                  <div className="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant font-headline font-bold">
+                                                      <Lock className="h-4 w-4" />
+                                                  </div>
+                                              )}
+                                              <div>
+                                                  <h4 className="font-headline font-bold text-on-surface group-hover:text-primary transition-colors">{lesson.title}</h4>
+                                                  <p className="font-body text-sm text-on-surface-variant line-clamp-1">{lesson.description || "Lección del curso"}</p>
+                                              </div>
+                                          </div>
+                                          <ChevronDown className="h-5 w-5 text-outline-variant group-hover:text-primary transition-colors" />
+                                      </div>
+                                  </div>
+                              ))}
+                            </div>
+                          </div>
                         ))}
                     </div>
-                    {course.lessons.length > 0 && (
+                    {allLessons.length > 0 && (
                         <button className="w-full py-3 text-center text-primary font-body font-medium hover:bg-surface-container-low rounded-lg transition-colors">
                             Ver todo el currículo
                         </button>
@@ -224,7 +237,7 @@ export default async function CoursePage({ params }: { params: { id: string } })
                 </div>
 
                 {isEnrolled ? (
-                    <Link href={`/courses/${id}/lessons/${course.lessons[0]?.id}`} className="w-full">
+                    <Link href={`/courses/${id}/lessons/${allLessons[0]?.id}`} className="w-full">
                         <Button className="w-full py-6 rounded-lg bg-gradient-to-r from-primary to-primary-container text-white font-headline font-bold text-lg hover:opacity-90 transition-opacity shadow-[0_4px_14px_rgba(0,42,88,0.2)]">
                             Continuar Aprendiendo
                         </Button>
@@ -257,7 +270,7 @@ export default async function CoursePage({ params }: { params: { id: string } })
                         </div>
                         <div>
                             <p className="font-body text-xs text-on-surface-variant uppercase tracking-wider">Lecciones</p>
-                            <p className="font-body font-semibold text-on-surface">{course.lessons.length} Módulos en video</p>
+                            <p className="font-body font-semibold text-on-surface">{allLessons.length} Módulos en video</p>
                         </div>
                     </li>
                     <li className="flex items-center gap-3">

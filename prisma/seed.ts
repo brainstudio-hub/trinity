@@ -28,11 +28,19 @@ async function main() {
       category: "Teología",
       level: Level.BASICO,
       isPublished: true,
-      lessons: {
+      modules: {
         create: [
-          { title: "Historia de la Reforma", videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", order: 1, isPublished: true },
-          { title: "Los 39 Artículos", videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", order: 2, isPublished: true },
-          { title: "Liturgia Anglicana", videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", order: 3, isPublished: true },
+          {
+            title: "Fundamentos",
+            order: 1,
+            lessons: {
+              create: [
+                { title: "Historia de la Reforma", videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", order: 1, isPublished: true },
+                { title: "Los 39 Artículos", videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", order: 2, isPublished: true },
+                { title: "Liturgia Anglicana", videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", order: 3, isPublished: true },
+              ]
+            }
+          }
         ],
       },
     },
@@ -45,11 +53,19 @@ async function main() {
       category: "Idiomas Bíblicos",
       level: Level.INTERMEDIO,
       isPublished: true,
-      lessons: {
+      modules: {
         create: [
-          { title: "El Alfabeto", videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", order: 1, isPublished: true },
-          { title: "Sustantivos de la 2da Declinación", videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", order: 2, isPublished: true },
-          { title: "Verbos en Presente Activo", videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", order: 3, isPublished: true },
+          {
+            title: "Básico",
+            order: 1,
+            lessons: {
+              create: [
+                { title: "El Alfabeto", videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", order: 1, isPublished: true },
+                { title: "Sustantivos de la 2da Declinación", videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", order: 2, isPublished: true },
+                { title: "Verbos en Presente Activo", videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", order: 3, isPublished: true },
+              ]
+            }
+          }
         ],
       },
     },

@@ -6,8 +6,10 @@ export default async function CoursesPage() {
   const courses = await db.course.findMany({
     where: { isPublished: true },
     include: {
-      _count: {
-        select: { lessons: true }
+      modules: {
+        include: {
+          lessons: true
+        }
       }
     },
     orderBy: { createdAt: "desc" }
@@ -72,54 +74,57 @@ export default async function CoursesPage() {
 
         {/* Course Grid */}
         <div className="flex-1 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-          {courses.map((course) => (
-            <Link key={course.id} href={`/courses/${course.id}`}>
-                <article className="group bg-surface-container-lowest rounded-xl overflow-hidden cursor-pointer flex flex-col h-full transform transition-transform hover:-translate-y-1 border border-outline-variant/10 shadow-sm hover:shadow-md transition-all">
-                <div className="relative h-48 w-full overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
-                    {course.image ? (
-                        <img src={course.image} alt={course.title} className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" />
-                    ) : (
-                        <div className="w-full h-full bg-primary/10 flex items-center justify-center">
-                            <Book className="h-12 w-12 text-primary/20" />
-                        </div>
-                    )}
-                    <div className="absolute bottom-4 left-4 z-20 flex gap-2">
-                    <span className="px-2 py-1 rounded bg-white/20 backdrop-blur-md text-white font-label text-xs font-semibold">
-                        {course.category || "Teología"}
-                    </span>
-                    </div>
-                </div>
+          {courses.map((course) => {
+            const lessonCount = course.modules.reduce((acc, m) => acc + m.lessons.length, 0);
+            return (
+              <Link key={course.id} href={`/courses/${course.id}`}>
+                  <article className="group bg-surface-container-lowest rounded-xl overflow-hidden cursor-pointer flex flex-col h-full transform transition-transform hover:-translate-y-1 border border-outline-variant/10 shadow-sm hover:shadow-md transition-all">
+                  <div className="relative h-48 w-full overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+                      {course.image ? (
+                          <img src={course.image} alt={course.title} className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" />
+                      ) : (
+                          <div className="w-full h-full bg-primary/10 flex items-center justify-center">
+                              <Book className="h-12 w-12 text-primary/20" />
+                          </div>
+                      )}
+                      <div className="absolute bottom-4 left-4 z-20 flex gap-2">
+                      <span className="px-2 py-1 rounded bg-white/20 backdrop-blur-md text-white font-label text-xs font-semibold">
+                          {course.category || "Teología"}
+                      </span>
+                      </div>
+                  </div>
 
-                <div className="p-6 flex flex-col flex-1">
-                    <div className="flex items-center gap-2 text-on-surface-variant font-label text-xs mb-3">
-                    <Clock className="h-4 w-4" />
-                    <span>8 Semanas</span>
-                    <span className="w-1 h-1 rounded-full bg-outline-variant mx-1"></span>
-                    <BarChart3 className="h-4 w-4" />
-                    <span>{course.level === 'BASICO' ? 'Introductorio' : course.level === 'INTERMEDIO' ? 'Intermedio' : 'Avanzado'}</span>
-                    </div>
+                  <div className="p-6 flex flex-col flex-1">
+                      <div className="flex items-center gap-2 text-on-surface-variant font-label text-xs mb-3">
+                      <Clock className="h-4 w-4" />
+                      <span>8 Semanas</span>
+                      <span className="w-1 h-1 rounded-full bg-outline-variant mx-1"></span>
+                      <BarChart3 className="h-4 w-4" />
+                      <span>{course.level === 'BASICO' ? 'Introductorio' : course.level === 'INTERMEDIO' ? 'Intermedio' : 'Avanzado'}</span>
+                      </div>
 
-                    <h3 className="font-headline font-bold text-xl text-on-surface mb-2 leading-tight group-hover:text-primary transition-colors">
-                        {course.title}
-                    </h3>
-                    <p className="font-body text-on-surface-variant text-sm line-clamp-2 mb-6">
-                        {course.description}
-                    </p>
+                      <h3 className="font-headline font-bold text-xl text-on-surface mb-2 leading-tight group-hover:text-primary transition-colors">
+                          {course.title}
+                      </h3>
+                      <p className="font-body text-on-surface-variant text-sm line-clamp-2 mb-6">
+                          {course.description}
+                      </p>
 
-                    <div className="mt-auto pt-4 flex items-center gap-3 border-t border-surface-container-highest">
-                    <div className="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant/20">
-                         <User className="h-5 w-5 text-on-surface-variant" />
-                    </div>
-                    <div className="font-label text-xs">
-                        <p className="text-on-surface font-semibold">Dr. Thomas Cranmer</p>
-                        <p className="text-on-surface-variant">Profesor de Teología Sistemática</p>
-                    </div>
-                    </div>
-                </div>
-                </article>
-            </Link>
-          ))}
+                      <div className="mt-auto pt-4 flex items-center gap-3 border-t border-surface-container-highest">
+                      <div className="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant/20">
+                           <User className="h-5 w-5 text-on-surface-variant" />
+                      </div>
+                      <div className="font-label text-xs">
+                          <p className="text-on-surface font-semibold">Dr. Thomas Cranmer</p>
+                          <p className="text-on-surface-variant">Profesor de Teología Sistemática</p>
+                      </div>
+                      </div>
+                  </div>
+                  </article>
+              </Link>
+            );
+          })}
 
           {courses.length === 0 && (
             <div className="col-span-full text-center py-20 bg-surface-container-low rounded-2xl border-2 border-dashed border-outline-variant/50">

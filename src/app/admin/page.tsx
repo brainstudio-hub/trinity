@@ -8,8 +8,10 @@ import { Badge } from "@/components/ui/badge";
 export default async function AdminPage() {
   const courses = await db.course.findMany({
     include: {
-      _count: {
-        select: { lessons: true }
+      modules: {
+        include: {
+          lessons: true
+        }
       }
     },
     orderBy: { createdAt: "desc" }
@@ -31,32 +33,35 @@ export default async function AdminPage() {
       </div>
 
       <div className="grid gap-4">
-        {courses.map((course) => (
-          <Card key={course.id}>
-            <CardHeader className="p-4 md:p-6">
-              <div className="flex items-center justify-between">
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <CardTitle className="text-lg">{course.title}</CardTitle>
-                    <Badge variant={course.isPublished ? "default" : "secondary"}>
-                      {course.isPublished ? "Publicado" : "Borrador"}
-                    </Badge>
+        {courses.map((course) => {
+          const lessonCount = course.modules.reduce((acc, m) => acc + m.lessons.length, 0);
+          return (
+            <Card key={course.id}>
+              <CardHeader className="p-4 md:p-6">
+                <div className="flex items-center justify-between">
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-2">
+                      <CardTitle className="text-lg">{course.title}</CardTitle>
+                      <Badge variant={course.isPublished ? "default" : "secondary"}>
+                        {course.isPublished ? "Publicado" : "Borrador"}
+                      </Badge>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      {course.category} • {lessonCount} lecciones
+                    </p>
                   </div>
-                  <p className="text-sm text-muted-foreground">
-                    {course.category} • {course._count.lessons} lecciones
-                  </p>
+                  <div className="flex items-center gap-2">
+                    <Link href={`/admin/courses/${course.id}`}>
+                      <Button variant="outline" size="sm">
+                        <Pencil className="h-4 w-4" />
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Link href={`/admin/courses/${course.id}`}>
-                    <Button variant="outline" size="sm">
-                      <Pencil className="h-4 w-4" />
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            </CardHeader>
-          </Card>
-        ))}
+              </CardHeader>
+            </Card>
+          );
+        })}
         {courses.length === 0 && (
           <div className="text-center py-10 border-2 border-dashed rounded-xl">
              <p className="text-muted-foreground">No hay cursos creados todavía.</p>
