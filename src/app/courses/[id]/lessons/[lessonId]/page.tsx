@@ -1,11 +1,7 @@
 import { auth } from "@/auth";
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
-import { VideoPlayer } from "@/components/video-player";
-import { CourseProgressButton } from "@/components/course-progress-button";
-import Link from "next/link";
-import { PlayCircle, ChevronLeft } from "lucide-react";
-import { cn } from "@/lib/utils";
+import LessonClientPage from "./lesson-client";
 
 export default async function LessonPage({
   params,
@@ -48,6 +44,11 @@ export default async function LessonPage({
                   lessons: {
                     where: { isPublished: true },
                     orderBy: { order: "asc" },
+                    include: {
+                      userProgress: {
+                        where: { userId }
+                      }
+                    }
                   }
                 }
               },
@@ -58,6 +59,10 @@ export default async function LessonPage({
       userProgress: {
         where: { userId },
       },
+      notes: {
+        where: { userId },
+        orderBy: { timestamp: "asc" }
+      }
     },
   });
 
@@ -65,75 +70,15 @@ export default async function LessonPage({
     redirect(`/courses/${courseId}`);
   }
 
-  const isCompleted = lesson.userProgress[0]?.isCompleted ?? false;
   const course = lesson.module.course;
 
   return (
-    <div className="flex flex-col lg:flex-row gap-8">
-      {/* Main Content */}
-      <div className="flex-1 space-y-6">
-        <Link
-          href={`/courses/${courseId}`}
-          className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
-        >
-          <ChevronLeft className="h-4 w-4 mr-1" />
-          Volver al curso
-        </Link>
-
-        <VideoPlayer url={lesson.videoUrl} />
-
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b pb-6">
-          <div>
-            <h1 className="text-2xl font-bold">{lesson.title}</h1>
-            <p className="text-muted-foreground">{course.title}</p>
-          </div>
-          <CourseProgressButton
-            lessonId={lessonId}
-            initialIsCompleted={isCompleted}
-          />
-        </div>
-
-        {lesson.description && (
-          <div className="prose max-w-none">
-            <p>{lesson.description}</p>
-          </div>
-        )}
-      </div>
-
-      {/* Syllabus Sidebar */}
-      <div className="w-full lg:w-80 space-y-4">
-        <div className="bg-white border rounded-xl overflow-hidden">
-          <div className="p-4 border-b bg-primary/5">
-            <h3 className="font-bold text-primary">Contenido del Curso</h3>
-          </div>
-          <div className="divide-y">
-            {course.modules.map((m) => (
-              <div key={m.id} className="space-y-0">
-                <div className="px-4 py-2 bg-gray-50 text-xs font-bold text-gray-500 uppercase tracking-wider border-b">
-                  {m.title}
-                </div>
-                {m.lessons.map((l) => (
-                  <Link
-                    key={l.id}
-                    href={`/courses/${courseId}/lessons/${l.id}`}
-                    className={cn(
-                      "flex items-center gap-3 p-4 hover:bg-gray-50 transition-colors text-sm",
-                      l.id === lessonId ? "bg-accent text-primary font-medium" : "text-muted-foreground"
-                    )}
-                  >
-                    {l.id === lessonId ? (
-                      <PlayCircle className="h-4 w-4 text-primary shrink-0" />
-                    ) : (
-                      <div className="h-4 w-4 rounded-full border border-muted-foreground shrink-0" />
-                    )}
-                    <span className="line-clamp-2 flex-1">{l.title}</span>
-                  </Link>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
+    <LessonClientPage
+      courseId={courseId}
+      lesson={lesson}
+      course={course}
+      userId={userId}
+      initialNotes={lesson.notes}
+    />
   );
 }
