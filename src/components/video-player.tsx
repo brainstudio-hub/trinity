@@ -17,7 +17,7 @@ interface VideoPlayerProps {
 export const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
   ({ url, onProgress, onReady }, ref) => {
     const [isMounted, setIsMounted] = useState(false);
-    const playerRef = useRef<ReactPlayer>(null);
+    const playerRef = useRef<any>(null);
 
     useEffect(() => {
       setIsMounted(true);
@@ -38,9 +38,11 @@ export const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
       );
     }
 
+    const Player = ReactPlayer as any;
+
     return (
       <div className="relative aspect-video overflow-hidden rounded-xl bg-black shadow-2xl border border-outline-variant/10">
-        <ReactPlayer
+        <Player
           ref={playerRef}
           url={url}
           width="100%"
