@@ -5,12 +5,13 @@ import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache";
 import { Level, Course, Module, Lesson } from "@prisma/client";
 
-export async function createCourse(data: { title: string; category: string; level: string }) {
+export async function createCourse(data: { title: string; category: string; level: string; code: string }) {
   const session = await auth();
   if (session?.user?.role !== "ADMIN") throw new Error("No autorizado");
 
   const course = await db.course.create({
     data: {
+      code: data.code,
       title: data.title,
       category: data.category,
       level: data.level as Level,
@@ -158,4 +159,84 @@ export async function deleteLesson(id: string) {
 
   revalidatePath(`/admin/courses/${lesson.module.courseId}`);
   revalidatePath(`/courses/${lesson.module.courseId}`);
+}
+
+// Instructor Actions
+export async function createInstructor(data: { name: string; department?: string; bio?: string }) {
+  const session = await auth();
+  if (session?.user?.role !== "ADMIN") throw new Error("No autorizado");
+
+  const instructor = await db.instructor.create({ data });
+  revalidatePath("/admin");
+  return instructor;
+}
+
+export async function updateInstructor(id: string, data: any) {
+  const session = await auth();
+  if (session?.user?.role !== "ADMIN") throw new Error("No autorizado");
+
+  await db.instructor.update({ where: { id }, data });
+  revalidatePath("/admin");
+}
+
+export async function deleteInstructor(id: string) {
+  const session = await auth();
+  if (session?.user?.role !== "ADMIN") throw new Error("No autorizado");
+
+  await db.instructor.delete({ where: { id } });
+  revalidatePath("/admin");
+}
+
+// Announcement Actions
+export async function createAnnouncement(data: { title: string; content: string; link?: string; isPublished?: boolean }) {
+  const session = await auth();
+  if (session?.user?.role !== "ADMIN") throw new Error("No autorizado");
+
+  const announcement = await db.announcement.create({ data });
+  revalidatePath("/admin");
+  revalidatePath("/");
+  return announcement;
+}
+
+export async function updateAnnouncement(id: string, data: any) {
+  const session = await auth();
+  if (session?.user?.role !== "ADMIN") throw new Error("No autorizado");
+
+  await db.announcement.update({ where: { id }, data });
+  revalidatePath("/admin");
+}
+
+export async function deleteAnnouncement(id: string) {
+  const session = await auth();
+  if (session?.user?.role !== "ADMIN") throw new Error("No autorizado");
+
+  await db.announcement.delete({ where: { id } });
+  revalidatePath("/admin");
+}
+
+// Event Actions
+export async function createEvent(data: { title: string; description?: string; date: Date }) {
+  const session = await auth();
+  if (session?.user?.role !== "ADMIN") throw new Error("No autorizado");
+
+  const event = await db.event.create({ data });
+  revalidatePath("/admin");
+  revalidatePath("/dashboard");
+  return event;
+}
+
+export async function updateEvent(id: string, data: any) {
+  const session = await auth();
+  if (session?.user?.role !== "ADMIN") throw new Error("No autorizado");
+
+  await db.event.update({ where: { id }, data });
+  revalidatePath("/admin");
+}
+
+export async function deleteEvent(id: string) {
+  const session = await auth();
+  if (session?.user?.role !== "ADMIN") throw new Error("No autorizado");
+
+  await db.event.delete({ where: { id } });
+  revalidatePath("/admin");
 }

@@ -4,20 +4,7 @@ import * as bcrypt from "bcryptjs";
 const prisma = new PrismaClient();
 
 async function main() {
-  if (process.env.ALLOW_DESTRUCTIVE_SEED === "true") {
-    console.log("Cleaning database...");
-    await prisma.lessonNote.deleteMany();
-    await prisma.userProgress.deleteMany();
-    await prisma.enrollment.deleteMany();
-    await prisma.lesson.deleteMany();
-    await prisma.module.deleteMany();
-    await prisma.course.deleteMany();
-    // We keep users to avoid locking out during seed if needed, or we could delete users except admin.
-    // For a clean seed, we can delete non-admin users.
-    await prisma.user.deleteMany({ where: { role: { not: Role.ADMIN } } });
-  } else {
-    console.log("Skipping database cleaning (ALLOW_DESTRUCTIVE_SEED !== 'true')");
-  }
+  console.log("Starting seed process...");
 
   const adminPassword = await bcrypt.hash("admin123", 10);
 
@@ -35,14 +22,45 @@ async function main() {
 
   console.log({ admin });
 
-  // 2. Create Sample Courses
-  const course1 = await prisma.course.create({
-    data: {
+  // 2. Create Instructors
+  const instructor1 = await prisma.instructor.upsert({
+    where: { id: "inst_1" },
+    update: {},
+    create: {
+      id: "inst_1",
+      name: "Dr. Alistair McGrath",
+      department: "Teología Histórica",
+      bio: "Reconocido teólogo y científico, autor de numerosos libros sobre la relación entre ciencia y fe.",
+    }
+  });
+
+  const instructor2 = await prisma.instructor.upsert({
+    where: { id: "inst_2" },
+    update: {},
+    create: {
+      id: "inst_2",
+      name: "Dr. Thomas Cranmer",
+      department: "Liturgia y Reforma",
+      bio: "Especialista en la Reforma Inglesa y la formación del Libro de Oración Común.",
+    }
+  });
+
+  // 3. Create Sample Courses using Upsert with 'code'
+  const course1 = await prisma.course.upsert({
+    where: { code: "THEO-101" },
+    update: {
+      instructorId: instructor2.id,
+      professorName: instructor2.name,
+    },
+    create: {
+      code: "THEO-101",
       title: "Introducción a la Teología Anglicana",
       description: "Un recorrido por las bases históricas y doctrinales del anglicanismo.",
       category: "Teología",
       level: Level.BASICO,
       isPublished: true,
+      instructorId: instructor2.id,
+      professorName: instructor2.name,
       modules: {
         create: [
           {
@@ -61,13 +79,21 @@ async function main() {
     },
   });
 
-  const course2 = await prisma.course.create({
-    data: {
+  const course2 = await prisma.course.upsert({
+    where: { code: "GRK-101" },
+    update: {
+      instructorId: instructor1.id,
+      professorName: instructor1.name,
+    },
+    create: {
+      code: "GRK-101",
       title: "Griego Bíblico I",
       description: "Aprende los fundamentos del griego koiné para el estudio del Nuevo Testamento.",
       category: "Idiomas Bíblicos",
       level: Level.INTERMEDIO,
       isPublished: true,
+      instructorId: instructor1.id,
+      professorName: instructor1.name,
       modules: {
         create: [
           {
@@ -86,7 +112,7 @@ async function main() {
     },
   });
 
-  console.log("Seed data created successfully");
+  console.log("Seed data created successfully via upsert pattern.");
 }
 
 main()

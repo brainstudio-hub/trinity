@@ -36,11 +36,14 @@ model User {
 
 model Course {
   id            String       @id @default(cuid())
+  code          String       @unique
   title         String
   description   String?      @db.Text
   image         String?
   category      String?
   professorName String?
+  instructorId  String?
+  instructor    Instructor?  @relation(fields: [instructorId], references: [id])
   faqs          Json?        @default("[]")
   level         Level        @default(BASICO)
   isPublished   Boolean      @default(false)
@@ -48,6 +51,35 @@ model Course {
   updatedAt     DateTime     @updatedAt
   modules       Module[]
   enrollments   Enrollment[]
+}
+
+model Instructor {
+  id          String   @id @default(cuid())
+  name        String
+  department  String?
+  bio         String?  @db.Text
+  courses     Course[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Announcement {
+  id          String   @id @default(cuid())
+  title       String
+  content     String   @db.Text
+  link        String?
+  isPublished Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Event {
+  id          String   @id @default(cuid())
+  title       String
+  description String?  @db.Text
+  date        DateTime
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 model Module {

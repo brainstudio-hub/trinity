@@ -8,9 +8,8 @@ import { BookOpen, LayoutDashboard, School, Users, Megaphone, ArrowRight, Play }
 const sidebarItems = [
   { name: "Catálogo", href: "/courses", icon: BookOpen },
   { name: "Panel de Control", href: "/dashboard", icon: LayoutDashboard },
-  { name: "Mis Cursos", href: "/dashboard", icon: School },
-  { name: "Facultad", href: "/faculty/alistair-mcgrath", icon: Users },
-  { name: "Noticias", href: "#", icon: Megaphone },
+  { name: "Facultad", href: "/faculty", icon: Users },
+  { name: "Noticias", href: "/announcements", icon: Megaphone },
 ];
 
 export function Sidebar({ role }: { role?: string }) {
