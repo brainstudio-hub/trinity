@@ -14,6 +14,7 @@ export async function createCourse(data: { title: string; category: string; leve
       title: data.title,
       category: data.category,
       level: data.level as Level,
+      faqs: [],
     },
   });
 
@@ -27,7 +28,10 @@ export async function updateCourse(id: string, data: Partial<Course>) {
 
   await db.course.update({
     where: { id },
-    data,
+    data: {
+      ...data,
+      faqs: data.faqs as any,
+    },
   });
 
   revalidatePath("/admin");

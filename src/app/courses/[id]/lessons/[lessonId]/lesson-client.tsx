@@ -40,6 +40,7 @@ export default function LessonClientPage({
     [lesson.moduleId]: true,
   });
   const [notes, setNotes] = useState(initialNotes);
+  const [currentTime, setCurrentTime] = useState(0);
   const playerRef = useRef<VideoPlayerRef>(null);
 
   const toggleModule = (moduleId: string) => {
@@ -77,6 +78,7 @@ export default function LessonClientPage({
             <VideoPlayer
               ref={playerRef}
               url={lesson.videoUrl}
+              onTimeUpdate={(seconds) => setCurrentTime(seconds)}
             />
 
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pt-4">
@@ -140,7 +142,26 @@ export default function LessonClientPage({
               <TabsContent value="transcript" className="mt-0 focus-visible:ring-0">
                 <div className="prose prose-lg max-w-none text-on-surface-variant font-body leading-relaxed">
                   {lesson.transcript ? (
-                    <div className="whitespace-pre-wrap">{lesson.transcript}</div>
+                    <div className="whitespace-pre-wrap">
+                      {lesson.transcript.split(/(\[\d{1,2}:\d{2}\]|\d{1,2}:\d{2})/).map((part: string, i: number) => {
+                        const timeMatch = part.match(/\[?(\d{1,2}):(\d{2})\]?/);
+                        if (timeMatch) {
+                          const mins = parseInt(timeMatch[1]);
+                          const secs = parseInt(timeMatch[2]);
+                          const totalSecs = mins * 60 + secs;
+                          return (
+                            <button
+                              key={i}
+                              onClick={() => handleSeek(totalSecs)}
+                              className="text-primary font-bold hover:underline bg-primary/5 px-1 rounded transition-colors"
+                            >
+                              {part}
+                            </button>
+                          );
+                        }
+                        return part;
+                      })}
+                    </div>
                   ) : (
                     <div className="text-center py-20">
                        <FileText className="h-12 w-12 text-outline-variant mx-auto mb-4" />
@@ -155,14 +176,7 @@ export default function LessonClientPage({
                   lessonId={lesson.id}
                   notes={notes || []}
                   setNotes={setNotes}
-                  getCurrentTime={() => {
-                    try {
-                      return playerRef.current?.getCurrentTime() || 0;
-                    } catch (error) {
-                      console.error("Error getting player time:", error);
-                      return 0;
-                    }
-                  }}
+                  getCurrentTime={() => currentTime}
                   onSeek={handleSeek}
                 />
               </TabsContent>

@@ -11,11 +11,12 @@ export interface VideoPlayerRef {
 interface VideoPlayerProps {
   url: string;
   onProgress?: (state: { playedSeconds: number }) => void;
+  onTimeUpdate?: (seconds: number) => void;
   onReady?: () => void;
 }
 
 export const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
-  ({ url, onProgress, onReady }, ref) => {
+  ({ url, onProgress, onTimeUpdate, onReady }, ref) => {
     const [isMounted, setIsMounted] = useState(false);
     const [hasError, setHasError] = useState(false);
     const playerRef = useRef<any>(null);
@@ -62,6 +63,7 @@ export const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
           onError={() => setHasError(true)}
           onProgress={(state: any) => {
             if (onProgress) onProgress(state);
+            if (onTimeUpdate) onTimeUpdate(state.playedSeconds);
           }}
           onReady={onReady}
           config={{

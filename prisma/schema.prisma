@@ -35,17 +35,19 @@ model User {
 }
 
 model Course {
-  id          String       @id @default(cuid())
-  title       String
-  description String?      @db.Text
-  image       String?
-  category    String?
-  level       Level        @default(BASICO)
-  isPublished Boolean      @default(false)
-  createdAt   DateTime     @default(now())
-  updatedAt   DateTime     @updatedAt
-  modules     Module[]
-  enrollments Enrollment[]
+  id            String       @id @default(cuid())
+  title         String
+  description   String?      @db.Text
+  image         String?
+  category      String?
+  professorName String?
+  faqs          Json?        @default("[]")
+  level         Level        @default(BASICO)
+  isPublished   Boolean      @default(false)
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  modules       Module[]
+  enrollments   Enrollment[]
 }
 
 model Module {
