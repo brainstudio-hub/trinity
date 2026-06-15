@@ -95,7 +95,7 @@ export default async function CoursePage({ params }: { params: { id: string } })
                     <h2 className="font-headline text-2xl font-bold text-on-surface">Sobre este curso</h2>
                     <div className="prose prose-lg text-on-surface-variant max-w-none font-body leading-relaxed space-y-4">
                         <p>
-                            Este curso ofrece una inmersión rigurosa en los documentos fundacionales del anglicanismo. No es un mero recuento histórico, sino una exploración teológica de cómo se forjó la 'Vía Media'.
+                            Este curso ofrece una inmersión rigurosa en los documentos fundacionales del anglicanismo. No es un mero recuento histórico, sino una exploración teológica de cómo se forjó la &apos;Vía Media&apos;.
                         </p>
                         <p>
                             A través de la lectura atenta del Libro de Oración Común, los Treinta y Nueve Artículos y las Homilías, los estudiantes desarrollarán una comprensión matizada de la identidad anglicana y su relevancia pastoral en el mundo contemporáneo.

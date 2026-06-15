@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Sidebar } from "@/components/sidebar";
 import { auth } from "@/auth";
 
-const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"] });
+const plusJakartaSans = localFont({
+  src: "../../public/fonts/PlusJakartaSans-Variable.ttf",
+  variable: "--font-plus-jakarta-sans",
+});
 
 export const metadata: Metadata = {
   title: "Seminario Anglicano Trinity - LMS",

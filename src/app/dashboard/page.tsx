@@ -169,7 +169,7 @@ export default async function DashboardPage() {
                 </div>
                 <div className="opacity-70">
                   <h4 className="font-headline font-bold text-on-surface text-sm mb-1">Chapel Service</h4>
-                  <p className="font-body text-xs text-on-surface-variant mb-1">8:00 AM - St. Jude's</p>
+                  <p className="font-body text-xs text-on-surface-variant mb-1">8:00 AM - St. Jude&apos;s</p>
                   <span className="inline-block px-2 py-1 bg-surface-variant text-on-surface-variant text-[10px] font-bold rounded-md uppercase tracking-wider">Event</span>
                 </div>
               </div>
