@@ -4,16 +4,20 @@ import * as bcrypt from "bcryptjs";
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log("Cleaning database...");
-  await prisma.lessonNote.deleteMany();
-  await prisma.userProgress.deleteMany();
-  await prisma.enrollment.deleteMany();
-  await prisma.lesson.deleteMany();
-  await prisma.module.deleteMany();
-  await prisma.course.deleteMany();
-  // We keep users to avoid locking out during seed if needed, or we could delete users except admin.
-  // For a clean seed, we can delete non-admin users.
-  await prisma.user.deleteMany({ where: { role: { not: Role.ADMIN } } });
+  if (process.env.ALLOW_DESTRUCTIVE_SEED === "true") {
+    console.log("Cleaning database...");
+    await prisma.lessonNote.deleteMany();
+    await prisma.userProgress.deleteMany();
+    await prisma.enrollment.deleteMany();
+    await prisma.lesson.deleteMany();
+    await prisma.module.deleteMany();
+    await prisma.course.deleteMany();
+    // We keep users to avoid locking out during seed if needed, or we could delete users except admin.
+    // For a clean seed, we can delete non-admin users.
+    await prisma.user.deleteMany({ where: { role: { not: Role.ADMIN } } });
+  } else {
+    console.log("Skipping database cleaning (ALLOW_DESTRUCTIVE_SEED !== 'true')");
+  }
 
   const adminPassword = await bcrypt.hash("admin123", 10);
 

@@ -17,6 +17,7 @@ interface VideoPlayerProps {
 export const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
   ({ url, onProgress, onReady }, ref) => {
     const [isMounted, setIsMounted] = useState(false);
+    const [hasError, setHasError] = useState(false);
     const playerRef = useRef<any>(null);
 
     useEffect(() => {
@@ -38,16 +39,27 @@ export const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
       );
     }
 
+    if (hasError) {
+      return (
+        <div className="aspect-video bg-slate-100 rounded-xl flex items-center justify-center border border-slate-200 p-8 text-center">
+          <p className="font-headline font-semibold text-slate-500">
+            Este video no se puede reproducir o el enlace es inválido.
+          </p>
+        </div>
+      );
+    }
+
     const Player = ReactPlayer as any;
 
     return (
       <div className="relative aspect-video overflow-hidden rounded-xl bg-black shadow-2xl border border-outline-variant/10">
         <Player
           ref={playerRef}
-          url={url}
+          src={url}
           width="100%"
           height="100%"
           controls
+          onError={() => setHasError(true)}
           onProgress={(state: any) => {
             if (onProgress) onProgress(state);
           }}

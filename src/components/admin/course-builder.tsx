@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Plus, Pencil, Trash2, ChevronDown, ChevronUp, Video, FileText, Clock, GripVertical } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -20,6 +20,11 @@ interface CourseBuilderProps {
 export function CourseBuilder({ courseId, initialModules }: CourseBuilderProps) {
   const router = useRouter();
   const [modules, setModules] = useState(initialModules);
+
+  useEffect(() => {
+    setModules(initialModules);
+  }, [initialModules]);
+
   const [expandedModules, setExpandedModules] = useState<Record<string, boolean>>(
     initialModules.reduce((acc, m) => ({ ...acc, [m.id]: true }), {})
   );
@@ -49,24 +54,33 @@ export function CourseBuilder({ courseId, initialModules }: CourseBuilderProps) 
 
   const saveModule = async (formData: FormData) => {
     setLoading(true);
-    const title = formData.get("title") as string;
-    const order = parseInt(formData.get("order") as string);
+    try {
+      const title = formData.get("title") as string;
+      const order = parseInt(formData.get("order") as string);
 
-    if (editingModule) {
-      await updateModule(editingModule.id, { title, order });
-    } else {
-      await createModule(courseId, { title, order });
+      if (editingModule) {
+        await updateModule(editingModule.id, { title, order });
+      } else {
+        await createModule(courseId, { title, order });
+      }
+
+      setIsModuleModalOpen(false);
+      router.refresh();
+    } catch (error: any) {
+      alert("Error al guardar el módulo: " + error.message);
+    } finally {
+      setLoading(false);
     }
-
-    setIsModuleModalOpen(false);
-    setLoading(false);
-    router.refresh();
   };
 
   const handleDeleteModule = async (id: string) => {
     if (confirm("¿Eliminar este módulo y todas sus lecciones?")) {
-      await deleteModule(id);
-      router.refresh();
+      try {
+        await deleteModule(id);
+        router.refresh();
+      } catch (error: any) {
+        alert("Error al eliminar el módulo: " + error.message);
+      }
     }
   };
 
@@ -79,36 +93,49 @@ export function CourseBuilder({ courseId, initialModules }: CourseBuilderProps) 
 
   const handleEditLesson = (lesson: any, moduleId: string) => {
     setActiveModuleId(moduleId);
-    setEditingLesson(lesson);
+    // Convert duration to minutes for display in the form
+    setEditingLesson({
+      ...lesson,
+      duration: Math.floor(lesson.duration / 60)
+    });
     setIsLessonModalOpen(true);
   };
 
   const saveLesson = async (formData: FormData) => {
     setLoading(true);
-    const data = {
-      title: formData.get("title") as string,
-      videoUrl: formData.get("videoUrl") as string,
-      duration: parseInt(formData.get("duration") as string),
-      transcript: formData.get("transcript") as string,
-      order: parseInt(formData.get("order") as string),
-      isPublished: true
-    };
+    try {
+      const data = {
+        title: formData.get("title") as string,
+        videoUrl: formData.get("videoUrl") as string,
+        duration: parseInt(formData.get("duration") as string),
+        transcript: formData.get("transcript") as string,
+        order: parseInt(formData.get("order") as string),
+        isPublished: true
+      };
 
-    if (editingLesson) {
-      await updateLesson(editingLesson.id, data);
-    } else if (activeModuleId) {
-      await createLesson(activeModuleId, data);
+      if (editingLesson) {
+        await updateLesson(editingLesson.id, data);
+      } else if (activeModuleId) {
+        await createLesson(activeModuleId, data);
+      }
+
+      setIsLessonModalOpen(false);
+      router.refresh();
+    } catch (error: any) {
+      alert("Error al guardar la lección: " + error.message);
+    } finally {
+      setLoading(false);
     }
-
-    setIsLessonModalOpen(false);
-    setLoading(false);
-    router.refresh();
   };
 
   const handleDeleteLesson = async (id: string) => {
     if (confirm("¿Eliminar esta lección?")) {
-      await deleteLesson(id);
-      router.refresh();
+      try {
+        await deleteLesson(id);
+        router.refresh();
+      } catch (error: any) {
+        alert("Error al eliminar la lección: " + error.message);
+      }
     }
   };
 
