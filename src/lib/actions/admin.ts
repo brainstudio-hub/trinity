@@ -11,7 +11,7 @@ export async function createCourse(data: { title: string; category: string; leve
 
   const course = await db.course.create({
     data: {
-      code: data.code,
+      code: data.code.toUpperCase().trim(),
       title: data.title,
       category: data.category,
       level: data.level as Level,
