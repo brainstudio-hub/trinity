@@ -95,6 +95,7 @@ export function LessonNotes({
           <Textarea
             placeholder="Toma una nota académica en este momento del video..."
             value={content}
+            onFocus={handleFocus}
             onChange={(e) => setContent(e.target.value)}
             className="min-h-[100px] bg-surface-container-low border-outline-variant/20 focus:border-primary/50 rounded-xl resize-none font-body"
           />

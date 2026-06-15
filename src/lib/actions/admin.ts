@@ -104,7 +104,7 @@ export async function createLesson(moduleId: string, data: Partial<Lesson>) {
       title: data.title || "",
       description: data.description,
       videoUrl: data.videoUrl || "",
-      duration: data.duration || 0,
+      duration: data.duration ? data.duration * 60 : 0,
       transcript: data.transcript,
       order: data.order || 0,
       isPublished: data.isPublished || false,
@@ -123,7 +123,10 @@ export async function updateLesson(id: string, data: Partial<Lesson>) {
 
   const lesson = await db.lesson.update({
     where: { id },
-    data,
+    data: {
+      ...data,
+      duration: data.duration ? data.duration * 60 : undefined,
+    },
     include: {
       module: {
         select: { courseId: true }
