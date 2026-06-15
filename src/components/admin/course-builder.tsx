@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Plus, Pencil, Trash2, ChevronDown, ChevronUp, Video, FileText, Clock, GripVertical } from "lucide-react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -66,8 +67,9 @@ export function CourseBuilder({ courseId, initialModules }: CourseBuilderProps) 
 
       setIsModuleModalOpen(false);
       router.refresh();
+      toast.success("Módulo guardado exitosamente");
     } catch (error: any) {
-      alert("Error al guardar el módulo: " + error.message);
+      toast.error("Error al guardar el módulo", { description: error.message });
     } finally {
       setLoading(false);
     }
@@ -78,8 +80,9 @@ export function CourseBuilder({ courseId, initialModules }: CourseBuilderProps) 
       try {
         await deleteModule(id);
         router.refresh();
+        toast.success("Módulo eliminado");
       } catch (error: any) {
-        alert("Error al eliminar el módulo: " + error.message);
+        toast.error("Error al eliminar el módulo", { description: error.message });
       }
     }
   };
@@ -121,8 +124,9 @@ export function CourseBuilder({ courseId, initialModules }: CourseBuilderProps) 
 
       setIsLessonModalOpen(false);
       router.refresh();
+      toast.success("Lección guardada exitosamente");
     } catch (error: any) {
-      alert("Error al guardar la lección: " + error.message);
+      toast.error("Error al guardar la lección", { description: error.message });
     } finally {
       setLoading(false);
     }
@@ -133,8 +137,9 @@ export function CourseBuilder({ courseId, initialModules }: CourseBuilderProps) 
       try {
         await deleteLesson(id);
         router.refresh();
+        toast.success("Lección eliminada");
       } catch (error: any) {
-        alert("Error al eliminar la lección: " + error.message);
+        toast.error("Error al eliminar la lección", { description: error.message });
       }
     }
   };

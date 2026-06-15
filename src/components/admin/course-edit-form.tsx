@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { updateCourse, deleteCourse } from "@/lib/actions/admin";
@@ -35,9 +36,9 @@ export function CourseEditForm({ course }: { course: Course }) {
         faqs: faqs as any,
         isPublished
       });
-      alert("Guardado");
+      toast.success("Curso actualizado", { description: "Los detalles del curso se guardaron en la base de datos." });
     } catch (error: any) {
-      alert("Error: " + error.message);
+      toast.error("Error al guardar", { description: error.message });
     } finally {
       setLoading(false);
     }

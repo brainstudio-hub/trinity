@@ -19,6 +19,7 @@ interface LessonNotesProps {
   notes: Note[];
   setNotes: React.Dispatch<React.SetStateAction<Note[]>>;
   getCurrentTime: () => number;
+  currentSeconds?: number;
   onSeek: (seconds: number) => void;
 }
 
@@ -27,6 +28,7 @@ export function LessonNotes({
   notes,
   setNotes,
   getCurrentTime,
+  currentSeconds = 0,
   onSeek,
 }: LessonNotesProps) {
   const [content, setContent] = useState("");
@@ -86,7 +88,8 @@ export function LessonNotes({
   };
 
   const safeNotes = notes || [];
-  const displayTime = currentTimeDisplay || 0;
+  // Use reactive currentSeconds when typing
+  const displayTime = content ? Math.floor(currentSeconds) : (currentTimeDisplay || 0);
 
   return (
     <div className="space-y-6">
