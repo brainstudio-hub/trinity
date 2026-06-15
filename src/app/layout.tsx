@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { Sidebar } from "@/components/sidebar";
 import { auth } from "@/auth";
+import { Toaster } from "sonner";
 
 const plusJakartaSans = localFont({
   src: "../../public/fonts/PlusJakartaSans-Variable.ttf",
@@ -35,6 +36,7 @@ export default async function RootLayout({
                 {children}
               </div>
             </main>
+            <Toaster position="top-center" richColors />
           </div>
         </div>
       </body>

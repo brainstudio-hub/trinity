@@ -177,6 +177,7 @@ export default function LessonClientPage({
                   notes={notes || []}
                   setNotes={setNotes}
                   getCurrentTime={() => currentTime}
+                  currentSeconds={currentTime}
                   onSeek={handleSeek}
                 />
               </TabsContent>
@@ -282,13 +283,26 @@ export default function LessonClientPage({
              </div>
 
              <div className="bg-surface-container-low rounded-xl border border-outline-variant/10 overflow-hidden">
-                <button className="w-full px-6 py-4 flex items-center justify-between hover:bg-surface-container transition-colors">
-                  <span className="font-headline font-bold text-sm text-on-surface flex items-center gap-3">
+                <div className="px-6 py-4 border-b border-outline-variant/10 bg-surface-container/50">
+                  <h3 className="font-headline font-bold text-sm text-on-surface flex items-center gap-3">
                     <HelpCircle className="h-4 w-4 text-primary" />
                     Preguntas Frecuentes
-                  </span>
-                  <ChevronDown className="h-4 w-4 text-outline-variant" />
-                </button>
+                  </h3>
+                </div>
+                <div className="divide-y divide-outline-variant/10">
+                  {Array.isArray(course.faqs) && (course.faqs as any[]).length > 0 ? (
+                    (course.faqs as any[]).map((faq, idx) => (
+                      <div key={idx} className="p-4 bg-surface-container-low/30">
+                        <p className="font-headline font-bold text-xs text-primary mb-1 uppercase tracking-tight">{faq.question}</p>
+                        <p className="font-body text-xs text-on-surface-variant leading-relaxed">{faq.answer}</p>
+                      </div>
+                    ))
+                  ) : (
+                    <div className="p-4 text-center">
+                      <p className="text-[10px] text-on-surface-variant italic">No hay FAQs para este curso.</p>
+                    </div>
+                  )}
+                </div>
              </div>
           </div>
         </aside>
