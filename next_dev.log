@@ -7,8 +7,9 @@
   - Environments: .env
 
  ✓ Starting...
- ✓ Ready in 1988ms
- ✓ Compiled /src/middleware in 493ms (244 modules)
+ ✓ Ready in 2.9s
+ ○ Compiling /src/middleware ...
+ ✓ Compiled /src/middleware in 683ms (244 modules)
 [31m[auth][error][0m UnknownAction: Cannot parse action at /session .Read more at https://errors.authjs.dev#unknownaction
     at parseActionAndProviderId (webpack-internal:///(middleware)/./node_modules/@auth/core/lib/utils/web.js:105:15)
     at toInternalRequest (webpack-internal:///(middleware)/./node_modules/@auth/core/lib/utils/web.js:37:40)
@@ -20,8 +21,8 @@
     at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)
     at Object.wrap (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/async-storage/request-async-storage-wrapper.js:105:24)
     at eval (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/web/adapter.js:188:122)
- ○ Compiling /login ...
- ✓ Compiled /login in 2.9s (777 modules)
+ ○ Compiling /courses ...
+ ✓ Compiled /courses in 4.7s (761 modules)
 [31m[auth][error][0m UnknownAction: Cannot parse action at /session .Read more at https://errors.authjs.dev#unknownaction
     at parseActionAndProviderId (webpack-internal:///(rsc)/./node_modules/@auth/core/lib/utils/web.js:105:15)
     at toInternalRequest (webpack-internal:///(rsc)/./node_modules/@auth/core/lib/utils/web.js:37:40)
@@ -68,8 +69,8 @@
     at Timeout._onTimeout (/app/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:266177)
     at listOnTimeout (node:internal/timers:585:17)
     at process.processTimers (node:internal/timers:521:7)
- ✓ Compiled in 703ms (287 modules)
- GET /login 200 in 3664ms
+ ✓ Compiled in 700ms (276 modules)
+ GET /courses 200 in 5758ms
 [31m[auth][error][0m UnknownAction: Cannot parse action at /session .Read more at https://errors.authjs.dev#unknownaction
     at parseActionAndProviderId (webpack-internal:///(middleware)/./node_modules/@auth/core/lib/utils/web.js:105:15)
     at toInternalRequest (webpack-internal:///(middleware)/./node_modules/@auth/core/lib/utils/web.js:37:40)
@@ -81,6 +82,8 @@
     at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)
     at Object.wrap (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/async-storage/request-async-storage-wrapper.js:105:24)
     at eval (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/web/adapter.js:188:122)
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 969ms (750 modules)
 [31m[auth][error][0m UnknownAction: Cannot parse action at /session .Read more at https://errors.authjs.dev#unknownaction
     at parseActionAndProviderId (webpack-internal:///(rsc)/./node_modules/@auth/core/lib/utils/web.js:105:15)
     at toInternalRequest (webpack-internal:///(rsc)/./node_modules/@auth/core/lib/utils/web.js:37:40)
@@ -127,15 +130,4 @@
     at Timeout._onTimeout (/app/node_modules/next/dist/compiled/next-server/app-page.runtime.dev.js:35:266177)
     at listOnTimeout (node:internal/timers:585:17)
     at process.processTimers (node:internal/timers:521:7)
- GET /login? 200 in 46ms
-[31m[auth][error][0m UnknownAction: Cannot parse action at /session .Read more at https://errors.authjs.dev#unknownaction
-    at parseActionAndProviderId (webpack-internal:///(middleware)/./node_modules/@auth/core/lib/utils/web.js:105:15)
-    at toInternalRequest (webpack-internal:///(middleware)/./node_modules/@auth/core/lib/utils/web.js:37:40)
-    at Auth (webpack-internal:///(middleware)/./node_modules/@auth/core/index.js:84:103)
-    at getSession (webpack-internal:///(middleware)/./node_modules/next-auth/lib/index.js:20:60)
-    at handleAuth (webpack-internal:///(middleware)/./node_modules/next-auth/lib/index.js:134:35)
-    at Object.eval [as handler] (webpack-internal:///(middleware)/./node_modules/next-auth/lib/index.js:103:20)
-    at eval (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/web/adapter.js:197:31)
-    at AsyncLocalStorage.run (node:internal/async_local_storage/async_hooks:91:14)
-    at Object.wrap (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/async-storage/request-async-storage-wrapper.js:105:24)
-    at eval (webpack-internal:///(middleware)/./node_modules/next/dist/esm/server/web/adapter.js:188:122)
+ GET /trinity-shield.png 404 in 1191ms

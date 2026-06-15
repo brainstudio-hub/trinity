@@ -19,7 +19,7 @@ export async function Header() {
                     Catálogo
                 </Link>
                 <Link href="/dashboard" className="text-[#424750] font-headline uppercase tracking-widest text-sm font-medium hover:text-[#002a58] transition-all duration-300 ease-in-out hover:opacity-80">
-                    Dashboard
+                    Panel
                 </Link>
                 <Link href="#" className="text-[#424750] font-headline uppercase tracking-widest text-sm font-medium hover:text-[#002a58] transition-all duration-300 ease-in-out hover:opacity-80">
                     Biblioteca
@@ -28,7 +28,15 @@ export async function Header() {
         </div>
 
         <div className="flex items-center gap-4">
-          <button className="text-[#002a58] scale-95 active:scale-100 transition-transform p-2 rounded-full hover:bg-surface-container-low">
+          <div className="relative hidden lg:block">
+             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-primary/40" />
+             <input
+               type="text"
+               placeholder="Buscar en el archivo..."
+               className="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm font-body focus:ring-2 focus:ring-primary/20 transition-all w-64"
+             />
+          </div>
+          <button className="text-[#002a58] lg:hidden scale-95 active:scale-100 transition-transform p-2 rounded-full hover:bg-surface-container-low">
             <Search className="h-5 w-5" />
           </button>
 

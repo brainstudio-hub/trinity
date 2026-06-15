@@ -7,7 +7,7 @@ import { BookOpen, LayoutDashboard, School, Users, Megaphone, ArrowRight, Play }
 
 const sidebarItems = [
   { name: "Catálogo", href: "/courses", icon: BookOpen },
-  { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
+  { name: "Panel de Control", href: "/dashboard", icon: LayoutDashboard },
   { name: "Mis Cursos", href: "/dashboard", icon: School },
   { name: "Facultad", href: "/faculty/alistair-mcgrath", icon: Users },
   { name: "Noticias", href: "#", icon: Megaphone },
@@ -19,11 +19,16 @@ export function Sidebar({ role }: { role?: string }) {
   return (
     <aside className="fixed left-0 top-16 hidden h-[calc(100vh-4rem)] w-72 bg-[#f2f4f6] dark:bg-[#111416] py-8 border-none md:flex flex-col z-40">
       <div className="px-6 mb-10 flex flex-col items-start">
-        <div className="h-12 w-12 rounded-full bg-primary-container text-on-primary flex items-center justify-center mb-4 overflow-hidden border border-outline-variant/20 shadow-sm">
-            <School className="h-6 w-6 text-on-primary-container" />
+        <div className="mb-4">
+            <div className="h-12 w-12 bg-primary/5 rounded-xl flex items-center justify-center border border-primary/10">
+                <img src="/trinity-shield.png" alt="Escudo Trinity" className="h-10 w-auto" onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.parentElement!.innerHTML = '<svg class="h-6 w-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>';
+                }} />
+            </div>
         </div>
-        <h1 className="font-headline font-bold text-[#002a58] dark:text-[#c9e7f7] text-xl tracking-tight">The Digital Curator</h1>
-        <p className="font-body text-[15px] leading-relaxed text-on-surface-variant">Academic Portal</p>
+        <h1 className="font-headline font-bold text-[#002a58] dark:text-[#c9e7f7] text-xl tracking-tight">Seminario Trinity</h1>
+        <p className="font-body text-[13px] font-medium uppercase tracking-widest text-primary/60">Portal Académico</p>
       </div>
 
       <nav className="flex-1 overflow-y-auto">
@@ -52,7 +57,7 @@ export function Sidebar({ role }: { role?: string }) {
 
       <div className="px-6 mt-auto">
         <button className="w-full bg-gradient-to-r from-primary to-primary-container text-white rounded-xl py-3 px-4 font-headline font-semibold text-sm tracking-wide transition-all duration-300 hover:opacity-90 flex items-center justify-center gap-2 shadow-md">
-          <span>Start Lesson</span>
+          <span>Iniciar Lección</span>
           <ArrowRight className="h-4 w-4" />
         </button>
       </div>
