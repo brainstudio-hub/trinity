@@ -8,6 +8,7 @@ import { createCourse } from "@/lib/actions/admin";
 
 export default function NewCoursePage() {
   const [title, setTitle] = useState("");
+  const [code, setCode] = useState("");
   const [category, setCategory] = useState("");
   const [level, setLevel] = useState("BASICO");
   const [loading, setLoading] = useState(false);
@@ -17,7 +18,7 @@ export default function NewCoursePage() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await createCourse({ title, category, level });
+      const res = await createCourse({ title, category, level, code });
       router.push(`/admin/courses/${res.id}`);
     } catch {
       alert("Error al crear curso");
@@ -30,6 +31,10 @@ export default function NewCoursePage() {
     <div className="max-w-xl mx-auto space-y-6">
       <h1 className="text-2xl font-bold">Crear Nuevo Curso</h1>
       <form onSubmit={onSubmit} className="space-y-4">
+        <div className="space-y-2">
+          <label className="text-sm font-medium">Código Único (Slug)</label>
+          <Input value={code} onChange={(e) => setCode(e.target.value)} placeholder="Ej: THEO-101" required />
+        </div>
         <div className="space-y-2">
           <label className="text-sm font-medium">Título</label>
           <Input value={title} onChange={(e) => setTitle(e.target.value)} required />

@@ -33,8 +33,8 @@ export default async function DashboardPage() {
     <div className="pb-20 pt-4">
       {/* Page Header */}
       <div className="mb-10">
-        <h1 className="text-[3.5rem] font-headline font-black text-on-surface leading-tight mb-2">Bienvenido, {session.user.name?.split(' ')[0]}</h1>
-        <p className="text-on-surface-variant font-body text-lg">Your academic journey for the Michaelmas Term.</p>
+        <h1 className="text-4xl font-headline font-extrabold text-on-surface leading-tight mb-2">Bienvenido, {session.user.name?.split(' ')[0]}</h1>
+        <p className="text-on-surface-variant font-body text-lg">Tu progreso académico en el seminario.</p>
       </div>
 
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
