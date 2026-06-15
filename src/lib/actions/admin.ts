@@ -51,7 +51,7 @@ export async function createModule(courseId: string, data: { title: string; orde
   const session = await auth();
   if (session?.user?.role !== "ADMIN") throw new Error("No autorizado");
 
-  const module = await db.module.create({
+  const newModule = await db.module.create({
     data: {
       title: data.title,
       order: data.order,
@@ -60,31 +60,31 @@ export async function createModule(courseId: string, data: { title: string; orde
   });
 
   revalidatePath(`/admin/courses/${courseId}`);
-  return module;
+  return newModule;
 }
 
 export async function updateModule(id: string, data: Partial<Module>) {
   const session = await auth();
   if (session?.user?.role !== "ADMIN") throw new Error("No autorizado");
 
-  const module = await db.module.update({
+  const updatedModule = await db.module.update({
     where: { id },
     data,
   });
 
-  revalidatePath(`/admin/courses/${module.courseId}`);
-  return module;
+  revalidatePath(`/admin/courses/${updatedModule.courseId}`);
+  return updatedModule;
 }
 
 export async function deleteModule(id: string) {
   const session = await auth();
   if (session?.user?.role !== "ADMIN") throw new Error("No autorizado");
 
-  const module = await db.module.delete({
+  const deletedModule = await db.module.delete({
     where: { id },
   });
 
-  revalidatePath(`/admin/courses/${module.courseId}`);
+  revalidatePath(`/admin/courses/${deletedModule.courseId}`);
 }
 
 // Lesson Actions
@@ -92,12 +92,12 @@ export async function createLesson(moduleId: string, data: Partial<Lesson>) {
   const session = await auth();
   if (session?.user?.role !== "ADMIN") throw new Error("No autorizado");
 
-  const module = await db.module.findUnique({
+  const parentModule = await db.module.findUnique({
     where: { id: moduleId },
     select: { courseId: true }
   });
 
-  if (!module) throw new Error("Módulo no encontrado");
+  if (!parentModule) throw new Error("Módulo no encontrado");
 
   const lesson = await db.lesson.create({
     data: {
@@ -112,8 +112,8 @@ export async function createLesson(moduleId: string, data: Partial<Lesson>) {
     },
   });
 
-  revalidatePath(`/admin/courses/${module.courseId}`);
-  revalidatePath(`/courses/${module.courseId}`);
+  revalidatePath(`/admin/courses/${parentModule.courseId}`);
+  revalidatePath(`/courses/${parentModule.courseId}`);
   return lesson;
 }
 
