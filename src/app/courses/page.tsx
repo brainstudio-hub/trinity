@@ -19,7 +19,7 @@ export default async function CoursesPage() {
     <div className="pt-4 md:pt-8 pb-20">
       {/* Page Header */}
       <div className="mb-12">
-        <h2 className="font-headline text-[2.5rem] md:text-[3.5rem] text-on-surface font-black tracking-tight leading-none mb-4">Catálogo de Cursos</h2>
+        <h2 className="font-headline text-4xl md:text-5xl text-on-surface font-extrabold tracking-tight leading-none mb-4">Catálogo de Cursos</h2>
         <p className="font-body text-lg text-on-surface-variant max-w-2xl leading-relaxed">Explore nuestra colección curada de estudios teológicos, históricos y pastorales, diseñados para formar líderes con profundidad académica y rigor espiritual.</p>
       </div>
 
@@ -104,7 +104,7 @@ export default async function CoursesPage() {
                       <span>{course.level === 'BASICO' ? 'Introductorio' : course.level === 'INTERMEDIO' ? 'Intermedio' : 'Avanzado'}</span>
                       </div>
 
-                      <h3 className="font-headline font-bold text-xl text-on-surface mb-2 leading-tight group-hover:text-primary transition-colors">
+                      <h3 className="font-headline font-semibold text-lg text-on-surface mb-2 leading-tight group-hover:text-primary transition-colors tracking-tight">
                           {course.title}
                       </h3>
                       <p className="font-body text-on-surface-variant text-sm line-clamp-2 mb-6">
