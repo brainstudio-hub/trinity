@@ -10,8 +10,9 @@ export async function Header() {
     <header className="fixed top-0 z-50 w-full border-b-0 bg-[#f8f9fb]/90 dark:bg-[#191c1e]/90 backdrop-blur-xl supports-[backdrop-filter]:bg-[#f8f9fb]/60 shadow-[0_12px_40px_rgba(0,42,88,0.08)]">
       <div className="flex h-16 items-center justify-between px-8 mx-auto">
         <div className="flex items-center gap-8">
-            <Link href="/" className="flex items-center gap-2">
-                <span className="text-xl font-headline font-black text-primary tracking-tight">Trinity Anglican Seminary</span>
+            <Link href="/" className="flex items-center gap-4">
+                <img src="/tas-logo.png" alt="Logo TAS" className="h-10 w-auto" />
+                <span className="text-xl font-headline font-black text-primary tracking-tight hidden lg:block">Seminario Anglicano Trinity</span>
             </Link>
 
             <nav className="hidden md:flex items-center gap-6">
@@ -47,7 +48,7 @@ export async function Header() {
                 <span className="absolute top-1 right-1 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
               </button>
 
-              <Link href="/admin/settings">
+              <Link href="/admin">
                 <button className="text-[#002a58] scale-95 active:scale-100 transition-transform p-2 rounded-full hover:bg-surface-container-low">
                     <Settings className="h-5 w-5" />
                 </button>

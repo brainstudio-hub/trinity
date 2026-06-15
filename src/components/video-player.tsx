@@ -48,11 +48,17 @@ export const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
           width="100%"
           height="100%"
           controls
-          onProgress={onProgress}
+          onProgress={(state: any) => {
+            if (onProgress) onProgress(state);
+          }}
           onReady={onReady}
           config={{
             youtube: {
-              playerVars: { showinfo: 1 },
+              playerVars: {
+                showinfo: 0,
+                modestbranding: 1,
+                rel: 0
+              },
             },
             vimeo: {
               playerOptions: { responsive: true },
