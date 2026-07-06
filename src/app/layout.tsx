@@ -26,7 +26,7 @@ export default async function RootLayout({
 
   return (
     <html lang="es">
-      <body className={plusJakartaSans.className}>
+      <body className={`${plusJakartaSans.className} bg-slate-50`}>
         <div className="min-h-screen">
           <Header />
           <div className="flex pt-16">

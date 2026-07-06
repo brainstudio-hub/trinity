@@ -32,14 +32,14 @@ export default async function EditCoursePage({
   return (
     <div className="max-w-6xl mx-auto space-y-8 pb-20">
       <div className="flex items-center justify-between">
-        <Link href="/admin" className="flex items-center text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">
+        <Link href="/admin" className="flex items-center text-sm font-medium text-on-surface-variant hover:text-brand-navy transition-colors">
           <ArrowLeft className="h-4 w-4 mr-2" />
           Volver al Panel Administrativo
         </Link>
       </div>
 
       <div className="space-y-2">
-         <h1 className="font-headline text-3xl font-extrabold text-on-surface tracking-tight leading-tight">
+         <h1 className="font-headline text-3xl font-semibold text-on-surface tracking-tight leading-tight">
            {course.title}
          </h1>
          <p className="text-on-surface-variant font-body">ID del Curso: {course.id}</p>
@@ -47,11 +47,11 @@ export default async function EditCoursePage({
 
       <Tabs defaultValue="builder" className="w-full space-y-8">
         <TabsList className="bg-surface-container-low p-1 rounded-xl w-fit">
-          <TabsTrigger value="builder" className="px-6 py-2.5 rounded-lg data-[state=active]:bg-white data-[state=active]:text-primary font-bold text-sm">
+          <TabsTrigger value="builder" className="px-6 py-2.5 rounded-lg data-[state=active]:bg-slate-50 data-[state=active]:text-brand-navy font-bold text-sm">
             <ListTree className="h-4 w-4 mr-2" />
             Constructor Visual
           </TabsTrigger>
-          <TabsTrigger value="settings" className="px-6 py-2.5 rounded-lg data-[state=active]:bg-white data-[state=active]:text-primary font-bold text-sm">
+          <TabsTrigger value="settings" className="px-6 py-2.5 rounded-lg data-[state=active]:bg-slate-50 data-[state=active]:text-brand-navy font-bold text-sm">
             <Settings className="h-4 w-4 mr-2" />
             Configuración General
           </TabsTrigger>

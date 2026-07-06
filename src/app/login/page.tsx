@@ -42,7 +42,7 @@ export default function LoginPage() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-50">
       <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md">
-        <h1 className="text-2xl font-bold text-center text-primary">Iniciar Sesión</h1>
+        <h1 className="text-2xl font-bold text-center text-brand-navy">Iniciar Sesión</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
             <label className="text-sm font-medium">Correo Electrónico</label>
@@ -70,7 +70,7 @@ export default function LoginPage() {
         </form>
         <p className="text-sm text-center">
           ¿No tienes cuenta?{" "}
-          <Link href="/register" className="text-primary hover:underline">
+          <Link href="/register" className="text-brand-navy hover:underline">
             Regístrate aquí
           </Link>
         </p>

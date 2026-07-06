@@ -12,17 +12,17 @@ export async function Header() {
         <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center gap-4">
                 <img src="/tas-logo.png" alt="Logo TAS" className="h-10 w-auto" />
-                <span className="text-xl font-headline font-black text-primary tracking-tight hidden lg:block">Seminario Anglicano Trinity</span>
+                <span className="text-xl font-headline font-semibold text-brand-navy tracking-tight hidden lg:block">Seminario Anglicano Trinity</span>
             </Link>
 
             <nav className="hidden md:flex items-center gap-6">
-                <Link href="/courses" className="text-[#002a58] font-headline uppercase tracking-widest text-sm font-bold border-b-2 border-[#002a58] pb-1 transition-all duration-300 ease-in-out hover:opacity-80">
+                <Link href="/courses" className="text-[brand-navy] font-headline uppercase tracking-widest text-sm font-semibold border-b-2 border-[brand-navy] pb-1 transition-all duration-300 ease-in-out hover:opacity-80">
                     Catálogo
                 </Link>
-                <Link href="/dashboard" className="text-[#424750] font-headline uppercase tracking-widest text-sm font-medium hover:text-[#002a58] transition-all duration-300 ease-in-out hover:opacity-80">
+                <Link href="/dashboard" className="text-[#424750] font-headline uppercase tracking-widest text-sm font-medium hover:text-[brand-navy] transition-all duration-300 ease-in-out hover:opacity-80">
                     Panel
                 </Link>
-                <Link href="#" className="text-[#424750] font-headline uppercase tracking-widest text-sm font-medium hover:text-[#002a58] transition-all duration-300 ease-in-out hover:opacity-80">
+                <Link href="#" className="text-[#424750] font-headline uppercase tracking-widest text-sm font-medium hover:text-[brand-navy] transition-all duration-300 ease-in-out hover:opacity-80">
                     Biblioteca
                 </Link>
             </nav>
@@ -30,26 +30,26 @@ export async function Header() {
 
         <div className="flex items-center gap-4">
           <div className="relative hidden lg:block">
-             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-primary/40" />
+             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-brand-navy/40" />
              <input
                type="text"
                placeholder="Buscar en el archivo..."
                className="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm font-body focus:ring-2 focus:ring-primary/20 transition-all w-64"
              />
           </div>
-          <button className="text-[#002a58] lg:hidden scale-95 active:scale-100 transition-transform p-2 rounded-full hover:bg-surface-container-low">
+          <button className="text-[brand-navy] lg:hidden scale-95 active:scale-100 transition-transform p-2 rounded-full hover:bg-surface-container-low">
             <Search className="h-5 w-5" />
           </button>
 
           {session ? (
             <div className="flex items-center gap-4">
-              <button className="text-[#002a58] scale-95 active:scale-100 transition-transform p-2 rounded-full hover:bg-surface-container-low relative">
+              <button className="text-[brand-navy] scale-95 active:scale-100 transition-transform p-2 rounded-full hover:bg-surface-container-low relative">
                 <Bell className="h-5 w-5" />
                 <span className="absolute top-1 right-1 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
               </button>
 
               <Link href="/admin">
-                <button className="text-[#002a58] scale-95 active:scale-100 transition-transform p-2 rounded-full hover:bg-surface-container-low">
+                <button className="text-[brand-navy] scale-95 active:scale-100 transition-transform p-2 rounded-full hover:bg-surface-container-low">
                     <Settings className="h-5 w-5" />
                 </button>
               </Link>
@@ -68,7 +68,7 @@ export async function Header() {
                     await signOut();
                   }}
                 >
-                  <Button variant="ghost" size="sm" className="h-8 text-xs font-bold uppercase tracking-wider">
+                  <Button variant="ghost" size="sm" className="h-8 text-xs font-semibold uppercase tracking-wider">
                     Salir
                   </Button>
                 </form>
@@ -77,10 +77,10 @@ export async function Header() {
           ) : (
             <div className="flex items-center gap-3">
               <Link href="/login">
-                <Button variant="ghost" size="sm" className="font-bold uppercase tracking-wider text-xs">Entrar</Button>
+                <Button variant="ghost" size="sm" className="font-semibold uppercase tracking-wider text-xs">Entrar</Button>
               </Link>
               <Link href="/register">
-                <Button size="sm" className="font-bold uppercase tracking-wider text-xs px-4">Unirse</Button>
+                <Button size="sm" className="font-semibold uppercase tracking-wider text-xs px-4">Unirse</Button>
               </Link>
             </div>
           )}

@@ -23,7 +23,7 @@ export default function InstructorProfilePage({ params }: { params: { id: string
     <div className="max-w-7xl mx-auto w-full pt-4 pb-20">
       {/* Breadcrumb */}
       <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-on-surface-variant mb-12 font-medium">
-        <Link href="/courses" className="hover:text-primary transition-colors">Faculty</Link>
+        <Link href="/courses" className="hover:text-brand-navy transition-colors">Faculty</Link>
         <ChevronRight className="h-4 w-4" />
         <span className="text-on-surface">{instructor.name}</span>
       </nav>
@@ -35,7 +35,7 @@ export default function InstructorProfilePage({ params }: { params: { id: string
           <div className="w-full h-full bg-surface-container-high rounded-2xl shadow-[0_12px_40px_rgba(0,42,88,0.08)] relative z-10 overflow-hidden border border-outline-variant/10 flex items-center justify-center">
              <User className="h-24 w-24 text-on-surface-variant/40" />
           </div>
-          <div className="absolute -bottom-4 -right-4 bg-primary text-on-primary rounded-full p-3 shadow-lg z-20 flex items-center justify-center" title="Tenured Professor">
+          <div className="absolute -bottom-4 -right-4 bg-brand-navy text-on-primary rounded-full p-3 shadow-lg z-20 flex items-center justify-center" title="Tenured Professor">
             <Star className="h-6 w-6 fill-current" />
           </div>
         </div>
@@ -45,17 +45,17 @@ export default function InstructorProfilePage({ params }: { params: { id: string
             <Church className="h-4 w-4" />
             {instructor.department}
           </div>
-          <h2 className="font-headline text-4xl md:text-[3.5rem] leading-tight font-extrabold text-on-surface tracking-tight mb-2">{instructor.name}</h2>
-          <p className="text-xl text-primary font-medium mb-6 font-headline tracking-wide">{instructor.title}</p>
+          <h2 className="font-headline text-3xl md:text-[3.5rem] leading-tight font-semibold text-on-surface tracking-tight mb-2">{instructor.name}</h2>
+          <p className="text-xl text-brand-navy font-medium mb-6 font-headline tracking-wide">{instructor.title}</p>
 
           <div className="flex gap-4 mb-8">
-            <button className="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all shadow-sm border border-outline-variant/10">
+            <button className="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-brand-navy transition-all shadow-sm border border-outline-variant/10">
               <Mail className="h-5 w-5" />
             </button>
-            <button className="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all shadow-sm border border-outline-variant/10">
+            <button className="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-brand-navy transition-all shadow-sm border border-outline-variant/10">
               <Globe className="h-5 w-5" />
             </button>
-            <button className="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all shadow-sm border border-outline-variant/10">
+            <button className="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-brand-navy transition-all shadow-sm border border-outline-variant/10">
               <FileText className="h-5 w-5" />
             </button>
           </div>
@@ -95,7 +95,7 @@ export default function InstructorProfilePage({ params }: { params: { id: string
       <section>
         <div className="flex justify-between items-end mb-10">
           <h3 className="font-headline text-2xl font-bold text-on-surface">Courses Impartidos</h3>
-          <Link href="/courses" className="text-primary font-medium hover:underline text-sm flex items-center gap-1">
+          <Link href="/courses" className="text-brand-navy font-medium hover:underline text-sm flex items-center gap-1">
             View Full Syllabus <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -107,25 +107,25 @@ export default function InstructorProfilePage({ params }: { params: { id: string
                 {course.image ? (
                     <img src={course.image} alt={course.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 ) : (
-                    <div className="w-full h-full bg-primary/10 flex items-center justify-center">
-                        <Book className="h-12 w-12 text-primary/20" />
+                    <div className="w-full h-full bg-brand-navy/10 flex items-center justify-center">
+                        <Book className="h-12 w-12 text-brand-navy/20" />
                     </div>
                 )}
                 <div className="absolute bottom-4 left-4 z-20">
-                  <span className="bg-primary/90 backdrop-blur-sm text-on-primary text-xs font-bold px-2 py-1 rounded uppercase tracking-wider font-headline">
+                  <span className="bg-brand-navy/90 backdrop-blur-sm text-on-primary text-xs font-bold px-2 py-1 rounded uppercase tracking-wider font-headline">
                     {course.badge}
                   </span>
                 </div>
               </div>
               <div className="p-6 flex flex-col flex-1">
-                <h4 className="font-headline text-xl font-bold text-on-surface mb-2 group-hover:text-primary transition-colors">{course.title}</h4>
+                <h4 className="font-headline text-xl font-bold text-on-surface mb-2 group-hover:text-brand-navy transition-colors">{course.title}</h4>
                 <p className="text-sm text-on-surface-variant mb-6 line-clamp-2">{course.description}</p>
                 <div className="mt-auto flex items-center justify-between pt-4 border-t border-surface-container">
                   <div className="flex items-center gap-2 text-sm text-on-surface-variant font-medium">
                     <Clock className="h-4 w-4" />
                     {course.duration}
                   </div>
-                  <span className="text-primary font-medium text-sm">Enroll</span>
+                  <span className="text-brand-navy font-medium text-sm">Enroll</span>
                 </div>
               </div>
             </article>

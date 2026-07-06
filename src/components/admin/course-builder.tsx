@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Plus, Pencil, Trash2, ChevronDown, ChevronUp, Video, FileText, Clock, GripVertical } from "lucide-react";
+import { Plus, Pencil, Trash2, ChevronDown, ChevronUp, Video, FileText, Clock, GripVertical, Sparkles } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogFooter } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import { createModule, updateModule, deleteModule, createLesson, updateLesson, deleteLesson } from "@/lib/actions/admin";
+import { createModule, updateModule, deleteModule, createLesson, updateLesson, deleteLesson, generateAITranscription } from "@/lib/actions/admin";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 
@@ -109,6 +109,7 @@ export function CourseBuilder({ courseId, initialModules }: CourseBuilderProps) 
     try {
       const data = {
         title: formData.get("title") as string,
+        description: formData.get("description") as string,
         videoUrl: formData.get("videoUrl") as string,
         duration: parseInt(formData.get("duration") as string),
         transcript: formData.get("transcript") as string,
@@ -116,15 +117,20 @@ export function CourseBuilder({ courseId, initialModules }: CourseBuilderProps) 
         isPublished: true
       };
 
+      let result;
       if (editingLesson) {
-        await updateLesson(editingLesson.id, data);
+        result = await updateLesson(editingLesson.id, data);
       } else if (activeModuleId) {
-        await createLesson(activeModuleId, data);
+        result = await createLesson(activeModuleId, data);
       }
 
-      setIsLessonModalOpen(false);
-      router.refresh();
-      toast.success("Lección guardada exitosamente");
+      if (result && !result.success) {
+        toast.error("Error de validación", { description: result.error });
+      } else {
+        setIsLessonModalOpen(false);
+        router.refresh();
+        toast.success("Lección guardada exitosamente");
+      }
     } catch (error: any) {
       toast.error("Error al guardar la lección", { description: error.message });
     } finally {
@@ -148,10 +154,10 @@ export function CourseBuilder({ courseId, initialModules }: CourseBuilderProps) 
     <div className="space-y-6">
       <div className="flex items-center justify-between bg-white p-6 rounded-2xl border border-outline-variant/10 shadow-sm">
         <div>
-           <h2 className="font-headline font-bold text-xl text-primary">Constructor de Currículo</h2>
+           <h2 className="font-headline font-bold text-xl text-brand-navy">Constructor de Currículo</h2>
            <p className="text-on-surface-variant text-sm font-body">Gestiona la estructura de módulos y lecciones.</p>
         </div>
-        <Button onClick={handleAddModule} className="bg-primary hover:bg-primary/90 text-on-primary rounded-xl">
+        <Button onClick={handleAddModule} className="bg-brand-navy hover:bg-brand-navy/90 text-on-primary rounded-xl">
           <Plus className="h-4 w-4 mr-2" />
           Nuevo Módulo
         </Button>
@@ -167,7 +173,7 @@ export function CourseBuilder({ courseId, initialModules }: CourseBuilderProps) 
                   onClick={() => toggleModule(m.id)}
                   className="flex items-center gap-3 hover:opacity-80 transition-opacity"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">
+                  <div className="w-8 h-8 rounded-lg bg-brand-navy/10 flex items-center justify-center text-brand-navy font-bold text-xs">
                     {m.order}
                   </div>
                   <h3 className="font-headline font-bold text-on-surface">{m.title}</h3>
@@ -190,17 +196,17 @@ export function CourseBuilder({ courseId, initialModules }: CourseBuilderProps) 
                 <Separator className="mb-4 opacity-50" />
                 <div className="grid gap-2">
                   {m.lessons.map((l: any) => (
-                    <div key={l.id} className="flex items-center justify-between p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/5 group/lesson hover:border-primary/20 transition-all">
+                    <div key={l.id} className="flex items-center justify-between p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/5 group/lesson hover:border-brand-navy/20 transition-all">
                       <div className="flex items-center gap-4">
                          <div className="w-6 h-6 rounded bg-surface-container-high flex items-center justify-center text-[10px] font-bold text-on-surface-variant">
                            {l.order}
                          </div>
                          <div className="flex items-center gap-2">
-                            <Video className="h-4 w-4 text-primary/60" />
+                            <Video className="h-4 w-4 text-brand-navy/60" />
                             <span className="font-body text-sm font-medium text-on-surface">{l.title}</span>
                          </div>
                          <div className="flex items-center gap-3 text-[10px] text-on-surface-variant uppercase tracking-wider font-bold opacity-60">
-                            <span className="flex items-center gap-1"><Clock className="h-3 w-3" /> {l.duration} min</span>
+                            <span className="flex items-center gap-1"><Clock className="h-3 w-3" /> {Math.floor(l.duration / 60)} min</span>
                             <span className="flex items-center gap-1"><FileText className="h-3 w-3" /> Transcripción</span>
                          </div>
                       </div>
@@ -218,9 +224,9 @@ export function CourseBuilder({ courseId, initialModules }: CourseBuilderProps) 
 
                   <button
                     onClick={() => handleAddLesson(m.id)}
-                    className="w-full py-3 mt-2 rounded-xl border border-dashed border-outline-variant/50 flex items-center justify-center gap-2 text-sm font-medium text-on-surface-variant hover:bg-primary/5 hover:border-primary/30 transition-all group"
+                    className="w-full py-3 mt-2 rounded-xl border border-dashed border-outline-variant/50 flex items-center justify-center gap-2 text-sm font-medium text-on-surface-variant hover:bg-brand-navy/5 hover:border-brand-navy/30 transition-all group"
                   >
-                    <Plus className="h-4 w-4 text-outline-variant group-hover:text-primary" />
+                    <Plus className="h-4 w-4 text-outline-variant group-hover:text-brand-navy" />
                     <span>Añadir Lección</span>
                   </button>
                 </div>
@@ -254,7 +260,7 @@ export function CourseBuilder({ courseId, initialModules }: CourseBuilderProps) 
                 <Input id="order" name="order" type="number" defaultValue={editingModule?.order || modules.length + 1} required className="rounded-xl" />
              </div>
              <DialogFooter className="pt-4">
-                <Button type="submit" disabled={loading} className="w-full bg-primary text-on-primary rounded-xl">
+                <Button type="submit" disabled={loading} className="w-full bg-brand-navy text-on-primary rounded-xl">
                   {loading ? "Guardando..." : "Guardar Módulo"}
                 </Button>
              </DialogFooter>
@@ -281,6 +287,11 @@ export function CourseBuilder({ courseId, initialModules }: CourseBuilderProps) 
              </div>
 
              <div className="space-y-2">
+                <Label htmlFor="l-description">Descripción</Label>
+                <Textarea id="l-description" name="description" defaultValue={editingLesson?.description} className="rounded-xl" placeholder="Breve descripción de la lección..." />
+             </div>
+
+             <div className="space-y-2">
                 <Label htmlFor="l-video">URL del Video</Label>
                 <Input id="l-video" name="videoUrl" defaultValue={editingLesson?.videoUrl} required className="rounded-xl" placeholder="https://youtube.com/..." />
              </div>
@@ -291,12 +302,35 @@ export function CourseBuilder({ courseId, initialModules }: CourseBuilderProps) 
              </div>
 
              <div className="space-y-2">
-                <Label htmlFor="l-transcript">Transcripción Académica</Label>
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="l-transcript">Transcripción Académica</Label>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="sm"
+                    className="text-xs text-brand-navy font-semibold flex items-center gap-1.5"
+                    onClick={async () => {
+                      if (editingLesson) {
+                        const result = await generateAITranscription(editingLesson.id);
+                        if (result.success) {
+                          toast.success(result.message);
+                        } else {
+                          toast.error(result.error);
+                        }
+                      } else {
+                        toast.info("Guarda la lección primero para generar transcripción.");
+                      }
+                    }}
+                  >
+                    <Sparkles className="h-3.5 w-3.5" />
+                    Generar Transcripción con IA
+                  </Button>
+                </div>
                 <Textarea id="l-transcript" name="transcript" defaultValue={editingLesson?.transcript} className="min-h-[200px] rounded-xl font-body" placeholder="Pega aquí el texto de la lección..." />
              </div>
 
              <DialogFooter className="pt-4 sticky bottom-0 bg-background pb-2">
-                <Button type="submit" disabled={loading} className="w-full bg-primary text-on-primary rounded-xl py-6 text-lg font-bold">
+                <Button type="submit" disabled={loading} className="w-full bg-brand-navy text-on-primary rounded-xl py-6 text-lg font-bold">
                   {loading ? "Procesando..." : editingLesson ? "Actualizar Lección" : "Crear Lección"}
                 </Button>
              </DialogFooter>

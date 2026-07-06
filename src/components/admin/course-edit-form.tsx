@@ -99,7 +99,7 @@ export function CourseEditForm({ course }: { course: Course }) {
 
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <div key={index} className="p-4 bg-slate-50 rounded-xl border border-slate-200 relative space-y-3">
+              <div key={index} className="p-4 bg-white rounded-xl border border-slate-200 relative space-y-3">
                 <Button
                   type="button"
                   variant="ghost"
@@ -142,7 +142,7 @@ export function CourseEditForm({ course }: { course: Course }) {
               checked={isPublished}
               onChange={(e) => setIsPublished(e.target.checked)}
               id="published"
-              className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+              className="h-4 w-4 rounded border-gray-300 text-brand-navy focus:ring-primary"
           />
           <label htmlFor="published" className="text-sm font-medium">Publicado</label>
         </div>

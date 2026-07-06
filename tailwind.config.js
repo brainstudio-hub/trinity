@@ -95,7 +95,8 @@ module.exports = {
         "inverse-surface": "#2d3133",
         "surface-container-high": "#e6e8ea",
         "surface-bright": "#f8f9fb",
-        "secondary-fixed-dim": "#adcbda"
+        "secondary-fixed-dim": "#adcbda",
+        "brand-navy": "#002a58"
       },
       borderRadius: {
         lg: "var(--radius)",

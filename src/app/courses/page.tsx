@@ -19,7 +19,7 @@ export default async function CoursesPage() {
     <div className="pt-4 md:pt-8 pb-20">
       {/* Page Header */}
       <div className="mb-12">
-        <h2 className="font-headline text-4xl md:text-5xl text-on-surface font-extrabold tracking-tight leading-none mb-4">Catálogo de Cursos</h2>
+        <h2 className="font-headline text-3xl md:text-5xl text-on-surface font-semibold tracking-tight leading-none mb-4">Catálogo de Cursos</h2>
         <p className="font-body text-lg text-on-surface-variant max-w-2xl leading-relaxed">Explore nuestra colección curada de estudios teológicos, históricos y pastorales, diseñados para formar líderes con profundidad académica y rigor espiritual.</p>
       </div>
 
@@ -45,15 +45,15 @@ export default async function CoursesPage() {
                   {['Doctrina', 'Historia', 'Práctica Pastoral'].map((cat) => (
                     <li key={cat}>
                       <label className="flex items-center gap-3 cursor-pointer group">
-                        <div className="relative flex items-center justify-center w-5 h-5 rounded border border-outline-variant bg-surface-container-lowest group-hover:border-primary transition-colors">
+                        <div className="relative flex items-center justify-center w-5 h-5 rounded border border-outline-variant bg-surface-container-lowest group-hover:border-brand-navy transition-colors">
                           <input type="checkbox" className="peer sr-only" />
-                          <div className="absolute opacity-0 peer-checked:opacity-100 text-primary transition-opacity">
+                          <div className="absolute opacity-0 peer-checked:opacity-100 text-brand-navy transition-opacity">
                             <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                             </svg>
                           </div>
                         </div>
-                        <span className="group-hover:text-primary transition-colors">{cat}</span>
+                        <span className="group-hover:text-brand-navy transition-colors">{cat}</span>
                       </label>
                     </li>
                   ))}
@@ -84,12 +84,12 @@ export default async function CoursesPage() {
                       {course.image ? (
                           <img src={course.image} alt={course.title} className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" />
                       ) : (
-                          <div className="w-full h-full bg-primary/10 flex items-center justify-center">
-                              <Book className="h-12 w-12 text-primary/20" />
+                          <div className="w-full h-full bg-brand-navy/10 flex items-center justify-center">
+                              <Book className="h-12 w-12 text-brand-navy/20" />
                           </div>
                       )}
                       <div className="absolute bottom-4 left-4 z-20 flex gap-2">
-                      <span className="px-2 py-1 rounded bg-white/20 backdrop-blur-md text-white font-label text-xs font-semibold">
+                      <span className="px-2 py-1 rounded bg-slate-50/20 backdrop-blur-md text-white font-label text-xs font-semibold">
                           {course.category || "Teología"}
                       </span>
                       </div>
@@ -104,7 +104,7 @@ export default async function CoursesPage() {
                       <span>{course.level === 'BASICO' ? 'Introductorio' : course.level === 'INTERMEDIO' ? 'Intermedio' : 'Avanzado'}</span>
                       </div>
 
-                      <h3 className="font-headline font-semibold text-lg text-on-surface mb-2 leading-tight group-hover:text-primary transition-colors tracking-tight">
+                      <h3 className="font-headline font-semibold text-lg text-on-surface mb-2 leading-tight group-hover:text-brand-navy transition-colors tracking-tight">
                           {course.title}
                       </h3>
                       <p className="font-body text-on-surface-variant text-sm line-clamp-2 mb-6">

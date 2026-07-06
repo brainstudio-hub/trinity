@@ -54,7 +54,7 @@ export default async function CoursePage({ params }: { params: { id: string } })
                 <BookOpen className="h-3 w-3 text-on-surface-variant" />
                 <span className="font-label text-xs font-medium text-on-surface-variant uppercase tracking-wider">{course.category || "Teología"}</span>
               </div>
-              <h1 className="font-headline text-4xl md:text-5xl font-extrabold text-on-surface tracking-tight leading-tight">
+              <h1 className="font-headline text-3xl md:text-5xl font-semibold text-on-surface tracking-tight leading-tight">
                 {course.title}
               </h1>
               <p className="font-body text-lg text-on-surface-variant leading-relaxed">
@@ -76,16 +76,16 @@ export default async function CoursePage({ params }: { params: { id: string } })
         {/* Tabs and Content Area */}
         <Tabs defaultValue="info" className="space-y-8">
             <TabsList className="bg-surface-container-low rounded-xl p-2 inline-flex h-auto flex-wrap gap-2 border-none">
-                <TabsTrigger value="info" className="px-6 py-2 rounded-lg data-[state=active]:bg-surface-container-lowest data-[state=active]:text-primary data-[state=active]:shadow-sm data-[state=inactive]:text-on-surface-variant data-[state=inactive]:hover:bg-surface-container-lowest/50 font-body font-semibold transition-all border-none shadow-none">
+                <TabsTrigger value="info" className="px-6 py-2 rounded-lg data-[state=active]:bg-surface-container-lowest data-[state=active]:text-brand-navy data-[state=active]:shadow-sm data-[state=inactive]:text-on-surface-variant data-[state=inactive]:hover:bg-surface-container-lowest/50 font-body font-semibold transition-all border-none shadow-none">
                     Información General
                 </TabsTrigger>
-                <TabsTrigger value="curriculum" className="px-6 py-2 rounded-lg data-[state=active]:bg-surface-container-lowest data-[state=active]:text-primary data-[state=active]:shadow-sm data-[state=inactive]:text-on-surface-variant data-[state=inactive]:hover:bg-surface-container-lowest/50 font-body font-semibold transition-all border-none shadow-none">
+                <TabsTrigger value="curriculum" className="px-6 py-2 rounded-lg data-[state=active]:bg-surface-container-lowest data-[state=active]:text-brand-navy data-[state=active]:shadow-sm data-[state=inactive]:text-on-surface-variant data-[state=inactive]:hover:bg-surface-container-lowest/50 font-body font-semibold transition-all border-none shadow-none">
                     Currículo
                 </TabsTrigger>
-                <TabsTrigger value="instructor" className="px-6 py-2 rounded-lg data-[state=active]:bg-surface-container-lowest data-[state=active]:text-primary data-[state=active]:shadow-sm data-[state=inactive]:text-on-surface-variant data-[state=inactive]:hover:bg-surface-container-lowest/50 font-body font-semibold transition-all border-none shadow-none">
+                <TabsTrigger value="instructor" className="px-6 py-2 rounded-lg data-[state=active]:bg-surface-container-lowest data-[state=active]:text-brand-navy data-[state=active]:shadow-sm data-[state=inactive]:text-on-surface-variant data-[state=inactive]:hover:bg-surface-container-lowest/50 font-body font-semibold transition-all border-none shadow-none">
                     Instructor
                 </TabsTrigger>
-                <TabsTrigger value="reviews" className="px-6 py-2 rounded-lg data-[state=active]:bg-surface-container-lowest data-[state=active]:text-primary data-[state=active]:shadow-sm data-[state=inactive]:text-on-surface-variant data-[state=inactive]:hover:bg-surface-container-lowest/50 font-body font-semibold transition-all border-none shadow-none">
+                <TabsTrigger value="reviews" className="px-6 py-2 rounded-lg data-[state=active]:bg-surface-container-lowest data-[state=active]:text-brand-navy data-[state=active]:shadow-sm data-[state=inactive]:text-on-surface-variant data-[state=inactive]:hover:bg-surface-container-lowest/50 font-body font-semibold transition-all border-none shadow-none">
                     Reseñas
                 </TabsTrigger>
             </TabsList>
@@ -104,7 +104,7 @@ export default async function CoursePage({ params }: { params: { id: string } })
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6">
                         <div className="bg-surface-container-low p-6 rounded-lg">
                             <h3 className="font-headline text-lg font-bold text-on-surface mb-3 flex items-center gap-2">
-                                <CheckCircle2 className="h-5 w-5 text-primary" />
+                                <CheckCircle2 className="h-5 w-5 text-brand-navy" />
                                 Objetivos de Aprendizaje
                             </h3>
                             <ul className="space-y-3 font-body text-on-surface-variant text-sm">
@@ -124,7 +124,7 @@ export default async function CoursePage({ params }: { params: { id: string } })
                         </div>
                         <div className="bg-surface-container-low p-6 rounded-lg">
                             <h3 className="font-headline text-lg font-bold text-on-surface mb-3 flex items-center gap-2">
-                                <Book className="h-5 w-5 text-primary" />
+                                <Book className="h-5 w-5 text-brand-navy" />
                                 Lecturas Requeridas
                             </h3>
                             <ul className="space-y-3 font-body text-on-surface-variant text-sm">
@@ -148,7 +148,7 @@ export default async function CoursePage({ params }: { params: { id: string } })
                     <div className="space-y-8">
                         {course.modules.map((module) => (
                           <div key={module.id} className="space-y-4">
-                            <h3 className="font-headline font-bold text-lg text-primary">{module.title}</h3>
+                            <h3 className="font-headline font-bold text-lg text-brand-navy">{module.title}</h3>
                             <div className="space-y-4">
                               {module.lessons.map((lesson, index) => (
                                   <div key={lesson.id} className="border border-outline-variant/20 rounded-lg p-5 hover:bg-surface-container-low transition-colors group cursor-pointer">
@@ -164,11 +164,11 @@ export default async function CoursePage({ params }: { params: { id: string } })
                                                   </div>
                                               )}
                                               <div>
-                                                  <h4 className="font-headline font-bold text-on-surface group-hover:text-primary transition-colors">{lesson.title}</h4>
+                                                  <h4 className="font-headline font-bold text-on-surface group-hover:text-brand-navy transition-colors">{lesson.title}</h4>
                                                   <p className="font-body text-sm text-on-surface-variant line-clamp-1">{lesson.description || "Lección del curso"}</p>
                                               </div>
                                           </div>
-                                          <ChevronDown className="h-5 w-5 text-outline-variant group-hover:text-primary transition-colors" />
+                                          <ChevronDown className="h-5 w-5 text-outline-variant group-hover:text-brand-navy transition-colors" />
                                       </div>
                                   </div>
                               ))}
@@ -177,7 +177,7 @@ export default async function CoursePage({ params }: { params: { id: string } })
                         ))}
                     </div>
                     {allLessons.length > 0 && (
-                        <button className="w-full py-3 text-center text-primary font-body font-medium hover:bg-surface-container-low rounded-lg transition-colors">
+                        <button className="w-full py-3 text-center text-brand-navy font-body font-medium hover:bg-surface-container-low rounded-lg transition-colors">
                             Ver todo el currículo
                         </button>
                     )}
@@ -188,12 +188,12 @@ export default async function CoursePage({ params }: { params: { id: string } })
                 <div className="bg-surface-container-lowest rounded-xl p-8 space-y-6 border border-outline-variant/10">
                     <h2 className="font-headline text-2xl font-bold text-on-surface">Sobre el Instructor</h2>
                     <div className="flex items-start gap-6">
-                         <div className="w-24 h-24 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border-2 border-primary-fixed">
+                         <div className="w-24 h-24 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border-2 border-outline-variant">
                             <User className="h-10 w-10 text-on-surface-variant" />
                         </div>
                         <div className="space-y-2">
                              <h3 className="text-xl font-bold">Dr. Thomas Cranmer</h3>
-                             <p className="text-primary font-medium">Decano de Teología Histórica</p>
+                             <p className="text-brand-navy font-medium">Decano de Teología Histórica</p>
                              <p className="text-on-surface-variant leading-relaxed">
                                 Experto en la Reforma Inglesa y liturgia anglicana, con más de 20 años de experiencia académica y pastoral.
                              </p>
@@ -221,18 +221,18 @@ export default async function CoursePage({ params }: { params: { id: string } })
                     {introVideoUrl ? (
                          <VideoPlayer url={introVideoUrl} />
                     ) : (
-                        <div className="w-full h-full bg-primary/10 flex items-center justify-center">
-                            <PlayCircle className="h-16 w-16 text-primary/40" />
+                        <div className="w-full h-full bg-brand-navy/10 flex items-center justify-center">
+                            <PlayCircle className="h-16 w-16 text-brand-navy/40" />
                         </div>
                     )}
                     <div className="absolute inset-0 flex items-center justify-center">
-                        <button className="w-16 h-16 bg-surface-container-lowest/90 backdrop-blur-md rounded-full flex items-center justify-center text-primary hover:scale-110 transition-transform shadow-lg">
+                        <button className="w-16 h-16 bg-surface-container-lowest/90 backdrop-blur-md rounded-full flex items-center justify-center text-brand-navy hover:scale-110 transition-transform shadow-lg">
                              <PlayCircle className="h-10 w-10 fill-current" />
                         </button>
                     </div>
                 </div>
                 <div className="space-y-4 mb-6">
-                    <p className="font-headline text-3xl font-extrabold text-on-surface">Gratuito</p>
+                    <p className="font-headline text-3xl font-semibold text-on-surface">Gratuito</p>
                     <p className="font-body text-sm text-on-surface-variant">Para estudiantes matriculados en el programa de M.Div.</p>
                 </div>
 
@@ -256,7 +256,7 @@ export default async function CoursePage({ params }: { params: { id: string } })
                 <h3 className="font-headline text-lg font-bold text-on-surface mb-4">Detalles del Curso</h3>
                 <ul className="space-y-4">
                     <li className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+                        <div className="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-brand-navy shadow-sm">
                             <Clock className="h-5 w-5" />
                         </div>
                         <div>
@@ -265,7 +265,7 @@ export default async function CoursePage({ params }: { params: { id: string } })
                         </div>
                     </li>
                     <li className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+                        <div className="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-brand-navy shadow-sm">
                             <Video className="h-5 w-5" />
                         </div>
                         <div>
@@ -274,7 +274,7 @@ export default async function CoursePage({ params }: { params: { id: string } })
                         </div>
                     </li>
                     <li className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+                        <div className="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-brand-navy shadow-sm">
                             <Languages className="h-5 w-5" />
                         </div>
                         <div>
@@ -283,7 +283,7 @@ export default async function CoursePage({ params }: { params: { id: string } })
                         </div>
                     </li>
                     <li className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+                        <div className="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-brand-navy shadow-sm">
                             <Award className="h-5 w-5" />
                         </div>
                         <div>

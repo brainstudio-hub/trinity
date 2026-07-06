@@ -4,6 +4,17 @@ import { auth } from "@/auth";
 import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache";
 import { Level, Course, Module, Lesson } from "@prisma/client";
+import { z } from "zod";
+
+const LessonSchema = z.object({
+  title: z.string().min(1, "El título es requerido"),
+  description: z.string().optional(),
+  videoUrl: z.string().url("URL de video inválida"),
+  duration: z.number().min(0, "La duración no puede ser negativa"),
+  transcript: z.string().optional(),
+  order: z.number().int().default(1),
+  isPublished: z.boolean().default(false),
+});
 
 export async function createCourse(data: { title: string; category: string; level: string; code: string }) {
   const session = await auth();
@@ -93,55 +104,79 @@ export async function deleteModule(id: string) {
 }
 
 // Lesson Actions
-export async function createLesson(moduleId: string, data: Partial<Lesson>) {
-  const session = await auth();
-  if (session?.user?.role !== "ADMIN") throw new Error("No autorizado");
+export async function createLesson(moduleId: string, data: any) {
+  try {
+    const session = await auth();
+    if (session?.user?.role !== "ADMIN") return { success: false, error: "No autorizado" };
 
-  const parentModule = await db.module.findUnique({
-    where: { id: moduleId },
-    select: { courseId: true }
-  });
+    const validatedData = LessonSchema.parse(data);
 
-  if (!parentModule) throw new Error("Módulo no encontrado");
+    const parentModule = await db.module.findUnique({
+      where: { id: moduleId },
+      select: { courseId: true }
+    });
 
-  const lesson = await db.lesson.create({
-    data: {
-      title: data.title || "",
-      description: data.description,
-      videoUrl: data.videoUrl || "",
-      duration: data.duration ? data.duration * 60 : 0,
-      transcript: data.transcript,
-      order: data.order || 0,
-      isPublished: data.isPublished || false,
-      moduleId,
-    },
-  });
+    if (!parentModule) return { success: false, error: "Módulo no encontrado" };
 
-  revalidatePath(`/admin/courses/${parentModule.courseId}`);
-  revalidatePath(`/courses/${parentModule.courseId}`);
-  return lesson;
+    const lesson = await db.lesson.create({
+      data: {
+        ...validatedData,
+        duration: validatedData.duration * 60,
+        moduleId,
+      },
+    });
+
+    revalidatePath(`/admin/courses/${parentModule.courseId}`);
+    revalidatePath(`/courses/${parentModule.courseId}`);
+    return { success: true, lesson };
+  } catch (error: any) {
+    if (error instanceof z.ZodError) {
+      return { success: false, error: error.errors[0].message };
+    }
+    return { success: false, error: "Error al crear la lección" };
+  }
 }
 
-export async function updateLesson(id: string, data: Partial<Lesson>) {
-  const session = await auth();
-  if (session?.user?.role !== "ADMIN") throw new Error("No autorizado");
+export async function updateLesson(id: string, data: any) {
+  try {
+    const session = await auth();
+    if (session?.user?.role !== "ADMIN") return { success: false, error: "No autorizado" };
 
-  const lesson = await db.lesson.update({
-    where: { id },
-    data: {
-      ...data,
-      duration: data.duration ? data.duration * 60 : undefined,
-    },
-    include: {
-      module: {
-        select: { courseId: true }
+    const validatedData = LessonSchema.partial().parse(data);
+
+    const lesson = await db.lesson.update({
+      where: { id },
+      data: {
+        ...validatedData,
+        duration: validatedData.duration !== undefined ? validatedData.duration * 60 : undefined,
+      },
+      include: {
+        module: {
+          select: { courseId: true }
+        }
       }
-    }
-  });
+    });
 
-  revalidatePath(`/admin/courses/${lesson.module.courseId}`);
-  revalidatePath(`/courses/${lesson.module.courseId}`);
-  return lesson;
+    revalidatePath(`/admin/courses/${lesson.module.courseId}`);
+    revalidatePath(`/courses/${lesson.module.courseId}`);
+    return { success: true, lesson };
+  } catch (error: any) {
+    if (error instanceof z.ZodError) {
+      return { success: false, error: error.errors[0].message };
+    }
+    return { success: false, error: "Error al actualizar la lección" };
+  }
+}
+
+export async function generateAITranscription(lessonId: string) {
+  const session = await auth();
+  if (session?.user?.role !== "ADMIN") return { success: false, error: "No autorizado" };
+
+  // Skeleton action
+  return {
+    success: true,
+    message: "Función en desarrollo. La IA procesará el video próximamente."
+  };
 }
 
 export async function deleteLesson(id: string) {
