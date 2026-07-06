@@ -18,8 +18,7 @@ interface LessonNotesProps {
   lessonId: string;
   notes: Note[];
   setNotes: React.Dispatch<React.SetStateAction<Note[]>>;
-  getCurrentTime: () => number;
-  currentSeconds?: number;
+  currentSeconds: number;
   onSeek: (seconds: number) => void;
 }
 
@@ -27,7 +26,6 @@ export function LessonNotes({
   lessonId,
   notes,
   setNotes,
-  getCurrentTime,
   currentSeconds = 0,
   onSeek,
 }: LessonNotesProps) {
@@ -35,17 +33,8 @@ export function LessonNotes({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentTimeDisplay, setCurrentTimeDisplay] = useState(0);
 
-  // Update display time periodically only when tab is active if needed,
-  // or just use the time at the moment of typing.
-  // For simplicity and performance, we'll capture it when they start typing or via a small interval.
-
   const handleFocus = () => {
-    try {
-      const time = getCurrentTime();
-      setCurrentTimeDisplay(Math.floor(time || 0));
-    } catch (error) {
-      console.error("Error capturing focus time:", error);
-    }
+    setCurrentTimeDisplay(Math.floor(currentSeconds));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -53,8 +42,7 @@ export function LessonNotes({
     if (!content.trim()) return;
 
     try {
-      const time = getCurrentTime();
-      const timestamp = Math.floor(time || 0);
+      const timestamp = Math.floor(currentSeconds);
       setIsSubmitting(true);
 
       const result = await createLessonNote({
@@ -100,7 +88,7 @@ export function LessonNotes({
             value={content}
             onFocus={handleFocus}
             onChange={(e) => setContent(e.target.value)}
-            className="min-h-[100px] bg-surface-container-low border-outline-variant/20 focus:border-primary/50 rounded-xl resize-none font-body"
+            className="min-h-[100px] bg-surface-container-low border-outline-variant/20 focus:border-brand-navy/50 rounded-xl resize-none font-body"
           />
           <div className="absolute bottom-3 right-3 flex items-center gap-2">
             <div className="flex items-center gap-1.5 px-2 py-1 bg-surface-container-highest rounded-md text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">
@@ -113,7 +101,7 @@ export function LessonNotes({
           <Button
             type="submit"
             disabled={isSubmitting || !content.trim()}
-            className="bg-primary hover:bg-primary/90 text-on-primary rounded-lg px-6"
+            className="bg-brand-navy hover:bg-brand-navy/90 text-on-primary rounded-lg px-6"
           >
             <Send className="h-4 w-4 mr-2" />
             Guardar Nota
@@ -132,12 +120,12 @@ export function LessonNotes({
             {safeNotes.map((note) => (
               <div
                 key={note?.id}
-                className="bg-surface-container-low p-4 rounded-xl border border-outline-variant/10 group transition-all hover:border-primary/20"
+                className="bg-surface-container-low p-4 rounded-xl border border-outline-variant/10 group transition-all hover:border-brand-navy/20"
               >
                 <div className="flex justify-between items-start mb-2">
                   <button
                     onClick={() => note?.timestamp !== undefined && onSeek(note.timestamp)}
-                    className="flex items-center gap-1.5 px-2 py-0.5 bg-primary/10 text-primary rounded text-xs font-bold hover:bg-primary hover:text-white transition-colors"
+                    className="flex items-center gap-1.5 px-2 py-0.5 bg-brand-navy/10 text-brand-navy rounded text-xs font-bold hover:bg-brand-navy hover:text-white transition-colors"
                   >
                     <Clock className="h-3 w-3" />
                     {formatTime(note?.timestamp || 0)}

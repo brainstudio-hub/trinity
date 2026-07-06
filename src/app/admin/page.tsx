@@ -33,7 +33,7 @@ export default async function AdminPage() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-3xl font-bold text-primary font-headline">Panel de Administración Global</h1>
+        <h1 className="text-3xl font-bold text-brand-navy font-headline">Panel de Administración Global</h1>
         <p className="text-muted-foreground font-body">Gestiona todos los aspectos de la plataforma educativa.</p>
       </div>
 
@@ -41,19 +41,19 @@ export default async function AdminPage() {
 
       <Tabs defaultValue="courses" className="space-y-6">
         <TabsList className="bg-surface-container-low p-1 rounded-xl w-fit flex-wrap h-auto">
-          <TabsTrigger value="courses" className="px-6 py-2.5 rounded-lg data-[state=active]:bg-white data-[state=active]:text-primary font-bold text-sm">
+          <TabsTrigger value="courses" className="px-6 py-2.5 rounded-lg data-[state=active]:bg-slate-50 data-[state=active]:text-brand-navy font-bold text-sm">
             <BookOpen className="h-4 w-4 mr-2" /> Cursos
           </TabsTrigger>
-          <TabsTrigger value="faculty" className="px-6 py-2.5 rounded-lg data-[state=active]:bg-white data-[state=active]:text-primary font-bold text-sm">
+          <TabsTrigger value="faculty" className="px-6 py-2.5 rounded-lg data-[state=active]:bg-slate-50 data-[state=active]:text-brand-navy font-bold text-sm">
             <Users className="h-4 w-4 mr-2" /> Facultad
           </TabsTrigger>
-          <TabsTrigger value="announcements" className="px-6 py-2.5 rounded-lg data-[state=active]:bg-white data-[state=active]:text-primary font-bold text-sm">
+          <TabsTrigger value="announcements" className="px-6 py-2.5 rounded-lg data-[state=active]:bg-slate-50 data-[state=active]:text-brand-navy font-bold text-sm">
             <Megaphone className="h-4 w-4 mr-2" /> Anuncios
           </TabsTrigger>
-          <TabsTrigger value="calendar" className="px-6 py-2.5 rounded-lg data-[state=active]:bg-white data-[state=active]:text-primary font-bold text-sm">
+          <TabsTrigger value="calendar" className="px-6 py-2.5 rounded-lg data-[state=active]:bg-slate-50 data-[state=active]:text-brand-navy font-bold text-sm">
             <Calendar className="h-4 w-4 mr-2" /> Calendario
           </TabsTrigger>
-          <TabsTrigger value="users" className="px-6 py-2.5 rounded-lg data-[state=active]:bg-white data-[state=active]:text-primary font-bold text-sm">
+          <TabsTrigger value="users" className="px-6 py-2.5 rounded-lg data-[state=active]:bg-slate-50 data-[state=active]:text-brand-navy font-bold text-sm">
             <UserCheck className="h-4 w-4 mr-2" /> Usuarios
           </TabsTrigger>
         </TabsList>
@@ -73,7 +73,7 @@ export default async function AdminPage() {
                   <div className="flex items-center justify-between">
                     <div className="space-y-1">
                       <div className="flex items-center gap-2">
-                        <span className="text-[10px] font-bold bg-primary/10 text-primary px-1.5 py-0.5 rounded uppercase">{course.code}</span>
+                        <span className="text-[10px] font-bold bg-brand-navy/10 text-brand-navy px-1.5 py-0.5 rounded uppercase">{course.code}</span>
                         <CardTitle className="text-base font-headline">{course.title}</CardTitle>
                         <Badge variant={course.isPublished ? "default" : "secondary"}>
                           {course.isPublished ? "Publicado" : "Borrador"}
@@ -103,7 +103,7 @@ export default async function AdminPage() {
                 <Card key={inst.id} className="border-outline-variant/10">
                   <CardHeader className="p-4">
                     <CardTitle className="text-base">{inst.name}</CardTitle>
-                    <p className="text-xs text-primary font-medium">{inst.department}</p>
+                    <p className="text-xs text-brand-navy font-medium">{inst.department}</p>
                   </CardHeader>
                   <CardContent className="px-4 pb-4">
                     <p className="text-xs text-muted-foreground line-clamp-2">{inst.bio}</p>
@@ -120,7 +120,7 @@ export default async function AdminPage() {
            </div>
            <div className="space-y-3">
               {announcements.map((ann) => (
-                <div key={ann.id} className="flex items-center justify-between p-4 bg-white border rounded-xl border-outline-variant/10 shadow-sm">
+                <div key={ann.id} className="flex items-center justify-between p-4 bg-slate-50 border rounded-xl border-outline-variant/10 shadow-sm">
                    <div>
                       <h4 className="font-bold text-sm">{ann.title}</h4>
                       <p className="text-xs text-muted-foreground">{new Date(ann.createdAt).toLocaleDateString()}</p>
@@ -138,10 +138,10 @@ export default async function AdminPage() {
            </div>
            <div className="space-y-3">
               {events.map((event) => (
-                <div key={event.id} className="flex items-center gap-4 p-4 bg-white border rounded-xl border-outline-variant/10 shadow-sm">
-                   <div className="bg-primary/5 text-primary p-2 rounded-lg text-center min-w-[60px]">
+                <div key={event.id} className="flex items-center gap-4 p-4 bg-slate-50 border rounded-xl border-outline-variant/10 shadow-sm">
+                   <div className="bg-brand-navy/5 text-brand-navy p-2 rounded-lg text-center min-w-[60px]">
                       <p className="text-[10px] font-bold uppercase">{new Date(event.date).toLocaleString('es', { month: 'short' })}</p>
-                      <p className="text-lg font-black">{new Date(event.date).getDate()}</p>
+                      <p className="text-lg font-semibold">{new Date(event.date).getDate()}</p>
                    </div>
                    <div>
                       <h4 className="font-bold text-sm">{event.title}</h4>
@@ -153,7 +153,7 @@ export default async function AdminPage() {
         </TabsContent>
 
         <TabsContent value="users" className="space-y-4 animate-fade-in">
-           <div className="bg-white border rounded-xl border-outline-variant/10 overflow-hidden shadow-sm">
+           <div className="bg-slate-50 border rounded-xl border-outline-variant/10 overflow-hidden shadow-sm">
               <table className="w-full text-sm text-left">
                 <thead className="bg-surface-container-low text-on-surface-variant uppercase text-[10px] font-bold tracking-wider">
                   <tr>

@@ -27,8 +27,8 @@ export function Sidebar({ role }: { role?: string }) {
                 />
             </div>
         </div>
-        <h1 className="font-headline font-bold text-[#002a58] dark:text-[#c9e7f7] text-xl tracking-tight">Seminario Anglicano Trinity</h1>
-        <p className="font-body text-[13px] font-medium uppercase tracking-widest text-primary/60">Portal Académico</p>
+        <h1 className="font-headline font-semibold text-brand-navy dark:text-[#c9e7f7] text-xl tracking-tight">Seminario Anglicano Trinity</h1>
+        <p className="font-body text-[13px] font-medium uppercase tracking-widest text-brand-navy/60">Portal Académico</p>
       </div>
 
       <nav className="flex-1 overflow-y-auto">
@@ -42,7 +42,7 @@ export function Sidebar({ role }: { role?: string }) {
                   className={cn(
                     "flex items-center gap-4 px-6 py-4 transition-all duration-300",
                     isActive
-                      ? "bg-white dark:bg-[#191c1e] text-[#002a58] font-bold border-l-4 border-[#002a58]"
+                      ? "bg-white dark:bg-[#191c1e] text-[brand-navy] font-semibold border-l-4 border-[brand-navy]"
                       : "text-[#424750] dark:text-[#c3c6d2] hover:bg-[#eceef0] dark:hover:bg-[#2a2d31]"
                   )}
                 >
@@ -56,7 +56,7 @@ export function Sidebar({ role }: { role?: string }) {
       </nav>
 
       <div className="px-6 mt-auto">
-        <button className="w-full bg-gradient-to-r from-primary to-primary-container text-white rounded-xl py-3 px-4 font-headline font-semibold text-sm tracking-wide transition-all duration-300 hover:opacity-90 flex items-center justify-center gap-2 shadow-md">
+        <button className="w-full bg-brand-navy text-white rounded-xl py-3 px-4 font-headline font-semibold text-sm tracking-wide transition-all duration-300 hover:opacity-90 flex items-center justify-center gap-2 shadow-md">
           <span>Iniciar Lección</span>
           <ArrowRight className="h-4 w-4" />
         </button>

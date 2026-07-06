@@ -69,7 +69,7 @@ export default function LessonClientPage({
           <div className="space-y-4">
             <Link
               href={`/courses/${courseId}`}
-              className="inline-flex items-center text-sm font-body font-medium text-on-surface-variant hover:text-primary transition-colors mb-2"
+              className="inline-flex items-center text-sm font-body font-medium text-on-surface-variant hover:text-brand-navy transition-colors mb-2"
             >
               <ChevronLeft className="h-4 w-4 mr-1" />
               Volver al Catálogo del Curso
@@ -83,11 +83,11 @@ export default function LessonClientPage({
 
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pt-4">
               <div className="space-y-1">
-                <h1 className="font-headline text-3xl font-extrabold text-on-surface tracking-tight leading-tight">
+                <h1 className="font-headline text-3xl font-semibold text-on-surface tracking-tight leading-tight">
                   {lesson.title}
                 </h1>
                 <p className="font-body text-on-surface-variant flex items-center gap-2">
-                  <span className="font-bold text-primary">{course.title}</span>
+                  <span className="font-bold text-brand-navy">{course.title}</span>
                   <span className="w-1 h-1 rounded-full bg-outline-variant"></span>
                   <span>{lesson.module.title}</span>
                 </p>
@@ -105,33 +105,33 @@ export default function LessonClientPage({
             <TabsList className="bg-surface-container-low p-1.5 rounded-xl flex h-auto w-fit gap-1 mb-8">
               <TabsTrigger
                 value="transcript"
-                className="px-6 py-2.5 rounded-lg data-[state=active]:bg-surface-container-lowest data-[state=active]:text-primary font-body font-bold text-sm transition-all border-none"
+                className="px-6 py-2.5 rounded-lg data-[state=active]:bg-surface-container-lowest data-[state=active]:text-brand-navy font-body font-bold text-sm transition-all border-none"
               >
                 <FileText className="h-4 w-4 mr-2" />
                 Transcripción
               </TabsTrigger>
               <TabsTrigger
                 value="notes"
-                className="px-6 py-2.5 rounded-lg data-[state=active]:bg-surface-container-lowest data-[state=active]:text-primary font-body font-bold text-sm transition-all border-none"
+                className="px-6 py-2.5 rounded-lg data-[state=active]:bg-surface-container-lowest data-[state=active]:text-brand-navy font-body font-bold text-sm transition-all border-none"
               >
                 <StickyNote className="h-4 w-4 mr-2" />
                 Notas Académicas
                 {notes.length > 0 && (
-                  <span className="ml-2 bg-primary/10 text-primary px-2 py-0.5 rounded-full text-[10px]">
+                  <span className="ml-2 bg-brand-navy/10 text-brand-navy px-2 py-0.5 rounded-full text-[10px]">
                     {notes.length}
                   </span>
                 )}
               </TabsTrigger>
               <TabsTrigger
                 value="forum"
-                className="px-6 py-2.5 rounded-lg data-[state=active]:bg-surface-container-lowest data-[state=active]:text-primary font-body font-bold text-sm transition-all border-none"
+                className="px-6 py-2.5 rounded-lg data-[state=active]:bg-surface-container-lowest data-[state=active]:text-brand-navy font-body font-bold text-sm transition-all border-none"
               >
                 <MessageSquare className="h-4 w-4 mr-2" />
                 Foro
               </TabsTrigger>
               <TabsTrigger
                 value="tasks"
-                className="px-6 py-2.5 rounded-lg data-[state=active]:bg-surface-container-lowest data-[state=active]:text-primary font-body font-bold text-sm transition-all border-none"
+                className="px-6 py-2.5 rounded-lg data-[state=active]:bg-surface-container-lowest data-[state=active]:text-brand-navy font-body font-bold text-sm transition-all border-none"
               >
                 <ListTodo className="h-4 w-4 mr-2" />
                 Tareas
@@ -153,7 +153,7 @@ export default function LessonClientPage({
                             <button
                               key={i}
                               onClick={() => handleSeek(totalSecs)}
-                              className="text-primary font-bold hover:underline bg-primary/5 px-1 rounded transition-colors"
+                              className="text-brand-navy font-bold hover:underline bg-brand-navy/5 px-1 rounded transition-colors"
                             >
                               {part}
                             </button>
@@ -176,7 +176,6 @@ export default function LessonClientPage({
                   lessonId={lesson.id}
                   notes={notes || []}
                   setNotes={setNotes}
-                  getCurrentTime={() => currentTime}
                   currentSeconds={currentTime}
                   onSeek={handleSeek}
                 />
@@ -205,7 +204,7 @@ export default function LessonClientPage({
         <aside className="w-full lg:w-[400px] flex-shrink-0 sticky top-24 space-y-6">
           <div className="bg-surface-container-low rounded-2xl border border-outline-variant/10 overflow-hidden shadow-sm">
             <div className="p-6 border-b bg-surface-container/50">
-              <h3 className="font-headline font-bold text-lg text-primary flex items-center gap-2">
+              <h3 className="font-headline font-bold text-lg text-brand-navy flex items-center gap-2">
                 <PlayCircle className="h-5 w-5" />
                 Contenido del Programa
               </h3>
@@ -219,7 +218,7 @@ export default function LessonClientPage({
                     className="w-full px-6 py-4 flex items-center justify-between hover:bg-surface-container transition-colors group"
                   >
                     <div className="flex items-center gap-3">
-                       <span className="font-headline font-black text-outline-variant group-hover:text-primary transition-colors">
+                       <span className="font-headline font-semibold text-outline-variant group-hover:text-brand-navy transition-colors">
                          {m.order.toString().padStart(2, '0')}
                        </span>
                        <span className="font-headline font-bold text-on-surface text-left text-sm leading-tight">
@@ -238,12 +237,12 @@ export default function LessonClientPage({
                           className={cn(
                             "flex items-center gap-4 px-8 py-4 hover:bg-surface-container transition-all border-l-4",
                             l.id === lesson.id
-                              ? "bg-primary/5 border-primary"
+                              ? "bg-brand-navy/5 border-brand-navy"
                               : "border-transparent"
                           )}
                         >
                           {l.id === lesson.id ? (
-                             <PlayCircle className="h-4 w-4 text-primary shrink-0" />
+                             <PlayCircle className="h-4 w-4 text-brand-navy shrink-0" />
                           ) : (
                              <CheckCircle2 className={cn(
                                "h-4 w-4 shrink-0",
@@ -253,7 +252,7 @@ export default function LessonClientPage({
                           <div className="flex-1">
                              <p className={cn(
                                "font-body text-xs leading-tight mb-1",
-                               l.id === lesson.id ? "text-primary font-bold" : "text-on-surface"
+                               l.id === lesson.id ? "text-brand-navy font-bold" : "text-on-surface"
                              )}>
                                {l.title}
                              </p>
@@ -275,7 +274,7 @@ export default function LessonClientPage({
              <div className="bg-surface-container-low rounded-xl border border-outline-variant/10 overflow-hidden">
                 <button className="w-full px-6 py-4 flex items-center justify-between hover:bg-surface-container transition-colors">
                   <span className="font-headline font-bold text-sm text-on-surface flex items-center gap-3">
-                    <Volume2 className="h-4 w-4 text-primary" />
+                    <Volume2 className="h-4 w-4 text-brand-navy" />
                     Recursos de Audio
                   </span>
                   <ChevronDown className="h-4 w-4 text-outline-variant" />
@@ -285,7 +284,7 @@ export default function LessonClientPage({
              <div className="bg-surface-container-low rounded-xl border border-outline-variant/10 overflow-hidden">
                 <div className="px-6 py-4 border-b border-outline-variant/10 bg-surface-container/50">
                   <h3 className="font-headline font-bold text-sm text-on-surface flex items-center gap-3">
-                    <HelpCircle className="h-4 w-4 text-primary" />
+                    <HelpCircle className="h-4 w-4 text-brand-navy" />
                     Preguntas Frecuentes
                   </h3>
                 </div>
@@ -293,7 +292,7 @@ export default function LessonClientPage({
                   {Array.isArray(course.faqs) && (course.faqs as any[]).length > 0 ? (
                     (course.faqs as any[]).map((faq, idx) => (
                       <div key={idx} className="p-4 bg-surface-container-low/30">
-                        <p className="font-headline font-bold text-xs text-primary mb-1 uppercase tracking-tight">{faq.question}</p>
+                        <p className="font-headline font-bold text-xs text-brand-navy mb-1 uppercase tracking-tight">{faq.question}</p>
                         <p className="font-body text-xs text-on-surface-variant leading-relaxed">{faq.answer}</p>
                       </div>
                     ))

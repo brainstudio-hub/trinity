@@ -33,7 +33,7 @@ export default function RegisterPage() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-50">
       <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md">
-        <h1 className="text-2xl font-bold text-center text-primary">Crear Cuenta</h1>
+        <h1 className="text-2xl font-bold text-center text-brand-navy">Crear Cuenta</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
             <label className="text-sm font-medium">Nombre</label>
@@ -69,7 +69,7 @@ export default function RegisterPage() {
         </form>
         <p className="text-sm text-center">
           ¿Ya tienes cuenta?{" "}
-          <Link href="/login" className="text-primary hover:underline">
+          <Link href="/login" className="text-brand-navy hover:underline">
             Inicia sesión
           </Link>
         </p>
