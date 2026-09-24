@@ -302,7 +302,7 @@ async function seedDemo(courseId: string) {
     "STUDENT",
     process.env.SEED_STUDENT_PASSWORD
   );
-  if (password) console.log(`• Estudiante demo: ${user.email} / ${password}`);
+  if (password) console.log(`• Estudiante demo: ${user.email}${process.env.SEED_STUDENT_PASSWORD ? "" : ` / ${password}`}`);
 
   await prisma.enrollment.upsert({
     where: { userId_courseId: { userId: user.id, courseId } },
@@ -369,7 +369,9 @@ async function main() {
     throw new Error("En producción SEED_ADMIN_PASSWORD es obligatoria.");
   }
   const { user: admin, password } = await upsertUser(adminEmail, "Coordinación Académica", "ADMIN", process.env.SEED_ADMIN_PASSWORD);
-  console.log(password ? `• Administrador: ${admin.email} / ${password}` : `• Administrador existente: ${admin.email}`);
+  // Nunca registrar una contraseña que vino por variable de entorno (quedaría en los logs del servidor).
+  const shown = password && !process.env.SEED_ADMIN_PASSWORD ? ` / ${password}` : "";
+  console.log(password ? `• Administrador creado: ${admin.email}${shown}` : `• Administrador existente: ${admin.email}`);
 
   const category = await prisma.category.findUniqueOrThrow({ where: { slug: "estudios-biblicos" } });
   const created = await seedCourse(admin.id, category.id);
