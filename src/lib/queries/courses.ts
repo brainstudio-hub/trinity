@@ -76,7 +76,7 @@ export async function getCatalog(filters: { q?: string; category?: string; level
 }
 
 export async function getCourseDetail(slug: string) {
-  const course = await db.course.findUnique({
+  const [course, agg] = await Promise.all([db.course.findUnique({
     where: { slug },
     include: {
       category: true,
@@ -99,10 +99,10 @@ export async function getCourseDetail(slug: string) {
       },
       _count: { select: { enrollments: true, reviews: true } },
     },
-  });
+  }),
+    db.review.aggregate({ where: { course: { slug } }, _avg: { rating: true } }),
+  ]);
   if (!course) return null;
-
-  const agg = await db.review.aggregate({ where: { courseId: course.id }, _avg: { rating: true } });
   const lessons = course.modules.flatMap((m) => m.lessons);
   return {
     ...course,
@@ -115,47 +115,46 @@ export async function getCourseDetail(slug: string) {
 
 export type CourseDetail = NonNullable<Awaited<ReturnType<typeof getCourseDetail>>>;
 
-/** Todo lo necesario para el aula: temario, progreso, notas del usuario y lección activa. */
+/**
+ * Todo lo necesario para el aula en UNA sola ronda de consultas paralelas
+ * (cada ida y vuelta a la base cuesta latencia; aquí todo se filtra por slug).
+ */
 export async function getClassroom(slug: string, lessonId: string, userId: string) {
-  const course = await db.course.findUnique({
-    where: { slug },
-    include: {
-      instructors: { include: { instructor: true }, orderBy: { position: "asc" } },
-      modules: {
-        orderBy: { position: "asc" },
-        include: {
-          lessons: {
-            where: { isPublished: true },
-            orderBy: { position: "asc" },
-            select: { id: true, title: true, type: true, durationSeconds: true, isFreePreview: true, videoProvider: true },
+  const inCourse = { module: { course: { slug } } };
+  const [course, lesson, enrollment, progress, notes, bookmark, attempts, comments, certificate, review] = await Promise.all([
+    db.course.findUnique({
+      where: { slug },
+      include: {
+        instructors: { include: { instructor: true }, orderBy: { position: "asc" } },
+        modules: {
+          orderBy: { position: "asc" },
+          include: {
+            lessons: {
+              where: { isPublished: true },
+              orderBy: { position: "asc" },
+              select: { id: true, title: true, type: true, durationSeconds: true, isFreePreview: true, videoProvider: true },
+            },
           },
         },
       },
-    },
-  });
-  if (!course) return null;
-
-  const lesson = await db.lesson.findFirst({
-    where: { id: lessonId, isPublished: true, module: { courseId: course.id } },
-    include: {
-      resources: { orderBy: { position: "asc" } },
-      quiz: {
-        include: {
-          questions: {
-            orderBy: { position: "asc" },
-            include: { options: { orderBy: { position: "asc" }, select: { id: true, text: true, position: true } } },
+    }),
+    db.lesson.findFirst({
+      where: { id: lessonId, isPublished: true, ...inCourse },
+      include: {
+        resources: { orderBy: { position: "asc" } },
+        quiz: {
+          include: {
+            questions: {
+              orderBy: { position: "asc" },
+              include: { options: { orderBy: { position: "asc" }, select: { id: true, text: true, position: true } } },
+            },
           },
         },
       },
-    },
-  });
-  if (!lesson) return { course, lesson: null } as const;
-
-  const orderedLessons = course.modules.flatMap((m) => m.lessons);
-  const [enrollment, progress, notes, bookmark, attempts] = await Promise.all([
-    db.enrollment.findUnique({ where: { userId_courseId: { userId, courseId: course.id } } }),
+    }),
+    db.enrollment.findFirst({ where: { userId, course: { slug } } }),
     db.lessonProgress.findMany({
-      where: { userId, lessonId: { in: orderedLessons.map((l) => l.id) } },
+      where: { userId, lesson: inCourse },
       select: { lessonId: true, isCompleted: true, lastPositionSeconds: true, watchedSeconds: true },
     }),
     db.note.findMany({
@@ -163,15 +162,28 @@ export async function getClassroom(slug: string, lessonId: string, userId: strin
       orderBy: [{ timestampSeconds: { sort: "asc", nulls: "first" } }, { createdAt: "asc" }],
     }),
     db.bookmark.findUnique({ where: { userId_lessonId: { userId, lessonId } } }),
-    lesson.quiz
-      ? db.quizAttempt.findMany({
-          where: { userId, quizId: lesson.quiz.id },
-          orderBy: { startedAt: "desc" },
-          include: { answers: true },
-        })
-      : Promise.resolve([]),
+    db.quizAttempt.findMany({
+      where: { userId, quiz: { lessonId } },
+      orderBy: { startedAt: "desc" },
+      select: { id: true, status: true, score: true, passed: true, submittedAt: true },
+    }),
+    db.comment.findMany({
+      where: { lessonId, parentId: null },
+      orderBy: [{ isPinned: "desc" }, { createdAt: "desc" }],
+      take: 50,
+      include: {
+        user: { select: { name: true, avatarUrl: true, role: true } },
+        replies: { orderBy: { createdAt: "asc" }, include: { user: { select: { name: true, avatarUrl: true, role: true } } } },
+      },
+    }),
+    db.certificate.findFirst({ where: { userId, course: { slug } }, select: { code: true } }),
+    db.review.findFirst({ where: { userId, course: { slug } }, select: { rating: true, comment: true } }),
   ]);
 
+  if (!course) return null;
+  if (!lesson) return { course, lesson: null } as const;
+
+  const orderedLessons = course.modules.flatMap((m) => m.lessons);
   const index = orderedLessons.findIndex((l) => l.id === lessonId);
   return {
     course,
@@ -181,6 +193,9 @@ export async function getClassroom(slug: string, lessonId: string, userId: strin
     notes,
     isBookmarked: !!bookmark,
     attempts,
+    comments,
+    certificateCode: certificate?.code ?? null,
+    myReview: review,
     summary: computeCourseProgress(orderedLessons, progress),
     prevLessonId: index > 0 ? orderedLessons[index - 1].id : null,
     nextLessonId: index < orderedLessons.length - 1 ? orderedLessons[index + 1].id : null,

@@ -2,7 +2,9 @@
 // Las actualizaciones se aplican con `npx prisma db push` (sin carpeta de migraciones).
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  // Resuelve las relaciones anidadas en una sola consulta SQL (menos idas y vueltas a la base)
+  previewFeatures = ["relationJoins"]
 }
 
 datasource db {

@@ -36,22 +36,7 @@ export default async function LessonPage({
   const lesson = data.lesson;
   const moduleTitle = data.course.modules.find((m) => m.lessons.some((l) => l.id === lesson.id))?.title ?? "";
 
-  const [comments, certificate, myReview] = await Promise.all([
-    db.comment.findMany({
-      where: { lessonId: lesson.id, parentId: null },
-      orderBy: [{ isPinned: "desc" }, { createdAt: "desc" }],
-      take: 50,
-      include: {
-        user: { select: { name: true, avatarUrl: true, role: true } },
-        replies: {
-          orderBy: { createdAt: "asc" },
-          include: { user: { select: { name: true, avatarUrl: true, role: true } } },
-        },
-      },
-    }),
-    db.certificate.findUnique({ where: { userId_courseId: { userId: user.id, courseId: data.course.id } }, select: { code: true } }),
-    db.review.findUnique({ where: { userId_courseId: { userId: user.id, courseId: data.course.id } }, select: { rating: true, comment: true } }),
-  ]);
+  const { comments, certificateCode, myReview } = data;
 
   const video = lesson.videoUrl ? parseVideoUrl(lesson.videoUrl) : null;
 
@@ -92,12 +77,12 @@ export default async function LessonPage({
       summary={data.summary}
       notes={data.notes}
       isBookmarked={data.isBookmarked}
-      attempts={data.attempts.map((a) => ({ id: a.id, status: a.status, score: a.score, passed: a.passed, submittedAt: a.submittedAt }))}
+      attempts={data.attempts}
       comments={comments as DiscussionComment[]}
       prevLessonId={data.prevLessonId}
       nextLessonId={data.nextLessonId}
       position={data.position}
-      certificateCode={certificate?.code ?? null}
+      certificateCode={certificateCode}
       myReview={myReview}
       userMenu={<UserMenu user={user} />}
       startAtOverride={searchParams.t !== undefined ? startAtOverride : null}
