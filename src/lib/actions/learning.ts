@@ -180,7 +180,7 @@ export async function createNoteAction(input: z.infer<typeof noteSchema>) {
   if (!parsed.success) return { ok: false as const, error: parsed.error.issues[0].message };
   try {
     const access = await lessonAccess(user.id, parsed.data.lessonId);
-    if (!access || (!access.enrollment && !access.lesson.isFreePreview)) {
+    if (!access || (!access.enrollment && !access.lesson.isFreePreview && !isStaff(user.role))) {
       return { ok: false as const, error: "No tienes acceso a esta lección." };
     }
     const note = await db.note.create({ data: { ...parsed.data, userId: user.id } });

@@ -145,7 +145,7 @@ export function Classroom(p: ClassroomProps) {
           modules={p.course.modules}
           currentLessonId={p.lesson.id}
           completedIds={completedIds}
-          enrolled={p.enrolled}
+          enrolled={p.enrolled || p.isStaff}
         />
       </TabsContent>
       <TabsContent value="notas" className="min-h-0 flex-1 pt-0">
@@ -215,7 +215,7 @@ export function Classroom(p: ClassroomProps) {
               <div className="flex flex-col gap-5 border-b pb-6 md:flex-row md:items-start md:justify-between">
                 <div className="min-w-0">
                   <p className="eyebrow">
-                    {p.lesson.moduleTitle} · {LESSON_TYPE_LABEL[p.lesson.type]} {p.position.index} de {p.position.total}
+                    {p.lesson.moduleTitle} · {LESSON_TYPE_LABEL[p.lesson.type]} · Lección {p.position.index} de {p.position.total}
                   </p>
                   <h1 className="display mt-2 text-3xl leading-tight md:text-[2.25rem]">{p.lesson.title}</h1>
                   {p.lesson.summary && <p className="mt-2 text-sm text-muted-foreground">{p.lesson.summary}</p>}

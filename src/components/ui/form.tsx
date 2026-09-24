@@ -59,7 +59,7 @@ export function Field({
   return (
     <div className={cn("space-y-1.5", className)}>
       {label && (
-        <Label htmlFor={htmlFor} className="flex items-baseline justify-between">
+        <Label htmlFor={htmlFor} className="flex items-baseline justify-between gap-3">
           <span>{label}</span>
           {optional && <span className="text-xs font-normal text-muted-foreground">Opcional</span>}
         </Label>

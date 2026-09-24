@@ -138,7 +138,7 @@ export function CourseInfoForm({
               </Button>
             </div>
           </Field>
-          <Field label="Código académico" htmlFor="code" optional hint="Por ejemplo NT-310">
+          <Field label="Código" htmlFor="code" optional hint="Código académico, p. ej. NT-310">
             <Input id="code" value={values.code} onChange={(e) => set("code", e.target.value.toUpperCase())} maxLength={24} />
           </Field>
         </div>
