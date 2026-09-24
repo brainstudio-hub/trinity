@@ -1,0 +1,820 @@
+{
+  "modules": [
+    {
+      "module": 1,
+      "title": "Cuestionario: Introducción al Apocalipsis",
+      "questions": [
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "Entre los enfoques básicos de interpretación del Apocalipsis, ¿cuál se centra en el siglo I d.C.?",
+          "options": [
+            { "text": "Historicista", "isCorrect": false },
+            { "text": "Preterista", "isCorrect": true },
+            { "text": "Futurista", "isCorrect": false },
+            { "text": "Idealista", "isCorrect": false }
+          ],
+          "explanation": "Sesión 1: el enfoque preterista se centra en el siglo I d.C., mientras que el historicista abarca acontecimientos a lo largo de la historia.",
+          "sessions": [1]
+        },
+        {
+          "type": "MULTIPLE_CHOICE",
+          "prompt": "¿Cuáles de los siguientes figuran entre los cinco enfoques básicos de interpretación del Apocalipsis presentados en el bosquejo? Seleccione todos los que correspondan.",
+          "options": [
+            { "text": "«Confrontación en lugar de predicción»", "isCorrect": true },
+            { "text": "Dispensacionalista", "isCorrect": false },
+            { "text": "Historicista", "isCorrect": true },
+            { "text": "Amilenialista", "isCorrect": false },
+            { "text": "Idealista", "isCorrect": true }
+          ],
+          "explanation": "Sesión 1: los cinco enfoques son «confrontación en lugar de predicción», preterista, historicista, futurista e idealista. El dispensacionalismo y el amilenialismo son posiciones sobre el milenio (Sesión 16).",
+          "sessions": [1]
+        },
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "En la aproximación a la Escritura como Persona, Plan y Modelo, ¿a qué se refiere el «Plan»?",
+          "options": [
+            { "text": "A la revelación de Dios mismo", "isCorrect": false },
+            { "text": "A la revelación del modelo de vida en sintonía con Dios", "isCorrect": false },
+            { "text": "A la revelación del plan de Dios en la historia y más allá de ella", "isCorrect": true },
+            { "text": "A la secuencia de sellos, trompetas y copas", "isCorrect": false }
+          ],
+          "explanation": "Sesión 1: la Persona es la revelación de Dios; el Plan, la revelación de su plan en la historia y más allá de ella; y el Modelo, el modelo de vida en sintonía con Dios.",
+          "sessions": [1]
+        },
+        {
+          "type": "TRUE_FALSE",
+          "prompt": "Según el bosquejo, la tensión del «ya y todavía no» surge de la superposición de dos eras.",
+          "options": [
+            { "text": "Verdadero", "isCorrect": true },
+            { "text": "Falso", "isCorrect": false }
+          ],
+          "explanation": "Sesión 1: entre las dos visiones de la historia se presentan dos eras y la superposición de estas eras, es decir, el «ya y todavía no».",
+          "sessions": [1]
+        },
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "¿Cuál es la «cadena de mando» por la que se transmite la revelación según Ap. 1:1?",
+          "options": [
+            { "text": "Dios, Jesucristo, el ángel, el esclavo", "isCorrect": true },
+            { "text": "Jesucristo, Dios, el esclavo, el ángel", "isCorrect": false },
+            { "text": "Dios, el ángel, Jesucristo, las iglesias", "isCorrect": false },
+            { "text": "Dios, los siete espíritus, el ángel, las iglesias", "isCorrect": false }
+          ],
+          "explanation": "Sesión 2: la introducción al mensaje (Ap. 1:1) presenta la cadena de mando: Dios, Jesucristo, el ángel y el esclavo (δοῦλος, doulos).",
+          "sessions": [2]
+        },
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "El «todavía no» de Ap. 1:7 se apoya en dos textos del Antiguo Testamento. ¿Cuáles son?",
+          "options": [
+            { "text": "Isaías 11:2 y Zacarías 4", "isCorrect": false },
+            { "text": "Ezequiel 1:28 y Daniel 8:17", "isCorrect": false },
+            { "text": "Génesis 3:15 y Salmo 2:9", "isCorrect": false },
+            { "text": "Daniel 7:13 y Zacarías 12:10", "isCorrect": true }
+          ],
+          "explanation": "Sesión 2: el «todavía no» (Ap. 1:7) remite a Daniel 7:13 y Zacarías 12:10; Is. 11:2 y Zac. 4 se citan para los siete espíritus (Ap. 1:4).",
+          "sessions": [2]
+        },
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "Según la interpretación que Jesús mismo ofrece en Ap. 1:20, ¿qué representan los siete candeleros?",
+          "options": [
+            { "text": "Los ángeles de las iglesias", "isCorrect": false },
+            { "text": "Las iglesias", "isCorrect": true },
+            { "text": "Los siete espíritus de Dios", "isCorrect": false },
+            { "text": "Los siete arcángeles", "isCorrect": false }
+          ],
+          "explanation": "Sesión 3: Jesús interpreta que los candeleros son las iglesias y que las estrellas son los ángeles de las iglesias (Ap. 1:20).",
+          "sessions": [3]
+        },
+        {
+          "type": "TRUE_FALSE",
+          "prompt": "La descripción del Cristo exaltado en Ap. 1:12-16 combina imágenes utilizadas para Dios y para un ángel poderoso en Daniel y en otros pasajes.",
+          "options": [
+            { "text": "Verdadero", "isCorrect": true },
+            { "text": "Falso", "isCorrect": false }
+          ],
+          "explanation": "Sesión 3: el bosquejo señala que la descripción combina imágenes usadas para Dios y para un ángel poderoso (Dn. 7:9; 10:5-6).",
+          "sessions": [3]
+        }
+      ]
+    },
+    {
+      "module": 2,
+      "title": "Cuestionario: Las cartas a las siete iglesias",
+      "questions": [
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "¿Qué forma literaria antigua siguen las siete cartas de Ap. 2-3, según el bosquejo?",
+          "options": [
+            { "text": "El oráculo profético contra las naciones", "isCorrect": false },
+            { "text": "La carta grecorromana de amistad", "isCorrect": false },
+            { "text": "El pacto o tratado de vasallaje del Antiguo Oriente Próximo (Imperio hitita)", "isCorrect": true },
+            { "text": "El decreto imperial romano", "isCorrect": false }
+          ],
+          "explanation": "Sesión 4: las cartas siguen la forma del tratado entre vasallos y soberanos, o pacto de vasallaje, del Imperio hitita.",
+          "sessions": [4]
+        },
+        {
+          "type": "MULTIPLE_CHOICE",
+          "prompt": "¿Cuáles de los siguientes elementos forman parte de la forma del pacto/tratado de vasallaje descrita en el bosquejo? Seleccione todos los que correspondan.",
+          "options": [
+            { "text": "Prólogo histórico", "isCorrect": true },
+            { "text": "Genealogía del Gran Rey", "isCorrect": false },
+            { "text": "Requisito de lectura ocasional", "isCorrect": true },
+            { "text": "Testigos", "isCorrect": true },
+            { "text": "Lista de tributos del vasallo", "isCorrect": false }
+          ],
+          "explanation": "Sesión 4: la forma incluye la introducción del Gran Rey, el prólogo histórico, las estipulaciones, el depósito de una copia escrita, el requisito de lectura ocasional, los testigos y las maldiciones y bendiciones.",
+          "sessions": [4]
+        },
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "¿Qué iglesia se describe como una «comunidad infiel, con unos pocos fieles» (Ap. 3:4)?",
+          "options": [
+            { "text": "Éfeso", "isCorrect": false },
+            { "text": "Tiatira", "isCorrect": false },
+            { "text": "Laodicea", "isCorrect": false },
+            { "text": "Sardis", "isCorrect": true }
+          ],
+          "explanation": "Sesión 4: Sardis es una comunidad infiel con unos pocos fieles; Tiatira es mixta con unos pocos fieles, y Laodicea es infiel, pero con un llamado a los individuos.",
+          "sessions": [4, 6]
+        },
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "¿Qué título resume la carta a la Iglesia de Éfeso (Ap. 2:1-7)?",
+          "options": [
+            { "text": "Ortodoxia sin amor", "isCorrect": true },
+            { "text": "El sufrimiento fiel", "isCorrect": false },
+            { "text": "Resistencia paciente", "isCorrect": false },
+            { "text": "Permanecer fiel sin transigir", "isCorrect": false }
+          ],
+          "explanation": "Sesión 4: Éfeso es «ortodoxia sin amor»: perdió su primer amor y es llamada al arrepentimiento. Los otros títulos corresponden a Esmirna, Filadelfia y Pérgamo.",
+          "sessions": [4]
+        },
+        {
+          "type": "TRUE_FALSE",
+          "prompt": "La carta a la Iglesia de Esmirna (Ap. 2:8-11) no contiene maldiciones ni advertencias.",
+          "options": [
+            { "text": "Verdadero", "isCorrect": true },
+            { "text": "Falso", "isCorrect": false }
+          ],
+          "explanation": "Sesión 5: el bosquejo destaca la ausencia de maldiciones y advertencias en la carta a Esmirna, una comunidad fiel en medio del sufrimiento.",
+          "sessions": [5]
+        },
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "En la carta a Pérgamo (Ap. 2:14), ¿a qué figura del Antiguo Testamento se alude para denunciar la enseñanza falsa?",
+          "options": [
+            { "text": "Jezabel", "isCorrect": false },
+            { "text": "Balaam", "isCorrect": true },
+            { "text": "Coré", "isCorrect": false },
+            { "text": "Acab", "isCorrect": false }
+          ],
+          "explanation": "Sesión 5: la historia de Pérgamo menciona a Balaam (Ap. 2:14; cf. Núm. 22-24); Jezabel aparece en la carta a Tiatira.",
+          "sessions": [5]
+        },
+        {
+          "type": "MULTIPLE_CHOICE",
+          "prompt": "¿Cuáles de las siguientes promesas se dirigen al vencedor en Pérgamo (Ap. 2:17)? Seleccione todas las que correspondan.",
+          "options": [
+            { "text": "El maná escondido", "isCorrect": true },
+            { "text": "La estrella de la mañana", "isCorrect": false },
+            { "text": "La piedrecita blanca", "isCorrect": true },
+            { "text": "Ser columna en el templo de Dios", "isCorrect": false },
+            { "text": "El nuevo nombre", "isCorrect": true }
+          ],
+          "explanation": "Sesión 5: a Pérgamo se le promete el maná escondido, la piedrecita blanca y el nuevo nombre; la estrella de la mañana es para Tiatira y la columna en el templo, para Filadelfia (Sesión 6).",
+          "sessions": [5, 6]
+        },
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "¿Con qué título se presenta Cristo a la Iglesia de Laodicea (Ap. 3:14)?",
+          "options": [
+            { "text": "El que tiene la llave de David", "isCorrect": false },
+            { "text": "El que tiene ojos como llamas de fuego", "isCorrect": false },
+            { "text": "El primero y el último, que murió y resucitó", "isCorrect": false },
+            { "text": "El Amén, el testigo fiel y verdadero", "isCorrect": true }
+          ],
+          "explanation": "Sesión 6: Cristo se presenta a Laodicea como el Amén, el testigo fiel y verdadero y el origen de la creación de Dios.",
+          "sessions": [6]
+        }
+      ]
+    },
+    {
+      "module": 3,
+      "title": "Cuestionario: El trono, el Cordero y los sellos",
+      "questions": [
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "Según el bosquejo de Ap. 4-5, ¿qué imagen constituye el punto central de todo el libro?",
+          "options": [
+            { "text": "La caída de Babilonia", "isCorrect": false },
+            { "text": "El Cordero León (Ap. 5:5-6)", "isCorrect": true },
+            { "text": "El reinado de mil años", "isCorrect": false },
+            { "text": "El mar de cristal", "isCorrect": false }
+          ],
+          "explanation": "Sesión 7: el Cordero León (5:5-6) se presenta, con ironía, como el punto central de todo el libro.",
+          "sessions": [7]
+        },
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "En el cuadro que compara el templo terrenal con el santuario celestial, ¿a qué elemento del templo corresponde el mar de cristal (Ap. 4:6)?",
+          "options": [
+            { "text": "El candelero de siete brazos", "isCorrect": false },
+            { "text": "El arca del testimonio", "isCorrect": false },
+            { "text": "La fuente de bronce", "isCorrect": true },
+            { "text": "El altar del holocausto", "isCorrect": false }
+          ],
+          "explanation": "Sesión 7: la fuente de bronce (Éx. 30; 1 R. 7) corresponde al mar de cristal; el candelero corresponde a las siete lámparas de fuego ante el trono.",
+          "sessions": [7]
+        },
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "¿Cuáles son los dos puntos de vista sobre el libro (rollo) que abre el Cordero?",
+          "options": [
+            { "text": "El libro de las obras y el libro de la vida", "isCorrect": false },
+            { "text": "El registro de los 144.000 y el registro de la gran multitud", "isCorrect": false },
+            { "text": "El librito de Ap. 10 y el evangelio eterno de Ap. 14", "isCorrect": false },
+            { "text": "El futuro de la historia universal y la última voluntad y testamento del Cordero", "isCorrect": true }
+          ],
+          "explanation": "Sesión 8: el bosquejo presenta dos puntos de vista: el libro como el futuro de la historia universal o como la última voluntad y testamento del Cordero.",
+          "sessions": [8]
+        },
+        {
+          "type": "TRUE_FALSE",
+          "prompt": "En la comparación entre Apocalipsis 6 y Mateo 24, el caballo bermejo corresponde al hambre.",
+          "options": [
+            { "text": "Verdadero", "isCorrect": false },
+            { "text": "Falso", "isCorrect": true }
+          ],
+          "explanation": "Sesión 8: el caballo bermejo corresponde a la guerra; es el caballo negro el que corresponde al hambre (Mt. 24:7).",
+          "sessions": [8]
+        },
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "En la lectura de «acercamientos en primer plano», ¿cómo se relacionan las trompetas y las copas con los sellos?",
+          "options": [
+            { "text": "Son acercamientos en primer plano dentro de la serie de los sellos, como parte del sexto sello", "isCorrect": true },
+            { "text": "Se suceden cronológicamente después del séptimo sello", "isCorrect": false },
+            { "text": "Repiten los siete sellos en el mismo orden, pero en el cielo", "isCorrect": false },
+            { "text": "Describen solo acontecimientos del siglo I, a diferencia de los sellos", "isCorrect": false }
+          ],
+          "explanation": "Sesión 8: frente a la secuencia histórica, esta lectura entiende las trompetas y las copas como acercamientos en primer plano dentro de los sellos (cf. Sesión 10).",
+          "sessions": [8, 10]
+        },
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "¿Qué pasajes del Antiguo Testamento se citan como trasfondo del sello puesto a los esclavos de Dios (Ap. 7:3)?",
+          "options": [
+            { "text": "Éx. 28:36 y Dt. 6:8", "isCorrect": false },
+            { "text": "Ez. 9:4 y Éx. 12:13", "isCorrect": true },
+            { "text": "Is. 11:2 y Zac. 4", "isCorrect": false },
+            { "text": "Dn. 7:13 y Zac. 12:10", "isCorrect": false }
+          ],
+          "explanation": "Sesión 9: el sello de Ap. 7:3 remite a Ez. 9:4 y Éx. 12:13.",
+          "sessions": [9]
+        },
+        {
+          "type": "MULTIPLE_CHOICE",
+          "prompt": "Según el bosquejo, ¿cuáles son los dos aspectos de la gran tribulación? Seleccione todos los que correspondan.",
+          "options": [
+            { "text": "La ira de los reyes de la tierra", "isCorrect": false },
+            { "text": "La ira de Dios", "isCorrect": true },
+            { "text": "El juicio sobre la gran prostituta", "isCorrect": false },
+            { "text": "La ira de la bestia", "isCorrect": true }
+          ],
+          "explanation": "Sesión 9: el bosquejo distingue dos aspectos de la gran tribulación: la ira de Dios y la ira de la bestia.",
+          "sessions": [9]
+        },
+        {
+          "type": "TRUE_FALSE",
+          "prompt": "El bosquejo relaciona el simbolismo del número de la gran multitud (Ap. 7:9) con las promesas hechas a Abraham (Gén. 12:3; 15:5).",
+          "options": [
+            { "text": "Verdadero", "isCorrect": true },
+            { "text": "Falso", "isCorrect": false }
+          ],
+          "explanation": "Sesión 9: el simbolismo del número de la gran multitud se vincula con Gén. 12:3 y 15:5.",
+          "sessions": [9]
+        }
+      ]
+    },
+    {
+      "module": 4,
+      "title": "Cuestionario: Trompetas, conflicto y copas",
+      "questions": [
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "Si el séptimo sello, la séptima trompeta y la séptima copa describen el final en tres etapas en orden cronológico inverso, ¿qué describe el séptimo sello?",
+          "options": [
+            { "text": "El anuncio «Hecho está» y la destrucción de la ciudad", "isCorrect": false },
+            { "text": "La celebración y el cielo abierto, cuando Dios ha comenzado su reinado", "isCorrect": false },
+            { "text": "El silencio justo antes de la apertura del libro", "isCorrect": true },
+            { "text": "La derrota final del dragón", "isCorrect": false }
+          ],
+          "explanation": "Sesión 10: el séptimo sello es el silencio justo antes de la apertura del libro; la séptima trompeta es la celebración y la séptima copa anuncia «Hecho está».",
+          "sessions": [10]
+        },
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "Según el cuadro de paralelos, ¿a qué plaga de Egipto corresponde la quinta trompeta (langostas que salen del pozo del abismo)?",
+          "options": [
+            { "text": "La séptima plaga (Éx. 9:18-26)", "isCorrect": false },
+            { "text": "La novena plaga (Éx. 10:21-23)", "isCorrect": false },
+            { "text": "La décima plaga, contra los primogénitos", "isCorrect": false },
+            { "text": "La octava plaga (Éx. 10:1-20)", "isCorrect": true }
+          ],
+          "explanation": "Sesión 10: la quinta trompeta y la quinta copa se ubican en paralelo con la octava plaga, la de las langostas (Éx. 10:1-20).",
+          "sessions": [10]
+        },
+        {
+          "type": "MULTIPLE_CHOICE",
+          "prompt": "¿Qué imágenes emplea el bosquejo para explicar el simbolismo de los dos testigos (Ap. 11:3-6)? Seleccione todas las que correspondan.",
+          "options": [
+            { "text": "Imágenes de Moisés y Elías", "isCorrect": true },
+            { "text": "Las dos bestias de Ap. 13", "isCorrect": false },
+            { "text": "Los olivos y los candeleros de Zacarías 4", "isCorrect": true },
+            { "text": "Los arcángeles Miguel y Gabriel", "isCorrect": false }
+          ],
+          "explanation": "Sesión 10: los dos testigos se explican con imágenes de Moisés y Elías y con los olivos y candeleros de Zac. 3-4.",
+          "sessions": [10]
+        },
+        {
+          "type": "MULTIPLE_CHOICE",
+          "prompt": "¿Cuáles son las tres posibles identidades de la mujer de Ap. 12 que presenta el bosquejo? Seleccione todas las que correspondan.",
+          "options": [
+            { "text": "Israel", "isCorrect": true },
+            { "text": "Babilonia, la gran prostituta", "isCorrect": false },
+            { "text": "María", "isCorrect": true },
+            { "text": "Jezabel", "isCorrect": false },
+            { "text": "La Iglesia", "isCorrect": true }
+          ],
+          "explanation": "Sesión 11: el bosquejo presenta tres identidades posibles para la mujer: Israel, María y la Iglesia.",
+          "sessions": [11]
+        },
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "¿Cuál de las siguientes figuras del Antiguo Testamento se relaciona con el dragón de Ap. 12?",
+          "options": [
+            { "text": "Leviatán (Sal. 74:13-14)", "isCorrect": true },
+            { "text": "Ajenjo", "isCorrect": false },
+            { "text": "Gog", "isCorrect": false },
+            { "text": "Balaam", "isCorrect": false }
+          ],
+          "explanation": "Sesión 11: el dragón se asocia con la serpiente del jardín, con Leviatán y con Rahab, el monstruo.",
+          "sessions": [11]
+        },
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "¿Qué representa la segunda bestia de Ap. 13:11-18, según el bosquejo?",
+          "options": [
+            { "text": "El imperio político", "isCorrect": false },
+            { "text": "La ciudad de Babilonia", "isCorrect": false },
+            { "text": "La propaganda religiosa, es decir, el falso profeta", "isCorrect": true },
+            { "text": "El dragón, la serpiente antigua", "isCorrect": false }
+          ],
+          "explanation": "Sesión 12: la primera bestia es el imperio político y la segunda, la propaganda religiosa, identificada con el falso profeta (cf. 16:13).",
+          "sessions": [12]
+        },
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "¿Qué significa el nombre «Armagedón» (Ap. 16:16)?",
+          "options": [
+            { "text": "Monte Sion", "isCorrect": false },
+            { "text": "Monte Meguido (Har-Megiddo)", "isCorrect": true },
+            { "text": "Valle de Josafat", "isCorrect": false },
+            { "text": "Monte Carmelo", "isCorrect": false }
+          ],
+          "explanation": "Sesión 13: Armagedón viene de Har-Megiddo, «Monte Meguido», lugar histórico de batallas (Jue. 5:19; 2 R. 23:29).",
+          "sessions": [13]
+        },
+        {
+          "type": "TRUE_FALSE",
+          "prompt": "Al igual que en los sellos y las trompetas, en las copas hay un interludio entre la sexta y la séptima.",
+          "options": [
+            { "text": "Verdadero", "isCorrect": false },
+            { "text": "Falso", "isCorrect": true }
+          ],
+          "explanation": "Sesión 13: no hay interludio entre la sexta y la séptima copas; el canto del Cordero (15:2-4) funciona como un interludio al principio y no al final.",
+          "sessions": [13]
+        }
+      ]
+    },
+    {
+      "module": 5,
+      "title": "Cuestionario: La victoria de Dios",
+      "questions": [
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "Los enemigos de Dios se presentan en el orden dragón, dos bestias y Babilonia (Ap. 12-14). ¿En qué orden son derrotados?",
+          "options": [
+            { "text": "Dragón, dos bestias, Babilonia", "isCorrect": false },
+            { "text": "Dos bestias, Babilonia, dragón", "isCorrect": false },
+            { "text": "Babilonia, dos bestias, dragón", "isCorrect": true },
+            { "text": "Babilonia, dragón, dos bestias", "isCorrect": false }
+          ],
+          "explanation": "Sesión 14: la derrota sigue el orden inverso: Babilonia (Ap. 17-18), las dos bestias (Ap. 19) y el dragón (Ap. 20).",
+          "sessions": [14]
+        },
+        {
+          "type": "TRUE_FALSE",
+          "prompt": "En la explicación de la visión (Ap. 17:15-18), las muchas aguas sobre las que se sienta la prostituta representan a los pueblos.",
+          "options": [
+            { "text": "Verdadero", "isCorrect": true },
+            { "text": "Falso", "isCorrect": false }
+          ],
+          "explanation": "Sesión 14: en la explicación de la visión, las aguas son los pueblos.",
+          "sessions": [14]
+        },
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "¿Cuál de los siguientes títulos NO figura entre los que el bosquejo enumera para el jinete de Ap. 19:11-16?",
+          "options": [
+            { "text": "Fiel y Verdadero", "isCorrect": false },
+            { "text": "El Verbo de Dios", "isCorrect": false },
+            { "text": "Rey de reyes y Señor de señores", "isCorrect": false },
+            { "text": "La estrella resplandeciente de la mañana", "isCorrect": true }
+          ],
+          "explanation": "Sesión 15: los títulos del Rey de reyes son Fiel y Verdadero, un nombre desconocido, el Verbo de Dios y Rey de reyes y Señor de señores.",
+          "sessions": [15]
+        },
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "¿Quiénes entonan el segundo coro de victoria (Ap. 19:4)?",
+          "options": [
+            { "text": "Una gran multitud en el cielo", "isCorrect": false },
+            { "text": "Los 24 ancianos y las cuatro criaturas vivientes", "isCorrect": true },
+            { "text": "Los 144.000 junto al Cordero", "isCorrect": false },
+            { "text": "Los mártires bajo el altar", "isCorrect": false }
+          ],
+          "explanation": "Sesión 15: el segundo coro lo entonan los 24 ancianos y las cuatro criaturas vivientes: «¡Amén! ¡Aleluya!».",
+          "sessions": [15]
+        },
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "En el punto de vista no secuencial sobre Apocalipsis 19-20, ¿qué describe Ap. 20:1-6?",
+          "options": [
+            { "text": "Un reinado intermedio de Cristo en la tierra, entre la segunda venida y la derrota final de Satanás", "isCorrect": false },
+            { "text": "La atadura de Satanás y el reinado espiritual de Cristo hoy, antes de la segunda venida", "isCorrect": true },
+            { "text": "La liberación y derrota de Satanás", "isCorrect": false },
+            { "text": "El juicio final ante el trono", "isCorrect": false }
+          ],
+          "explanation": "Sesión 16: en la lectura no secuencial, Ap. 20:1-6 describe la atadura de Satanás y el reinado espiritual de Cristo hoy; la primera opción corresponde a la lectura secuencial.",
+          "sessions": [16]
+        },
+        {
+          "type": "MULTIPLE_CHOICE",
+          "prompt": "¿Qué posiciones entienden el milenio de forma secuencial, como un penúltimo reinado intermedio? Seleccione todas las que correspondan.",
+          "options": [
+            { "text": "Premilenialismo dispensacionalista", "isCorrect": true },
+            { "text": "Posmilenialismo", "isCorrect": false },
+            { "text": "Premilenialismo histórico", "isCorrect": true },
+            { "text": "Amilenialismo o milenialismo inaugurado", "isCorrect": false }
+          ],
+          "explanation": "Sesión 16: las dos formas de premilenialismo leen el milenio de forma secuencial; el posmilenialismo y el amilenialismo lo entienden como un interludio.",
+          "sessions": [16]
+        },
+        {
+          "type": "TRUE_FALSE",
+          "prompt": "Según el bosquejo, el amilenialismo entiende el milenio como un período de mil años literales.",
+          "options": [
+            { "text": "Verdadero", "isCorrect": false },
+            { "text": "Falso", "isCorrect": true }
+          ],
+          "explanation": "Sesión 16: para el amilenialismo no son mil años literales, sino un período de tiempo significativo; los mil años literales corresponden al premilenialismo dispensacionalista.",
+          "sessions": [16]
+        },
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "¿Qué sección del Antiguo Testamento se cita como trasfondo de Gog y Magog en la derrota final de Satanás (Ap. 20:8)?",
+          "options": [
+            { "text": "Daniel 7-12", "isCorrect": false },
+            { "text": "Zacarías 12-14", "isCorrect": false },
+            { "text": "Isaías 24-27", "isCorrect": false },
+            { "text": "Ezequiel 37-48", "isCorrect": true }
+          ],
+          "explanation": "Sesión 17: la mención de Gog y Magog remite a Ezequiel 37-48.",
+          "sessions": [17]
+        }
+      ]
+    },
+    {
+      "module": 6,
+      "title": "Cuestionario: Todo es renovado",
+      "questions": [
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "Según el bosquejo, ¿cuál es el objetivo final de la Iglesia sufriente?",
+          "options": [
+            { "text": "Cielos nuevos, tierra nueva y la nueva Jerusalén", "isCorrect": true },
+            { "text": "El milenio como reinado intermedio en la tierra", "isCorrect": false },
+            { "text": "La caída de Babilonia", "isCorrect": false },
+            { "text": "El rapto antes de la gran tribulación", "isCorrect": false }
+          ],
+          "explanation": "Sesión 18: la sección sobre Ap. 21:1-22:5 comienza presentando los cielos nuevos, la tierra nueva y la nueva Jerusalén como el objetivo final de la Iglesia sufriente.",
+          "sessions": [18]
+        },
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "¿Qué significa el término griego σκηνή (skēnē), empleado en Ap. 21:3?",
+          "options": [
+            { "text": "Esclavo, siervo", "isCorrect": false },
+            { "text": "Santuario interior", "isCorrect": false },
+            { "text": "Tienda, morada", "isCorrect": true },
+            { "text": "Revelación, desvelamiento", "isCorrect": false }
+          ],
+          "explanation": "Sesión 18: en Ap. 21:3, σκηνή significa «tienda, morada» y expresa que la nueva Jerusalén es la morada de Dios con su pueblo.",
+          "sessions": [18]
+        },
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "¿Qué pasaje se cita en el bosquejo en relación con la forma de la nueva Jerusalén?",
+          "options": [
+            { "text": "Ez. 40-48", "isCorrect": false },
+            { "text": "Éx. 28:17-20", "isCorrect": false },
+            { "text": "Gén. 2:10", "isCorrect": false },
+            { "text": "1 R. 6:20", "isCorrect": true }
+          ],
+          "explanation": "Sesión 18: la forma de la ciudad remite a 1 R. 6:20; Ez. 40-48 se cita para su tamaño, Éx. 28:17-20 para las joyas y Gén. 2:10 para el río de la vida.",
+          "sessions": [18]
+        },
+        {
+          "type": "TRUE_FALSE",
+          "prompt": "Según Ap. 21:22-23, en la nueva Jerusalén no hay templo, ni sol ni luna.",
+          "options": [
+            { "text": "Verdadero", "isCorrect": true },
+            { "text": "Falso", "isCorrect": false }
+          ],
+          "explanation": "Sesión 18: el bosquejo señala que no hay templo, sol ni luna, pues la gloria de Dios ilumina la ciudad.",
+          "sessions": [18]
+        },
+        {
+          "type": "SINGLE_CHOICE",
+          "prompt": "¿Qué textos se citan junto a la oración «¡Ven, Señor Jesús!» (Ap. 22:20)?",
+          "options": [
+            { "text": "Is. 55:1 y Jn. 7:37", "isCorrect": false },
+            { "text": "Didaché 10:5-7 y 1 Co. 16:22", "isCorrect": true },
+            { "text": "Dt. 4:1-2 y 12:32", "isCorrect": false },
+            { "text": "Dn. 12:10", "isCorrect": false }
+          ],
+          "explanation": "Sesión 18: «¡Ven, Señor Jesús!» se relaciona con la Didaché 10:5-7 y 1 Co. 16:22; Is. 55:1 y Jn. 7:37 se citan para la invitación «Ven» (22:17).",
+          "sessions": [18]
+        },
+        {
+          "type": "MULTIPLE_CHOICE",
+          "prompt": "¿Cuáles de los siguientes elementos forman parte del epílogo (Ap. 22:6-21) según el bosquejo? Seleccione todos los que correspondan.",
+          "options": [
+            { "text": "Una etiqueta de advertencia (Ap. 22:18-19)", "isCorrect": true },
+            { "text": "La medición del templo y del altar", "isCorrect": false },
+            { "text": "Un llamado a la santidad", "isCorrect": true },
+            { "text": "La lamentación de los mercaderes", "isCorrect": false },
+            { "text": "La afirmación «Vengo pronto» (Ap. 22:7, 12)", "isCorrect": true }
+          ],
+          "explanation": "Sesión 18: el epílogo incluye el énfasis en la inspiración del mensaje («Vengo pronto»), el llamado a la santidad, la etiqueta de advertencia y las invitaciones finales. La medición del templo pertenece a Ap. 11 y la lamentación de los mercaderes, a Ap. 18.",
+          "sessions": [18]
+        }
+      ]
+    }
+  ],
+  "finalExam": {
+    "title": "Examen final",
+    "questions": [
+      {
+        "type": "SINGLE_CHOICE",
+        "prompt": "¿Qué enfoque interpretativo entiende el Apocalipsis como símbolos relevantes a lo largo de toda la historia?",
+        "options": [
+          { "text": "Preterista", "isCorrect": false },
+          { "text": "Historicista", "isCorrect": false },
+          { "text": "Futurista", "isCorrect": false },
+          { "text": "Idealista", "isCorrect": true }
+        ],
+        "explanation": "Sesión 1: el enfoque idealista ve en el Apocalipsis símbolos relevantes a lo largo de la historia; el futurista lo lee principalmente como una descripción del futuro.",
+        "sessions": [1]
+      },
+      {
+        "type": "MULTIPLE_CHOICE",
+        "prompt": "El bosquejo presenta el Apocalipsis como un mensaje para tres grupos de lectores. ¿Cuáles son? Seleccione todos los que correspondan.",
+        "options": [
+          { "text": "Quienes vivieron en el siglo I", "isCorrect": true },
+          { "text": "Únicamente quienes vivan durante el milenio", "isCorrect": false },
+          { "text": "Quienes vivirán cuando Cristo vuelva", "isCorrect": true },
+          { "text": "Nosotros hoy", "isCorrect": true },
+          { "text": "Exclusivamente los líderes de las siete iglesias", "isCorrect": false }
+        ],
+        "explanation": "Sesión 1: el Apocalipsis es un mensaje para quienes vivieron en el siglo I, para quienes vivirán cuando Cristo vuelva y para nosotros hoy.",
+        "sessions": [1]
+      },
+      {
+        "type": "SINGLE_CHOICE",
+        "prompt": "¿Cuál de los siguientes es uno de los tres atributos de Jesús relevantes para la audiencia de Juan en Ap. 1:5?",
+        "options": [
+          { "text": "El Alfa y la Omega", "isCorrect": false },
+          { "text": "El soberano de los reyes de la tierra", "isCorrect": true },
+          { "text": "El León de la tribu de Judá", "isCorrect": false },
+          { "text": "El Verbo de Dios", "isCorrect": false }
+        ],
+        "explanation": "Sesión 2: los tres atributos de Ap. 1:5 son el testigo fiel, el primogénito de entre los muertos y el soberano de los reyes de la tierra.",
+        "sessions": [2]
+      },
+      {
+        "type": "TRUE_FALSE",
+        "prompt": "Según la interpretación de Jesús en Ap. 1:20, las siete estrellas representan a las siete iglesias.",
+        "options": [
+          { "text": "Verdadero", "isCorrect": false },
+          { "text": "Falso", "isCorrect": true }
+        ],
+        "explanation": "Sesión 3: las estrellas son los ángeles de las iglesias; los candeleros son las iglesias.",
+        "sessions": [3]
+      },
+      {
+        "type": "SINGLE_CHOICE",
+        "prompt": "¿Qué iglesia recibe una carta descrita como «tibia y autoengañada», en la que el Señor está fuera llamando a la puerta?",
+        "options": [
+          { "text": "Sardis", "isCorrect": false },
+          { "text": "Éfeso", "isCorrect": false },
+          { "text": "Laodicea", "isCorrect": true },
+          { "text": "Pérgamo", "isCorrect": false }
+        ],
+        "explanation": "Sesión 6: la carta a Laodicea (Ap. 3:14-22) la presenta como tibia y autoengañada, con el Señor llamando a la puerta (3:20).",
+        "sessions": [6]
+      },
+      {
+        "type": "MULTIPLE_CHOICE",
+        "prompt": "¿Qué iglesias se describen como una «comunidad fiel» en la introducción a las siete cartas? Seleccione todas las que correspondan.",
+        "options": [
+          { "text": "Éfeso", "isCorrect": false },
+          { "text": "Esmirna", "isCorrect": true },
+          { "text": "Pérgamo", "isCorrect": false },
+          { "text": "Filadelfia", "isCorrect": true },
+          { "text": "Laodicea", "isCorrect": false }
+        ],
+        "explanation": "Sesión 4: Esmirna y Filadelfia son comunidades fieles; Éfeso y Pérgamo son mixtas, y Laodicea es infiel, con un llamado a los individuos.",
+        "sessions": [4]
+      },
+      {
+        "type": "SINGLE_CHOICE",
+        "prompt": "¿Con qué imagen se presenta Cristo a la Iglesia de Filadelfia (Ap. 3:7)?",
+        "options": [
+          { "text": "La llave de David", "isCorrect": true },
+          { "text": "Los siete espíritus de Dios y las siete estrellas", "isCorrect": false },
+          { "text": "La espada aguda de dos filos", "isCorrect": false },
+          { "text": "Los pies como de bronce bruñido", "isCorrect": false }
+        ],
+        "explanation": "Sesión 6: a Filadelfia, Cristo se presenta como el Santo y Verdadero, que tiene la llave de David (Is. 22:22).",
+        "sessions": [6]
+      },
+      {
+        "type": "SINGLE_CHOICE",
+        "prompt": "En el cuadro del templo terrenal y el santuario celestial, ¿a qué elemento del templo corresponden los ancianos (Ap. 4:4, 10)?",
+        "options": [
+          { "text": "A los querubines sobre el propiciatorio", "isCorrect": false },
+          { "text": "A los sacerdotes", "isCorrect": true },
+          { "text": "A la fuente de bronce", "isCorrect": false },
+          { "text": "Al arca del testimonio", "isCorrect": false }
+        ],
+        "explanation": "Sesión 7: los ancianos (reyes y sacerdotes) corresponden a los sacerdotes (Éx. 29); los querubines corresponden a los seres vivientes.",
+        "sessions": [7]
+      },
+      {
+        "type": "TRUE_FALSE",
+        "prompt": "El bosquejo presenta dos interpretaciones de los sellos: como los acontecimientos de los tiempos finales o como todo el caos de la historia humana.",
+        "options": [
+          { "text": "Verdadero", "isCorrect": true },
+          { "text": "Falso", "isCorrect": false }
+        ],
+        "explanation": "Sesión 8: entre las diversas interpretaciones de los sellos se exponen estas dos: los acontecimientos de los tiempos finales y todo el caos de la historia humana.",
+        "sessions": [8]
+      },
+      {
+        "type": "SINGLE_CHOICE",
+        "prompt": "¿Qué pasaje del Antiguo Testamento se relaciona con la imagen del Cordero que pastorea a la gran multitud (Ap. 7:17)?",
+        "options": [
+          { "text": "Ez. 9:4", "isCorrect": false },
+          { "text": "Is. 49:2", "isCorrect": false },
+          { "text": "Sal. 2:9", "isCorrect": false },
+          { "text": "Ez. 34:20-24", "isCorrect": true }
+        ],
+        "explanation": "Sesión 9: la imagen del Cordero que pastorea se vincula con Sal. 80:1 y Ez. 34:20-24.",
+        "sessions": [9]
+      },
+      {
+        "type": "MULTIPLE_CHOICE",
+        "prompt": "¿Qué elementos destaca el bosquejo en la séptima trompeta (Ap. 11:15-19)? Seleccione todos los que correspondan.",
+        "options": [
+          { "text": "Himnos de triunfo", "isCorrect": true },
+          { "text": "El silencio en el cielo como por media hora", "isCorrect": false },
+          { "text": "La visión del arca en el cielo", "isCorrect": true },
+          { "text": "El anuncio «¡Hecho está!»", "isCorrect": false },
+          { "text": "Símbolos de la presencia de Dios", "isCorrect": true }
+        ],
+        "explanation": "Sesión 10: la séptima trompeta incluye himnos de triunfo, la visión del arca en el cielo y símbolos de la presencia de Dios; el silencio pertenece al séptimo sello y «¡Hecho está!», a la séptima copa.",
+        "sessions": [10]
+      },
+      {
+        "type": "SINGLE_CHOICE",
+        "prompt": "¿Quién combate contra el dragón en la guerra en el cielo (Ap. 12:7-12)?",
+        "options": [
+          { "text": "Los 24 ancianos", "isCorrect": false },
+          { "text": "El arcángel Miguel", "isCorrect": true },
+          { "text": "El ángel con el librito", "isCorrect": false },
+          { "text": "Los cuatro seres vivientes", "isCorrect": false }
+        ],
+        "explanation": "Sesión 11: en la guerra en el cielo aparece el arcángel Miguel (cf. Dn. 10:13, 21; 12:1), y el dragón es lanzado del cielo.",
+        "sessions": [11]
+      },
+      {
+        "type": "TRUE_FALSE",
+        "prompt": "El bosquejo describe la primera bestia de Ap. 13 como una parodia de Dios y de Cristo, con trasfondo en Daniel 7:3.",
+        "options": [
+          { "text": "Verdadero", "isCorrect": true },
+          { "text": "Falso", "isCorrect": false }
+        ],
+        "explanation": "Sesión 12: la primera bestia, el imperio político, remite a Dn. 7:3 y se presenta como una parodia de Dios y de Cristo.",
+        "sessions": [12]
+      },
+      {
+        "type": "SINGLE_CHOICE",
+        "prompt": "En el tercer interludio (Ap. 14), ¿cuál es el mensaje del segundo ángel (14:8)?",
+        "options": [
+          { "text": "El evangelio eterno", "isCorrect": false },
+          { "text": "El lagar de la ira de Dios", "isCorrect": false },
+          { "text": "El llamado a salir de Babilonia", "isCorrect": false },
+          { "text": "El anuncio de la caída de Babilonia", "isCorrect": true }
+        ],
+        "explanation": "Sesión 12: los tres ángeles anuncian el evangelio eterno (14:6-7), la caída de Babilonia (14:8) y el lagar de la ira de Dios (14:9-20). El llamado a salir de Babilonia está en Ap. 18:4-8.",
+        "sessions": [12]
+      },
+      {
+        "type": "SINGLE_CHOICE",
+        "prompt": "Según el paralelo que traza la Sesión 13 entre las copas y las plagas de Egipto, ¿a qué plaga corresponden la cuarta y la quinta copas?",
+        "options": [
+          { "text": "A la novena plaga: el sol abrasa y oscurece (Éx. 10:21-22)", "isCorrect": true },
+          { "text": "A la sexta plaga: las llagas (Éx. 9:10-11)", "isCorrect": false },
+          { "text": "A la primera plaga: el agua en sangre (Éx. 7:14-21)", "isCorrect": false },
+          { "text": "A la décima plaga: la muerte de los primogénitos", "isCorrect": false }
+        ],
+        "explanation": "Sesión 13: la primera copa corresponde a la sexta plaga, la segunda y tercera a la primera plaga, y la cuarta y quinta a la novena plaga.",
+        "sessions": [13]
+      },
+      {
+        "type": "MULTIPLE_CHOICE",
+        "prompt": "¿Qué grupos se lamentan por la caída de Babilonia en Ap. 18:9-20? Seleccione todos los que correspondan.",
+        "options": [
+          { "text": "Los reyes", "isCorrect": true },
+          { "text": "Los 24 ancianos", "isCorrect": false },
+          { "text": "Los mercaderes", "isCorrect": true },
+          { "text": "Los sacerdotes del templo", "isCorrect": false },
+          { "text": "Los capitanes y marineros", "isCorrect": true }
+        ],
+        "explanation": "Sesión 14: la lamentación por la caída de Babilonia la expresan los reyes (18:9-10), los mercaderes (18:11-17a) y los capitanes y marineros (18:17b-20).",
+        "sessions": [14]
+      },
+      {
+        "type": "SINGLE_CHOICE",
+        "prompt": "Cuando Juan intenta adorar al ángel (Ap. 19:10), ¿qué énfasis subraya el bosquejo?",
+        "options": [
+          { "text": "Que Juan debe escribir lo que dijeron los siete truenos", "isCorrect": false },
+          { "text": "Que Juan debe comer el librito", "isCorrect": false },
+          { "text": "Que se debe adorar a Dios, no a sus siervos", "isCorrect": true },
+          { "text": "Que Juan debe medir el templo y el altar", "isCorrect": false }
+        ],
+        "explanation": "Sesión 15: el aliento a Juan y a sus lectores incluye adorar a Dios y no a sus siervos (cf. Ap. 22:8-9) y aferrarse al testimonio de Jesús.",
+        "sessions": [15]
+      },
+      {
+        "type": "SINGLE_CHOICE",
+        "prompt": "¿Qué rasgo distingue al posmilenialismo según el bosquejo?",
+        "options": [
+          { "text": "Cristo regresa antes de un milenio de mil años literales", "isCorrect": false },
+          { "text": "La Iglesia debe lograr dominar el mundo como preparación para el regreso de Cristo", "isCorrect": true },
+          { "text": "Cristo inaugura con su regreso un largo período en que los santos reinan con él sobre las naciones", "isCorrect": false },
+          { "text": "El milenio no es un período de mil años literales, sino un período de tiempo significativo", "isCorrect": false }
+        ],
+        "explanation": "Sesión 16: el posmilenialismo sostiene que la Iglesia reina espiritualmente hoy y debe dominar el mundo como preparación para el regreso de Cristo; las demás opciones describen el premilenialismo dispensacionalista, el histórico y el amilenialismo.",
+        "sessions": [16]
+      },
+      {
+        "type": "TRUE_FALSE",
+        "prompt": "Según el bosquejo de la Sesión 17, en el juicio final se abre un único libro: el libro de la vida.",
+        "options": [
+          { "text": "Verdadero", "isCorrect": false },
+          { "text": "Falso", "isCorrect": true }
+        ],
+        "explanation": "Sesión 17: el bosquejo habla de dos libros en el juicio final, el libro de las obras y el libro de la vida.",
+        "sessions": [17]
+      },
+      {
+        "type": "SINGLE_CHOICE",
+        "prompt": "¿Qué pasajes se relacionan con el río de la vida de la nueva Jerusalén (Ap. 22:1-2)?",
+        "options": [
+          { "text": "Is. 51:17-22 y Jer. 25:15", "isCorrect": false },
+          { "text": "Éx. 28:17-20 y 39:8-14", "isCorrect": false },
+          { "text": "Gén. 2:10 y Ez. 47:1-9", "isCorrect": true },
+          { "text": "Dt. 4:24 y Heb. 12:29", "isCorrect": false }
+        ],
+        "explanation": "Sesión 18: el río de la vida remite a Gén. 2:10, Ez. 47:1-9, Zac. 14:8 y Jl. 3:18.",
+        "sessions": [18]
+      }
+    ]
+  }
+}

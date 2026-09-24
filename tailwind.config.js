@@ -1,20 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class"],
-  content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-  ],
-  prefix: "",
+  content: ["./src/**/*.{ts,tsx}"],
   theme: {
     container: {
       center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+      padding: { DEFAULT: "1rem", md: "2rem" },
+      screens: { "2xl": "1280px" },
     },
     extend: {
       colors: {
@@ -23,6 +14,7 @@ module.exports = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        surface: "hsl(var(--surface))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -30,10 +22,6 @@ module.exports = {
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
@@ -43,74 +31,62 @@ module.exports = {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
         },
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Custom colors from design reference
-        "tertiary-fixed-dim": "#ffb691",
-        "surface-variant": "#e0e3e5",
-        "on-tertiary-container": "#f59561",
-        "tertiary": "#4c1d00",
-        "surface-dim": "#d8dadc",
-        "on-error-container": "#93000a",
-        "surface-container-lowest": "#ffffff",
-        "on-background": "#191c1e",
-        "surface-container": "#eceef0",
-        "primary-fixed": "#d6e3ff",
-        "on-primary-fixed-variant": "#0e4686",
-        "on-primary-container": "#83aef5",
-        "error": "#ba1a1a",
-        "outline-variant": "#c3c6d2",
-        "inverse-primary": "#a9c7ff",
-        "inverse-on-surface": "#eff1f3",
-        "error-container": "#ffdad6",
-        "tertiary-fixed": "#ffdbcb",
-        "on-secondary-fixed-variant": "#2e4b57",
-        "on-tertiary-fixed-variant": "#773305",
-        "on-tertiary-fixed": "#341100",
-        "secondary-fixed": "#c9e7f7",
-        "on-surface-variant": "#424750",
-        "surface-tint": "#305ea0",
-        "on-error": "#ffffff",
-        "surface-container-low": "#f2f4f6",
-        "on-primary": "#ffffff",
-        "surface-container-highest": "#e0e3e5",
-        "outline": "#737781",
-        "on-secondary-fixed": "#001f2a",
-        "on-secondary": "#ffffff",
-        "primary-fixed-dim": "#a9c7ff",
-        "primary-container": "#004080",
-        "on-secondary-container": "#4a6774",
-        "on-tertiary": "#ffffff",
-        "surface": "#f8f9fb",
-        "secondary-container": "#c6e4f4",
-        "on-surface": "#191c1e",
-        "tertiary-container": "#6f2d00",
-        "on-primary-fixed": "#001b3d",
-        "inverse-surface": "#2d3133",
-        "surface-container-high": "#e6e8ea",
-        "surface-bright": "#f8f9fb",
-        "secondary-fixed-dim": "#adcbda",
-        "brand-navy": "#002a58"
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        // Paleta institucional (tas.edu)
+        tas: {
+          ink: "#1F1B13",
+          cream: "#FFF8F1",
+          paper: "#FBF8F3",
+          stone: "#EAE1D4",
+          sand: "#F3EDE4",
+          taupe: "#6B6356",
+          crimson: "#CD1543",
+          "crimson-dark": "#A50F35",
+          navy: "#00243A",
+          "navy-deep": "#051721",
+          "navy-mid": "#003155",
+          blue: "#004990",
+          gold: "#F2AF00",
+          "gold-soft": "#FAF0CE",
+        },
+      },
+      fontFamily: {
+        serif: ["var(--font-serif)", "Georgia", "serif"],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+      },
+      fontSize: {
+        "2xs": ["0.6875rem", { lineHeight: "1rem" }],
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
-        xl: "0.75rem",
-        full: "9999px"
       },
-      fontFamily: {
-        headline: ["Plus Jakarta Sans", "sans-serif"],
-        body: ["Plus Jakarta Sans", "sans-serif"],
-        label: ["Plus Jakarta Sans", "sans-serif"]
+      boxShadow: {
+        soft: "0 1px 2px rgba(31,27,19,0.04), 0 2px 8px rgba(31,27,19,0.04)",
+        lift: "0 2px 4px rgba(31,27,19,0.04), 0 12px 32px -8px rgba(31,27,19,0.12)",
       },
       keyframes: {
+        "fade-in": { from: { opacity: "0" }, to: { opacity: "1" } },
+        "fade-up": {
+          from: { opacity: "0", transform: "translateY(6px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -119,17 +95,31 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "fade-in": {
-          "0%": { opacity: "0" },
-          "100%": { opacity: "1" }
-        }
       },
       animation: {
+        "fade-in": "fade-in 0.2s ease-out",
+        "fade-up": "fade-up 0.3s ease-out",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fade-in 0.5s ease-out"
       },
+      typography: ({ theme }) => ({
+        tas: {
+          css: {
+            "--tw-prose-body": theme("colors.tas.ink"),
+            "--tw-prose-headings": theme("colors.tas.navy"),
+            "--tw-prose-links": theme("colors.tas.blue"),
+            "--tw-prose-bold": theme("colors.tas.ink"),
+            "--tw-prose-bullets": theme("colors.tas.taupe"),
+            "--tw-prose-counters": theme("colors.tas.taupe"),
+            "--tw-prose-quotes": theme("colors.tas.navy"),
+            "--tw-prose-quote-borders": theme("colors.tas.crimson"),
+            "--tw-prose-hr": theme("colors.tas.stone"),
+            "--tw-prose-th-borders": theme("colors.tas.stone"),
+            "--tw-prose-td-borders": theme("colors.tas.stone"),
+          },
+        },
+      }),
     },
   },
-  plugins: [require("tailwindcss-animate")],
-}
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+};

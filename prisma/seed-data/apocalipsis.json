@@ -1,0 +1,641 @@
+{
+  "course": {
+    "title": "Las Buenas Nuevas del Apocalipsis",
+    "subtitle": "Esquemas de las sesiones y guías de trabajo para un estudio del libro de Apocalipsis en dieciocho sesiones",
+    "author": "Rev. Dr. Rod Whitacre",
+    "term": "Verano 2024",
+    "description": "Este curso recorre el libro de Apocalipsis en dieciocho sesiones, desde la introducción de Juan y la visión inicial del Cristo exaltado hasta la nueva Jerusalén y el epílogo. Cada sesión ofrece un bosquejo del pasaje, con referencias al Antiguo Testamento y a otros textos bíblicos, y una guía de estudio con preguntas de comprensión y de aplicación personal y comunitaria.\n\nEl material parte de una aproximación a la Escritura como revelación de una Persona, un Plan y un Modelo de vida, y compara los enfoques preterista, historicista, futurista e idealista. Presta atención a la literatura apocalíptica, a la tensión entre el «ya» y el «todavía no», a la estructura de sellos, trompetas, copas e interludios, y a las principales posiciones sobre el milenio, con el fin de leer el Apocalipsis como un mensaje dirigido a la Iglesia del siglo I, a quienes vivirán cuando Cristo vuelva y a la Iglesia de hoy.",
+    "learningOutcomes": [
+      "Distinguir los enfoques preterista, historicista, futurista e idealista de interpretación del Apocalipsis y evaluar sus alcances.",
+      "Reconocer los rasgos de la literatura apocalíptica y la tensión escatológica del «ya y todavía no» en el texto.",
+      "Explicar la estructura de las cartas a las siete iglesias a la luz de los pactos de vasallaje del Antiguo Oriente Próximo.",
+      "Describir la relación entre los sellos, las trompetas, las copas y los interludios, así como sus paralelos con las plagas del Éxodo.",
+      "Comparar las principales posiciones sobre el milenio (premilenialismo dispensacionalista e histórico, posmilenialismo y amilenialismo) a partir de Apocalipsis 19-20.",
+      "Aplicar el mensaje del Apocalipsis a la vida personal y a la de la Iglesia en el contexto actual."
+    ],
+    "copyright": "Las Buenas Nuevas del libro de Apocalipsis: Esquemas de las sesiones y guías de trabajo. Copyright © 2015 por Rodney A. Whitacre. Publicado por Whitchurch Publishing, 311 Eleventh St., Ambridge, PA 15003, 1-800-874-8754, www.tsm.edu/espanol. Todos los derechos reservados. Se concede permiso para reproducir estas páginas para uso personal o para su uso en una clase de la iglesia o en un estudio bíblico de un grupo pequeño. Cualquier otro uso de estas páginas, incluyendo la reproducción o distribución en cualquier forma, requiere el permiso por escrito de Whitchurch Publishing."
+  },
+  "frontMatter": {
+    "sectionBySection": "### I. Una introducción al libro, al mensajero y a Dios\n\n- **1.** Ap. 1:1-8 — Introducción\n\n### II. El Señor Jesús exaltado y su mensaje a las siete iglesias\n\n- **2.** Ap. 1:9-20 — Una visión del Señor Jesús\n- **3.** Ap. 2-3 — El Señor en medio de su Iglesia\n\n### III. Una visión del cielo: la adoración y la adquisición de un pueblo, por el Cordero\n\n- **4.** Ap. 4-5 — El cielo: el trono, el Cordero y el rollo\n\n### IV. Cuatro puntos importantes para orientarnos\n\n- **5.** Ap. 6 — Los seis sellos\n- **6.** Ap. 7 — Primer interludio\n  - Ap. 7:1-8: Los 144.000\n  - Ap. 7:9-14: La gran multitud\n- **7.** Ap. 8:1 — El séptimo sello\n\n### V. Las siete trompetas: un «primer plano» del texto\n\n- **8.** Ap. 8-9 — Las siete trompetas, incluidos los dos primeros ayes\n- **9.** Ap. 10-11 — Segundo interludio\n  - Ap. 10: El ángel con el pequeño rollo\n\n### VI. Una visión central del gran conflicto\n\n- **10.** Ap. 12-13 — Un relato antiguo interpreta la historia\n  - Ap. 12: La mujer, el niño y el dragón\n  - Ap. 13: Las dos bestias\n- **11.** Ap. 14 — Tercer interludio\n  - Ap. 14:1-5: El Cordero y los 144.000\n  - Ap. 14:6-20: El mensaje de los tres [ángeles]\n\n### VII. Las siete copas: continuación del «primer plano» del sexto sello\n\n- **12.** Ap. 15-16 — Las siete copas: el tercer ay\n\n### VIII. La derrota venidera de los enemigos de Dios\n\n- **13.** Ap. 17-18 — La caída de Babilonia\n- **14.** Ap. 19:1-10 — Cuarto interludio: regocijo en el cielo por la caída de Babilonia\n- **15.** Ap. 19:11-21 — El Rey de reyes y la derrota de las dos bestias\n- **16.** Ap. 20:1-6 — El milenio: penúltimo reino o quinto interludio\n- **17.** Ap. 20:7-10 — La derrota de Satanás en la última batalla\n\n### IX. El juicio final y la morada de Dios con su pueblo\n\n- **18.** Ap. 20:11-15 — Los libros son abiertos: ¿Quiénes son los herederos?\n- **19.** Ap. 21:1-22:5 — Cielo nuevo, tierra nueva y la nueva Jerusalén: ¿Qué heredarán los herederos?\n\n### X. Promesas y advertencias finales\n\n- **20.** Ap. 22:6-21 — Epílogo",
+    "diagramNotes": "El diagrama presenta el Apocalipsis como una secuencia de visiones en la que las series de sellos, trompetas y copas se entrelazan con cinco interludios.\n\n#### Apertura (caps. 1-5)\n\n- Introducción al libro, al autor y a Dios (cap. 1)\n- Visión del Cristo celestial (cap. 1)\n- El mensaje de Cristo a su Iglesia (caps. 2-3)\n- Visión del cielo: el trono, el Cordero y el libro (caps. 4-5)\n\n#### Sellos (cap. 6)\n\n- Sellos 1-5 (cap. 6)\n- Sello 6: dentro de él se abren, como acercamiento en «primer plano», las trompetas y las copas\n- **[Interludio 1]** (cap. 7)\n- Sello 7: «se hizo silencio en el cielo» (8:1)\n\n#### Trompetas (caps. 8-9)\n\n- Trompetas 1-4\n- Trompeta 5: primer ay\n- Trompeta 6: segundo ay\n- **[Interludio 2]** (caps. 10-11)\n- Trompeta 7: tercer ay; «él reinará por los siglos de los siglos» (11:15)\n\n#### Visión central del conflicto (caps. 12-14)\n\n- Caps. 12-13: visión central del conflicto e introducción de los enemigos: el dragón y las dos bestias\n- **[Interludio 3]** (cap. 14): unos ángeles anuncian el juicio de Dios\n\n#### Copas / plagas (caps. 15-16)\n\n- Copas 1-5\n- Copa 6: las dos bestias reúnen a los reyes para la batalla\n- Copa 7: «¡Hecho está!»; Babilonia es dividida en tres (16:17)\n\n#### Derrota de los enemigos (caps. 17-20)\n\n- Caps. 17-18: caída de Babilonia\n- **[Interludio 4]** (cap. 19)\n- Cap. 19: derrota de los reyes y las dos bestias\n- **[Interludio 5]** (cap. 20): penúltimo reino de Cristo o interludio (el milenio)\n- Cap. 20: derrota del dragón / Satanás\n\n#### Consumación (caps. 20-22)\n\n- Juicio final: libros abiertos (cap. 20)\n- Nuevos cielos, tierra nueva, nueva Jerusalén (caps. 21-22)\n- Epílogo (cap. 22)",
+    "resources": [
+      {
+        "category": "Comentarios – Más largos",
+        "items": [
+          {
+            "citation": "G. K. Beale, El libro del Apocalipsis (Eerdmans, 1999).",
+            "note": null
+          },
+          {
+            "citation": "G. R. Beasley-Murray, The Book of Revelation (1974, reimpresión Wipf and Stock, 2010).",
+            "note": null
+          },
+          {
+            "citation": "Grant Osborne, Apocalipsis: Versículo a versículo (Baker, 2002).",
+            "note": null
+          },
+          {
+            "citation": "S. S. Smalley, The Revelation to John (InterVarsity, 2005).",
+            "note": null
+          }
+        ]
+      },
+      {
+        "category": "Comentarios – Más cortos",
+        "items": [
+          {
+            "citation": "C. S. Keener, Revelation: The NIV Application Commentary (Zondervan, 2000).",
+            "note": null
+          },
+          {
+            "citation": "R. H. Mounce, The Book of Revelation (Eerdmans, revisado en 1977).",
+            "note": null
+          },
+          {
+            "citation": "M. Wilcock, The Message of Revelation (InterVarsity, reimpresión de 1984).",
+            "note": null
+          }
+        ]
+      },
+      {
+        "category": "Breve comentario comparativo",
+        "items": [
+          {
+            "citation": "S. Gregg, Revelation: Four Views (Thomas Nelson, revisado y actualizado en 2013).",
+            "note": null
+          }
+        ]
+      },
+      {
+        "category": "Preterista",
+        "items": [
+          {
+            "citation": "D. Chilton, Days of Vengeance (Dominion Press, 1987, reimpreso en 2006).",
+            "note": null
+          }
+        ]
+      },
+      {
+        "category": "Dispensacionalista",
+        "items": [
+          {
+            "citation": "J. MacArthur, Porque el tiempo sí está cerca (Moody, 2007).",
+            "note": null
+          },
+          {
+            "citation": "J. F. Walvoord, The Revelation of Jesus Christ (Moody, revisado en 2011).",
+            "note": null
+          },
+          {
+            "citation": "W. W. Wiersbe, Be Victorious (Moody, revisado en 2008).",
+            "note": null
+          }
+        ]
+      },
+      {
+        "category": "Estudios sobre el milenialismo",
+        "items": [
+          {
+            "citation": "C. Blomberg y S. W. Chung, A Case for Historic Premillennialism (Baker, 2009).",
+            "note": null
+          },
+          {
+            "citation": "D. K. Campbell y J. L. Townsend, The Coming Millennial Kingdom: A Case for Premillennial Interpretation (Kregel, 1997).",
+            "note": null
+          },
+          {
+            "citation": "K. L. Gentry, He Shall Have Dominion: A Postmillennial Eschatology (The Nicene Council, 2009).",
+            "note": null
+          },
+          {
+            "citation": "K. Riddlebarger, A Case for Amillennialism (Baker, 2003).",
+            "note": null
+          }
+        ]
+      },
+      {
+        "category": "Otros estudios",
+        "items": [
+          {
+            "citation": "A. A. Hoekema, La Biblia y el futuro (Eerdmans, 1994).",
+            "note": "Una muy buena guía de la mayoría de los principales temas relacionados con las enseñanzas bíblicas sobre los acontecimientos futuros."
+          },
+          {
+            "citation": "C. A. Blaising y D. L. Bock, Progressive Dispensationalism (Baker, 2000).",
+            "note": "Una útil introducción al dispensacionalismo y a la evolución reciente de esta tradición. Los autores son dispensacionalistas."
+          },
+          {
+            "citation": "V. S. Poythress, Understanding Dispensationalists (P. and R. Publishing, 1993).",
+            "note": "Una útil visión general y crítica de un no-dispensacionalista en un tono irenista. Está disponible como libro y también gratis en la web en http://www.frame-poythress.org/poythress_books.htm."
+          }
+        ]
+      }
+    ]
+  },
+  "sessions": [
+    {
+      "number": 1,
+      "title": "Descifrando el Apocalipsis",
+      "passage": null,
+      "outlineMarkdown": "### I. El reto del Apocalipsis\n\n- **A.** Fascinación y miedo\n- **B.** Simbolismo impactante\n\n### II. Una aproximación a la interpretación de la Escritura\n\n- **A.** Persona – La revelación de Dios\n- **B.** Plan – La revelación del plan de Dios en la historia y más allá de ella\n- **C.** Modelo – La revelación del modelo de vida en sintonía con Dios\n\n### III. Aproximaciones a la interpretación del Apocalipsis\n\n- **A.** Cinco enfoques básicos\n  - **1.** «Confrontación en lugar de predicción»\n  - **2.** Preterista: se centra en el siglo I d.C.\n  - **3.** Historicista: acontecimientos a lo largo de la historia\n  - **4.** Futurista: habla, principalmente, sobre el futuro\n  - **5.** Idealista: son símbolos relevantes a lo largo de la historia\n- **B.** Evaluación de estos enfoques\n  - **1.** El Gran Código\n  - **2.** Historia\n    - **a.** Siglo I\n    - **b.** Segunda Venida\n\n### IV. Cuatro puntos importantes para orientarnos\n\n- **A.** La naturaleza de la literatura apocalíptica\n  - **1.** Trasfondo\n  - **2.** Características\n  - **3.** Comparación con el Apocalipsis\n- **B.** Dos visiones de la historia\n  - **1.** Dos eras\n  - **2.** Superposición de estas eras: el ya y el todavía no\n  - **3.** Acercamiento profético\n- **C.** Profecía predictiva vs. cumplimiento de patrones\n- **D.** Relación entre las imágenes apocalípticas y la historia\n\n### V. Un mensaje para tres grupos de lectores\n\n- **A.** Quienes vivieron en el siglo I\n- **B.** Quienes vivirán cuando Cristo vuelva\n- **C.** Nosotros hoy",
+      "studyGuide": [
+        {
+          "part": null,
+          "questions": [
+            "¿En qué consiste el enfoque «Persona, Plan, Patrón»?",
+            "¿Cuál es la diferencia entre el enfoque futurista y el idealista?",
+            "En sus propias palabras, ¿qué es el Gran Código expuesto por el Dr. Whitacre?",
+            "Dé un ejemplo bíblico del acercamiento profético.",
+            "¿Para qué se usa la descripción poética en el Apocalipsis?",
+            "¿Por qué el mensaje del Apocalipsis es también para usted?"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Introducción de Juan al libro, al mensajero y a Dios",
+      "passage": "Ap. 1:1-8",
+      "outlineMarkdown": "### I. Prólogo del Apocalipsis (1:1-3)\n\n- **A.** Introducción al mensaje (1:1)\n  - **1.** Revelación de Jesucristo – Apocalipsis (ἀποκάλυψις, apokalupsis)\n  - **2.** Cadena de mando: Dios, Jesucristo, el ángel, el esclavo (δοῦλος, doulos)\n  - **3.** «Pronto»: acercamiento profético\n- **B.** Presentación del mensajero (1:2)\n- **C.** Proclamación de la bendición (1:3)\n\n### II. Dirección y saludo (1:4-8)\n\n- **A.** El lado atemporal de la escatología: Dios eterno (1:4)\n  - **1.** La plenitud de la Iglesia\n  - **2.** El Dios eterno (cf. 1:8, 17; 4:8; 16:5)\n  - **3.** Los siete espíritus (cf. Is. 11:2; Zac. 4)\n- **B.** La tensión escatológica: el «ya y todavía no» visto en Jesús\n  - **1.** «Ya» (1:5-6)\n    - **a.** Tres atributos relevantes para la audiencia de Juan (1:5)\n      - **①** El testigo fiel\n      - **②** El primogénito de entre los muertos\n      - **③** El soberano de los reyes de la tierra\n    - **b.** Ha resuelto el problema del pecado (1:5b)\n    - **c.** Ha formado un nuevo pueblo (1:6)\n  - **2.** «Todavía no» (1:7)\n    - **a.** Daniel 7:13\n    - **b.** Zacarías 12:10\n- **C.** El Dios eterno (1:8)\n  - **1.** Alfa y Omega (Ap. 21:6; 22:13)\n  - **2.** La presencia del Eterno",
+      "studyGuide": [
+        {
+          "part": null,
+          "questions": [
+            "¿Cuántos testigos fieles hay? Justifique su respuesta.",
+            "¿Cómo se ve la eternidad de Dios en este pasaje?",
+            "¿Qué características describen al nuevo pueblo de Dios?",
+            "¿Cómo puede ver el Evangelio en Apocalipsis 1:5-6?",
+            "¿Cómo puede relacionar y aplicar a su vida el concepto de santidad y de eternidad de Dios?",
+            "¿Por qué el mensaje del Apocalipsis es también para usted?"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "La visión inicial del Cristo exaltado",
+      "passage": "Ap. 1:9-20",
+      "outlineMarkdown": "### I. El llamado de Juan a escribir\n\n- **A.** Descripción de Juan y de los primeros cristianos (1:9-11)\n  - **1.** Humildad\n  - **2.** Tribulación, reino y paciencia\n- **B.** La visión en el día del Señor (1:10)\n\n### II. La visión del Cristo exaltado (1:12-16)\n\n- **A.** Los siete candeleros de oro\n- **B.** El Cristo exaltado\n  - **1.** La descripción combina imágenes utilizadas para Dios y para un ángel poderoso en Daniel y en otros pasajes (Dn. 7:9; 10:5-6)\n    - **a.** «Uno como el hijo del hombre» (Dn. 7:13)\n    - **b.** Túnica y cinto (Éx. 28:4; Ez. 9:2, 11; Dn. 10:5-6)\n    - **c.** Cabeza y cabello (Dn. 7:9)\n    - **d.** Ojos (Dn. 10:6; Eclesiástico 23:19)\n    - **e.** Pies (Dn. 10:6; Ez. 1:7)\n    - **f.** Voz (Ez. 43:2)\n    - **g.** Siete estrellas (Dn. 12:3; Job 38:7)\n    - **h.** Espada de dos filos (Is. 49:2; 11:4)\n    - **i.** Rostro (Dn. 10:6; Sal. 84:11; Mt. 17:2)\n  - **2.** Está presente entre los suyos\n\n### III. La tensión escatológica: el «ya y todavía no» visto en Jesús\n\n- **A.** Respuesta de Juan a la visión\n  - **1.** Caer de bruces (cf. Ez. 1:28; Dn. 8:17)\n  - **2.** Terror (cf. Is. 6:5; Dn. 7:28)\n  - **3.** Ester 4:11\n- **B.** La autodescripción de Jesús (1:17b-18)\n  - **1.** Su eternidad\n  - **2.** Su vida\n  - **3.** Su autoridad\n- **C.** El llamado de Jesús a Juan para que escriba (1:19)\n- **D.** La interpretación de Jesús sobre los candeleros y las estrellas (1:20)\n  - **1.** Candeleros: iglesias\n  - **2.** Estrellas: ángeles de las iglesias (cf. Mt. 18:10; Dn. 10)",
+      "studyGuide": [
+        {
+          "part": null,
+          "questions": [
+            "¿Cómo se describe Juan a sí mismo?, ¿qué términos usa para describirse a sí mismo?",
+            "¿Por qué se utilizan imágenes de ángeles para hablar de Cristo?",
+            "¿Cuál de estas imágenes le impacta más?, ¿por qué?",
+            "Profundice en una de las características que usa Jesús para describirse a sí mismo."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Mensaje de Jesús a las siete iglesias – Parte 1",
+      "passage": "Ap. 2:1-7",
+      "outlineMarkdown": "### I. Introducción a las siete cartas\n\n- **A.** Cartas únicas\n- **B.** Forma de pacto/tratado del Antiguo Oriente Próximo (Imperio hitita): tratado entre vasallos y soberanos o pacto de vasallaje\n  - **1.** Forma del pacto/tratado\n    - **a.** Introducción del Gran Rey\n    - **b.** Prólogo histórico\n    - **c.** Estipulaciones del pacto\n    - **d.** Depósito de una copia escrita\n    - **e.** Requisito de lectura ocasional\n    - **f.** Testigos\n    - **g.** Maldiciones y bendiciones\n  - **2.** Las siete cartas\n    - **a.** Cristo se presenta a sí mismo y se identifica con su actividad salvadora\n    - **b.** Narración de la historia de cada iglesia en particular\n    - **c.** Llamado a tomar medidas (arrepentimiento y/o perseverancia)\n    - **d.** Anuncio de maldiciones y bendiciones\n- **C.** Interacción entre la comunidad y el individuo\n  - **1.** Éfeso: comunidad mixta (2:4)\n  - **2.** Esmirna: comunidad fiel\n  - **3.** Pérgamo: comunidad mixta (2:14)\n  - **4.** Tiatira: comunidad mixta, con unos pocos fieles (2:24)\n  - **5.** Sardis: comunidad infiel, con unos pocos fieles (3:4)\n  - **6.** Filadelfia: comunidad fiel\n  - **7.** Laodicea: comunidad infiel, pero con un llamado a los individuos (3:20)\n\n### II. Carta a la Iglesia de Éfeso – Ortodoxia sin amor (2:1-7)\n\n- **A.** Introducción (2:1)\n  - **1.** Cristo sostiene las siete estrellas (cf. 1:16)\n  - **2.** Cristo camina entre los candeleros (cf. 1:12-13)\n- **B.** Historia (2:2-3)\n  - **1.** El contexto de Éfeso (cf. Hch. 19)\n  - **2.** Elogio de Cristo\n- **C.** Llamado a tomar medidas (2:4-5a)\n  - **1.** Perdieron su primer amor\n  - **2.** Llamado al arrepentimiento\n- **D.** Bendiciones y maldiciones (2:5b-7)\n  - **1.** Advertencia (cf. Mt. 7:23)\n  - **2.** Elogio (cf. 2:14-15)\n  - **3.** Promesa",
+      "studyGuide": [
+        {
+          "part": "a",
+          "questions": [
+            "¿Por qué no escribir una sola carta para las siete iglesias?, ¿qué nos muestra sobre Dios el hecho de que cada carta haga alusión a las circunstancias específicas de cada ciudad?",
+            "¿Cuáles cree que son los problemas de la Iglesia latinoamericana hoy?",
+            "¿Cuál es la antigua estructura que siguen estas cartas?",
+            "¿Por qué utiliza Dios este tipo de estructura en las cartas?",
+            "¿Cuál es la importancia de los requisitos de copiar y leer que se incluían en los tratados de vasallaje?",
+            "¿Qué significa, en el contexto del Apocalipsis, una «comunidad mixta»?",
+            "¿En qué sentido están las cartas vigentes para la Iglesia de hoy?",
+            "¿Cree que es posible comparar el contexto de la Iglesia de Éfeso con la actualidad?, ¿por qué?"
+          ]
+        },
+        {
+          "part": "b",
+          "questions": [
+            "En sus propias palabras, ¿cuáles eran los problemas de la Iglesia de Éfeso?",
+            "¿Qué debía hacer la Iglesia de Éfeso para enderezar su camino (¿secuencia?)?",
+            "¿Cuál sería la consecuencia para la Iglesia de Éfeso si se mantenía como estaba?",
+            "¿Qué significa que Jesús sostiene las siete estrellas y camina entre los siete candeleros?",
+            "¿Por qué la idolatría e inmoralidad que se relaciona con los nicolaítas podría estar relacionada con una decisión política? ¿Qué opciones políticas actuales tientan a la Iglesia a olvidar a su Dios?",
+            "¿Por qué se asocia el árbol de la vida con la Cruz?",
+            "Jesús tomó elementos culturales de Éfeso para que el mensaje fuera mejor comprendido por la Iglesia de este lugar. Mencione dos aspectos de su contexto cultural que pueden ser usados para iluminar el mensaje del Evangelio.",
+            "¿Cómo aplica la enseñanza de la carta a la Iglesia de Éfeso a su vida?"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Mensaje de Jesús a las siete iglesias – Parte 2",
+      "passage": "Ap. 2:8-29",
+      "outlineMarkdown": "### I. Carta a la Iglesia de Esmirna – El sufrimiento fiel (2:8-11)\n\n- **A.** Introducción (2:8)\n  - **1.** Cristo es el primero y el último (cf. 1:17)\n  - **2.** Cristo murió y resucitó (cf. 1:18)\n- **B.** Historia (2:9-10)\n  - **1.** Pobreza\n  - **2.** Calumnia (cf. Jn. 8; Ro. 2:25-29)\n  - **3.** Prisión (cf. Dn. 1:12)\n  - **4.** Muerte\n- **C.** Llamado a tomar medidas (2:10)\n  - **1.** No tengan temor\n  - **2.** Sean fieles hasta la muerte (cf. Martirio de Policarpo, obispo de Esmirna)\n  - **3.** Corona de vida (cf. Jn. 19:2; Mt. 27:29; Mr. 15:17)\n- **D.** Promesa de Cristo al que venciere (2:11)\n  - **1.** No sufrir la segunda muerte (cf. 21:8; 20:10, 14)\n  - **2.** Ausencia de maldiciones y advertencias\n\n### II. Carta a la Iglesia de Pérgamo – Permanecer fiel sin transigir (2:12-17)\n\n- **A.** Introducción – La espada aguda de dos filos (2:12; cf. 1:16; 19:13, 15)\n- **B.** Historia (2:13-15)\n  - **1.** El trono de Satanás (2:13)\n  - **2.** Balaam (2:14; cf. Núm. 22-24; 25:1-2; 31:16)\n  - **3.** Los nicolaítas (2:15; cf. Hch. 6:5)\n- **C.** Respuesta – Arrepentimiento (2:16a)\n- **D.** Bendiciones y maldiciones (2:16b-17)\n  - **1.** La espada de su boca\n  - **2.** El maná escondido (cf. Éx. 16:33-34; Dt. 18:15; Jn. 6)\n  - **3.** La piedrecita blanca\n  - **4.** El nuevo nombre\n\n### III. Carta a la Iglesia en Tiatira – Amor y servicio fiel, pero tolerancia a la inmoralidad (2:18-29)\n\n- **A.** Introducción (2:18)\n  - **1.** Cristo con ojos como llamas de fuego (cf. 1:14; 2:23)\n  - **2.** Cristo con pies como de bronce bruñido (cf. 1:15)\n- **B.** Historia (2:19-21)\n  - **1.** Aumentar las buenas obras\n  - **2.** Jezabel (1 R. 16:29-32; 19:1-2; 2 R. 9:22)\n- **C.** Respuesta (2:22-25)\n  - **1.** Arrepentimiento de las obras de Jezabel\n  - **2.** Mantenerse firmes\n- **D.** Promesa (2:22-25)\n  - **1.** Autoridad sobre las naciones (cf. Sal. 2:8-9)\n  - **2.** La estrella de la mañana",
+      "studyGuide": [
+        {
+          "part": "a",
+          "questions": [
+            "¿Qué importancia tiene que Jesús sea «el primero y el postrero» (Ap. 2:8) para su día a día?",
+            "¿Cómo se puede ser pobre siendo rico (Ap. 2:9)?",
+            "De acuerdo con el Dr. Whitacre, ¿cuáles son dos interpretaciones para la expresión «tendréis tribulación por diez días»?",
+            "¿Cómo es la corona de la vida descrita en Ap. 2:10?",
+            "De acuerdo con el Dr. Whitacre, ¿cuáles son las dos posibles explicaciones para el trono de Satanás?",
+            "¿Qué representa la espada en Ap. 2:12?",
+            "¿Por qué Balaam es un referente para hablar de los falsos profetas?",
+            "De acuerdo con el Dr. Whitacre, ¿qué puede significar la piedrecita blanca (Ap. 2:17)?",
+            "¿Por qué cree usted que Jesús se presenta a la iglesia de Pérgamo sosteniendo una espada?"
+          ]
+        },
+        {
+          "part": "b",
+          "questions": [
+            "¿Cuál es la sugerencia del Dr. Whitacre para el lector que se encuentra con dos posibles interpretaciones de una misma imagen?",
+            "¿Qué significa que Jesús tenga «ojos como llamas de fuego» (Ap. 2:18)?",
+            "Las iglesias de Asia Menor estaban bajo el dominio del emperador romano, por lo que las tentaciones que vivía la Iglesia de esa época estaban marcadas por el influjo cultural romano. ¿Cuáles cree usted que son las tentaciones que trae la vida cultural de su comunidad hoy?",
+            "De acuerdo con el Dr. Whitacre, ¿cómo puede interpretarse la imagen de Jezabel?",
+            "¿Cuáles son las diferencias entre la imagen de Balaam y la de Jezabel?",
+            "En resumen, ¿cuál es el llamado que hace Jesús a la Iglesia de Tiatira?",
+            "La Iglesia ha vivido presiones desde su inicio; las iglesias de Asia Menor sufrieron por los nicolaítas, los Balaam y las Jezabel. ¿Cuáles cree usted que son las presiones que sufre su comunidad hoy?"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Mensaje de Jesús a las siete iglesias – Parte 3",
+      "passage": "Ap. 3",
+      "outlineMarkdown": "### I. Carta a la Iglesia de Sardis – Reputación alejada de la realidad, pero también un remanente (3:1-6)\n\n- **A.** Introducción (3:1a)\n  - **1.** Cristo tiene los siete espíritus de Dios (cf. 1:4)\n    - **a.** Referencia posible a los siete arcángeles (Enoc 20:1-7)\n    - **b.** Probablemente era el Espíritu Santo (Is. 11:2; Zac. 4:2, 10; Jn. 15:26)\n  - **2.** Cristo tiene las siete estrellas (cf. 1:16, 20)\n- **B.** Historia (3:1b-2)\n  - **1.** Reputación alejada de la realidad\n  - **2.** No vigilante, cercana a la muerte, con obras no terminadas\n- **C.** Respuesta (3:3-4)\n  - **1.** Recuerda y despierta\n  - **2.** Amenaza de venir como un ladrón (cf. 16:15; Mt. 24:42-44; Lc. 12:39-40; 1 Tes. 5:2; 2 P. 3:10)\n- **D.** Maldiciones y bendiciones (3:3-6)\n  - **1.** Remanente con vestiduras sin mancha\n  - **2.** Vestiduras blancas (cf. 7:14; 19:8)\n  - **3.** Libro de la vida\n    - **a.** Peligro de ser borrado (cf. 13:8; 17:8; 20:12, 15; Éx. 32:32-33; Sal. 69:28)\n    - **b.** Aliento a quienes tienen su nombre en el libro (21:27; Dn. 12:1; Lc. 10:20; Fil. 4:3)\n  - **4.** Cristo confesará su nombre ante su Padre y sus ángeles (cf. Mt. 10:32-33; Mr. 8:38; 2 Tim. 2:12)\n\n### II. Carta a la Iglesia de Filadelfia – Resistencia paciente (3:7-13)\n\n- **A.** Introducción (3:7)\n  - **1.** Santo y Verdadero (cf. 6:10)\n  - **2.** Llave de David (Is. 9:6; 22:22)\n- **B.** Historia (3:8-9)\n  - **1.** Poco poder (cf. 2 Co. 12:8-10; Fil. 4:13)\n  - **2.** Fiel y activa\n- **C.** Respuesta – Mantente firme (3:11a)\n- **D.** Promesa (3:10-13)\n  - **1.** Puerta abierta (cf. Hch. 14:27; 1 Co. 16:9; 2 Co. 2:12)\n  - **2.** Reivindicación (cf. Is. 60:14)\n  - **3.** Protección en la gran tribulación (cf. Jn. 17:15)\n  - **4.** Ser columna en el templo de Dios (cf. 21:22)\n  - **5.** Nombre (cf. Éx. 28:36-38)\n\n### III. Carta a la Iglesia de Laodicea – Tibia y autoengañada; el Señor está fuera llamando a la puerta (3:14-22)\n\n- **A.** Introducción (3:14)\n  - **1.** El Amén (cf. Is. 65:16)\n  - **2.** Testigo fiel y verdadero (cf. 1:5)\n  - **3.** El origen de la creación de Dios (cf. Jn. 1:3; Col. 1:15, 18)\n- **B.** Historia (3:15-18)\n  - **1.** Ni fría ni caliente\n  - **2.** Rica pero desgraciada\n  - **3.** Necesitada de medicina ocular\n- **C.** Respuesta (3:19-20)\n  - **1.** Reprensión y disciplina\n  - **2.** Llamado a responder a la puerta\n  - **3.** Invitación a la comunión íntima (cf. 19:9; Is. 25:6; Jn. 6:51-58; 15:1-11)\n- **D.** Promesa – Participación en el gobierno de Cristo",
+      "studyGuide": [
+        {
+          "part": "a",
+          "questions": [
+            "Escriba una característica del contexto histórico de cada una de estas ciudades.",
+            "En una frase, describa cada una de las cuatro secciones del pacto de vasallaje que se utilizan en las cartas (introducción, historia, respuesta y bendiciones/maldiciones).",
+            "De acuerdo con el Dr. Whitacre, ¿por qué se habla de siete espíritus y no de uno solo (Ap. 3:1)?, ¿a qué pasajes del Antiguo Testamento hace referencia?",
+            "De acuerdo con el Dr. Whitacre, ¿por qué es importante revisar todo el contexto y no quedarse con la primera frase de un pasaje particular (especialmente cuando la frase hace una declaración absoluta)?"
+          ]
+        },
+        {
+          "part": "b",
+          "questions": [
+            "Jesús reconoce el contexto histórico al hablar de la situación espiritual de las iglesias (por ejemplo, Filadelfia tiene problemas de terremotos y recibe la promesa de una ciudad). ¿Cuál cree usted que es la relevancia de este tipo de enfoque?, ¿qué imágenes cree que usaría Jesús para hablar de su ciudad?",
+            "De acuerdo con el Dr. Whitacre, ¿qué significa «tener la llave de David»?",
+            "En el contexto de la interpretación de las imágenes del Apocalipsis, ¿qué significa que una imagen tenga fluidez?",
+            "De acuerdo con el Dr. Whitacre, ¿por qué se usa la imagen de compartir la mesa (Ap. 3:20)?"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "El trono celestial y el Cordero",
+      "passage": "Ap. 4-5",
+      "outlineMarkdown": "### I. La escena en el cielo\n\n- **A.** La perspectiva eterna\n  - **1.** Puerta abierta en el cielo (4:1)\n    - **a.** Puerta (cf. Gén. 28:17; Jn. 1:51)\n    - **b.** Cielo\n      - **①** Cielo (cf. Mt. 8:20)\n      - **②** Dimensión espiritual en general (cf. Ef. 6:12)\n      - **③** Reino espiritual de Dios y quienes están alineados con Él (cf. Ef. 1:20; 2:6; 2 Co. 12:2)\n  - **2.** «Después de estas cosas» (4:1; cf. 7:1, 9; 15:5; 18:1; 19:1)\n- **B.** El corazón del universo\n  - **1.** La gloria de Dios (cf. Is. 6; Ez. 1)\n  - **2.** El trono de Dios\n  - **3.** El templo terrenal y el santuario celestial (cf. Éx. 25:40; Heb. 8:1-5; 9:1-5, 23-24)\n  - **4.** La visión de Dios (4:2-3; cf. Gén. 9:13-17; Ez. 1; Éx. 19)\n  - **5.** El mar de cristal (4:6; cf. 15:2; 21:1)\n- **C.** El Cordero León (5:5-6)\n  - **1.** Ironía\n  - **2.** Punto central de todo el libro\n\n### II. Los cinco himnos\n\n- **A.** Primer himno (4:8; cf. Gén. 9:9-10; Ez. 1; Is. 6:1-4)\n- **B.** Segundo himno (4:11; cf. 1 Cr. 24-25)\n- **C.** Tercer himno (5:9-10)\n- **D.** Cuarto himno (5:11-12)\n- **E.** Quinto himno (5:13)\n\n#### Templo terrenal y santuario celestial\n\n| Templo terrenal | Santuario celestial |\n| --- | --- |\n| Lugar santísimo (Éx. 26) | Trono de Dios (Ap. 4:2) |\n| Candelero de siete brazos (Éx. 25) | Siete lámparas de fuego ante el trono (Ap. 4:5) |\n| Fuente de bronce (Éx. 30; 1 R. 7) | Mar de cristal (Ap. 4:6) |\n| Querubines sobre el propiciatorio (Éx. 25) | Seres vivientes alrededor del trono (Ap. 4:6-7) |\n| Sacerdotes (Éx. 29) | Ancianos (reyes y sacerdotes) (Ap. 4:4, 10) |\n| Altar del holocausto (Éx. 27) | Altar (Ap. 6:9-11) |\n| Altar del incienso (Éx. 30) | Altar del incienso (Ap. 8:3-5) |\n| Arca del testimonio (Éx. 25) | Arca del pacto (Ap. 11:19) |\n\n*Adaptado parcialmente de W. Wiersbe, Be Victorious, p. 53.*",
+      "studyGuide": [
+        {
+          "part": "a",
+          "questions": [
+            "De acuerdo con el Dr. Whitacre, ¿cuál es el propósito de Juan al escribir el Apocalipsis?, ¿cómo cambia esta perspectiva su visión del Apocalipsis?",
+            "¿Cuáles son los tres posibles sentidos de la palabra «cielo»?",
+            "¿Qué significa la imagen de Dios sentado en el trono?",
+            "De acuerdo con el Dr. Whitacre, ¿qué podría significar el «mar de cristal»?",
+            "En sus propias palabras, ¿qué puede decir del Cordero León?",
+            "De acuerdo con el Dr. Whitacre, ¿cuál es el punto central del Apocalipsis?"
+          ]
+        },
+        {
+          "part": "b",
+          "questions": [
+            "Hemos sido redimidos por medio del Cordero inmolado. ¿Cómo puede vivir ese amor sacrificial en la práctica diaria de su fe?",
+            "¿Cuál cree usted que es la importancia de que la redención haya sido por medio de un cordero inmolado?",
+            "De acuerdo con el contexto de Apocalipsis 5, diga en sus propias palabras: ¿qué sucede cuando tenemos tiempos de adoración a Dios en comunidad?",
+            "Haga un cuadro comparativo con los himnos de estos dos capítulos (Ap. 4-5)."
+          ]
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "El libro y los siete sellos",
+      "passage": "Ap. 5-6, 8",
+      "outlineMarkdown": "### I. El libro\n\n- **A.** Punto de vista 1: el futuro de la historia universal\n- **B.** Punto de vista 2: la última voluntad y testamento del Cordero (cf. 3:5; 13:8; 17:8; 20:12, 15; 21:27)\n\n### II. Diversas interpretaciones de los sellos\n\n- **A.** Los acontecimientos de los tiempos finales\n- **B.** Todo el caos de la historia humana\n  - **1.** Los cuatro primeros sellos (6:1-8)\n  - **2.** El quinto sello (6:9-11; cf. Gn. 4:8; Mt. 23:35)\n  - **3.** El sexto sello (6:12-17)\n    - **a.** Joel 2:28-37; Hechos 2:14-21\n    - **b.** Apocalipsis 16:17-21; 18\n  - **4.** El séptimo sello (8:1)\n\n#### Apocalipsis 6 y Mateo 24\n\n| Apocalipsis 6 | Mateo 24 |\n| --- | --- |\n| El caballo blanco – Conquista (1-2) | Falsos cristos (4-5) |\n| El caballo bermejo – Guerra (3-4) | Guerras (6) |\n| El caballo negro – Hambre (5-6) | Hambre (7) |\n| El caballo amarillo – Muerte (7-8) | Muerte (7) |\n| Mártires bajo el altar (9-11) | Mártires (9) |\n| Caos mundial (10-12) | Caos mundial (12-17) |\n\n#### Dos formas de leer los sellos, las trompetas y las copas\n\n**Secuencia histórica:** los sellos (1-7), las trompetas (1-7) y las copas (1-7) se suceden uno tras otro en el tiempo.\n\n**Acercamientos en primer plano:** las trompetas (1-7) y las copas (1-7) son acercamientos en primer plano dentro de la serie de los sellos (cf. sesión 10: las trompetas y las copas como parte del sexto sello).",
+      "studyGuide": [
+        {
+          "part": "a",
+          "questions": [
+            "De acuerdo con el Dr. Whitacre, ¿en qué consiste el primer enfoque sobre el libro (rollo) que está abriendo Jesús («El futuro de la historia universal»)?",
+            "De acuerdo con el Dr. Whitacre, ¿en qué consiste el segundo enfoque sobre el libro que está abriendo Jesús («La última voluntad y testamento del Cordero»)?",
+            "En sus propias palabras, ¿cuál es la diferencia entre estos dos enfoques?",
+            "En sus propias palabras, ¿cuál es la diferencia entre los dos enfoques interpretativos sobre el significado de los sellos?"
+          ]
+        },
+        {
+          "part": "b",
+          "questions": [
+            "¿Qué diferencia al sexto sello de los cinco anteriores?",
+            "De acuerdo con el Dr. Whitacre, ¿por qué hay un cambio de estilo cuando comienza la narración del sexto sello (Ap. 6:12-17)?",
+            "De acuerdo con el Dr. Whitacre, ¿cuáles son dos posibles enfoques para interpretar el «silencio en el cielo como por media hora» (Ap. 8:1)?",
+            "¿Por qué cree que Jesús da el mensaje a las iglesias antes de hablar de los sellos?",
+            "De acuerdo con el Dr. Whitacre, ¿cuál es el propósito del libro del Apocalipsis?"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "Los 144.000 y la gran multitud",
+      "passage": "Ap. 7",
+      "outlineMarkdown": "### I. Primer interludio – El sello para los 144.000 y el triunfo de los redimidos\n\n- **A.** Los cuatro vientos y el sello de los esclavos de Dios (7:1-3)\n  - **1.** El sello (cf. 7:3; 13:16; cf. Ez. 9:4; Éx. 12:13)\n  - **2.** Los ángeles y los vientos (7:1-3)\n- **B.** Los 144.000 (7:4-8)\n  - **1.** El simbolismo del número (cf. Mt. 8:20)\n  - **2.** Su identidad (cf. 1:6; 5:5; 14:4; 21:12-14; Éx. 19:6)\n- **C.** La gran multitud (7:9-14)\n  - **1.** El simbolismo del número (cf. Gén. 12:3; 15:5)\n  - **2.** Su identidad\n  - **3.** Las ropas lavadas\n    - **a.** La sangre de Jesús (cf. 1:5; 5:9)\n    - **b.** Las vestiduras (cf. 19:8; 22:14-15)\n    - **c.** Contexto (cf. Éx. 19; 29; Gá. 6:14; Ro. 6:6; Lev. 23:40-43; Zac. 14:4, 16-19)\n\n### II. La relación con la gran tribulación\n\n- **A.** Dos períodos de la gran tribulación\n  - **1.** Antes de la gran tribulación\n  - **2.** Después de la gran tribulación\n- **B.** Dos aspectos de la gran tribulación\n  - **1.** La ira de Dios\n  - **2.** La ira de la bestia\n\n### III. La experiencia de esta gran multitud\n\n- **A.** El trono y el templo (cf. 21:22; ναός, naos; ἱερόν, hieron)\n- **B.** El gozo (cf. 6:15-17)\n- **C.** Sus himnos (7:10-12; cf. Gén. 11:9)\n- **D.** Dios los cobija (7:15; cf. Jn. 1:14; Is. 49:10; λατρεύω, latreuō)\n- **E.** El Cordero los pastorea (22:1; cf. Sal. 80:1; Ez. 34:20-24)",
+      "studyGuide": [
+        {
+          "part": "a",
+          "questions": [
+            "De acuerdo con el Dr. Whitacre, ¿cuál es el propósito de los interludios?",
+            "¿Por qué se marcaban las personas en el mundo antiguo?, ¿cómo puede relacionar este concepto con el sello que describe Ap. 7:3?",
+            "¿Cuál es la consecuencia de que «todo el espacio y el tiempo haya sido reclamado por Dios y disputado por Satanás»?",
+            "¿A qué pasajes del Antiguo Testamento hace referencia el sello en la frente?",
+            "¿Por qué cree usted que es importante tener en cuenta el contexto del Antiguo Testamento en la lectura del Apocalipsis?",
+            "De acuerdo con el Dr. Whitacre, ¿qué representa el número 144.000?",
+            "¿Cuáles son las posibles interpretaciones sobre quiénes son los 144.000?"
+          ]
+        },
+        {
+          "part": "b",
+          "questions": [
+            "En el Antiguo Testamento, ¿cuál era una de las funciones de los censos?, ¿cómo se relaciona con el contexto del Apocalipsis?",
+            "¿Qué promesa del Antiguo Testamento tiene cumplimiento en Ap. 7:9-10?",
+            "¿Cuáles son los cuatro énfasis sobre el significado de la Cruz que se enseñan en el video (tres del apóstol Juan y uno del apóstol Pablo)?",
+            "De acuerdo con el Dr. Whitacre, ¿cómo se puede interpretar el lavado de las ropas con la sangre del Cordero?, ¿a qué pasajes adicionales hace referencia?",
+            "De acuerdo con el Dr. Whitacre, ¿cuál es la relación entre los 144.000 y la gran tribulación?",
+            "De acuerdo con el Dr. Whitacre, ¿qué quiere decir que Dios «extenderá su tabernáculo» sobre el pueblo?",
+            "¿A qué hace referencia la expresión «fuentes de agua de vida» (Ap. 7:17)?"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": "Las siete trompetas y el librito",
+      "passage": "Ap. 8-11",
+      "outlineMarkdown": "### I. La relación entre los sellos, las trompetas y las copas\n\n- **A.** Paralelismos entre las trompetas y las copas\n- **B.** Lenguaje apocalíptico en la séptima trompeta y la séptima copa, tal como en el sexto sello\n- **C.** La séptima trompeta, la séptima copa y el séptimo sello describen el final en tres etapas, en orden cronológico inverso\n  - **1.** La séptima copa anuncia «Hecho está», pero también incluye la destrucción de la ciudad\n  - **2.** La séptima trompeta describe la celebración y el cielo abierto; Dios ha comenzado su reinado\n  - **3.** El séptimo sello es el silencio justo antes de la apertura del libro\n\n### II. El significado de las trompetas y las copas\n\n- **A.** Relación con el Éxodo\n- **B.** Patrones dentro de las trompetas y las copas\n  - **1.** Las cuatro primeras trompetas y copas\n  - **2.** Las tres últimas trompetas y copas\n  - **3.** Los tres ayes\n\n### III. El interludio entre la sexta y la séptima trompetas (Ap. 10)\n\n- **A.** El llamado a profetizar\n- **B.** El ángel con el librito\n  - **1.** La llegada del ángel (10:1-7)\n  - **2.** Comer el rollo (10:8-11; cf. Ez. 2:8-3:4)\n    - **a.** El contenido del rollo\n    - **b.** El simbolismo de comerlo\n  - **3.** Los dos testigos\n    - **a.** Medición del templo, el altar y los adoradores (11:1-2; cf. Ez. 40-48; Zac. 2:1-2)\n    - **b.** El simbolismo de los dos testigos (11:3-6; cf. Dt. 17:6; 19:15)\n      - **①** Imágenes de Moisés y Elías (cf. Éx. 7:17; Núm. 14:2; 1 R. 17:1; 19:10; 2 R. 1:10)\n      - **②** Los olivos y los candeleros (cf. Zac. 3-4, en especial 4:11-14)\n    - **c.** El modelo del testigo fiel (11:7-14; cf. Dn. 7:21)\n      - **①** Muerte y resurrección (cf. Ez. 37:5, 10-12)\n      - **②** Ser llevado al cielo (cf. 2 R. 2:11; 1 Ts. 4:16-17)\n\n### IV. La séptima trompeta (11:15-19)\n\n- **A.** Himnos de triunfo\n- **B.** Visión del arca en el cielo (cf. Jos. 3:11-17; 2 S. 6:2; Is. 37:16)\n- **C.** Símbolos de la presencia de Dios\n\n#### Paralelos entre las plagas, las trompetas y las copas\n\n| | Éxodo | Trompetas | Copas |\n| --- | --- | --- | --- |\n| I | Séptima plaga (Éx. 9:18-26) | Granizo, fuego y sangre caen sobre la tierra; queda calcinada un tercio de ella | Se derrama una copa sobre la tierra. Aparecen llagas malignas en los hombres que tenían la marca de la bestia y adoraban su imagen |\n| II | Primera plaga (Éx. 7:19-21) | Una montaña ardiente cae al mar. Un tercio del mar se convierte en sangre, un tercio de las criaturas marinas mueren y un tercio de los barcos son destruidos | Se derrama una copa sobre los mares. Se convierten en sangre y todo ser viviente en ellos muere |\n| III | No hay plaga análoga, pero se hace referencia a las aguas amargas de Mara (Éx. 15:23-27) | Una estrella abrasadora (Ajenjo) cae sobre un tercio de los ríos y fuentes; sus aguas se envenenan y muchos mueren | Se derrama una copa sobre los ríos y fuentes y se convierten en sangre |\n| IV | Novena plaga (Éx. 10:21-23) | Un tercio del sol, la luna y las estrellas fue herido. La oscuridad dura un tercio de la noche y del día | Se derrama una copa sobre el sol, que abrasa a los hombres con fuego |\n| V | Octava plaga (Éx. 10:1-20) | Se abre el pozo del abismo. El sol y el aire se oscurecen con el humo, del que salen langostas para atormentar a los hombres sin el sello de Dios | Se derrama una copa sobre el trono de la bestia. Su reino se oscurece y los hombres se angustian |\n| VI | Dado que la sexta trompeta y copa se refieren más directamente a la muerte de personas, tal vez haya correlación con la décima plaga (contra los primogénitos) | Cuatro ángeles atados junto al Éufrates son liberados, con 200 millones de caballería; ésta asesina a un tercio de los hombres | Se derrama una copa sobre el Éufrates, que se seca para los reyes del este. Los reyes del mundo se reúnen para la batalla en Armagedón |\n| VII | La séptima trompeta y copa no son desgracias, sino el final del conflicto, por eso no hay plaga asociada a ellas | Grandes voces en el cielo anuncian la llegada del reino de Dios y de Cristo. Hay himnos de alabanza y el templo celestial es abierto. Suceden relámpagos, truenos, terremotos y granizo | Se derrama una copa por el aire, y una gran voz del trono de Dios anuncia «Hecho está». Suceden relámpagos, truenos, un terremoto sin precedentes y enormes granizos |",
+      "studyGuide": [
+        {
+          "part": "a",
+          "questions": [
+            "De acuerdo con el Dr. Whitacre, ¿cuál es la relación entre las trompetas y las copas?",
+            "De acuerdo con el Dr. Whitacre, ¿por qué es posible interpretar que las trompetas y las copas son parte del sexto sello?",
+            "¿Cuál es la diferencia entre las cuatro primeras trompetas y copas y las tres últimas trompetas y copas?",
+            "De acuerdo con el Dr. Whitacre, ¿cuál era el enfoque del primer interludio?",
+            "De acuerdo con el Dr. Whitacre, ¿cuál era el enfoque del segundo interludio?",
+            "¿Por qué cree usted que se le ordenó a Juan no escribir lo que dijeron los siete truenos?"
+          ]
+        },
+        {
+          "part": "b",
+          "questions": [
+            "¿Cuáles son las dos posiciones expuestas sobre el significado del librito/rollo pequeño?",
+            "¿Qué pueden significar la dulzura y la amargura del librito?",
+            "De acuerdo con el Dr. Whitacre, ¿por qué se puede decir que la Iglesia va a vivir los tiempos de tribulación?, ¿a qué pasajes adicionales hace referencia?",
+            "De acuerdo con el Dr. Whitacre, ¿por qué razón Zacarías vincula a Zorobabel con imágenes de realeza y a Josué con imágenes sacerdotales?",
+            "De acuerdo con el Dr. Whitacre, ¿cómo se relaciona el modelo del testigo fiel con la Iglesia?",
+            "¿Cuáles son las dos posiciones expuestas sobre el significado del rapto?"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": "La mujer y su hijo contra el dragón",
+      "passage": "Ap. 12",
+      "outlineMarkdown": "### I. Jesús y la mujer contra el dragón\n\n- **A.** Génesis 3:15\n- **B.** Fuentes grecorromanas\n- **C.** Isaías 26:16-27, en especial vv. 17-18 en el Antiguo Testamento griego (la Septuaginta):\n\n> «Y, como la parturienta se acerca al parir; en su congoja ha gritado, así hemos sido hechos para el amado tuyo. Por tu temor, Señor, en el vientre concebimos y parimos y dimos a luz: espíritu de tu salvación hicimos sobre la tierra; empero caerán todos los que habitan sobre la tierra».\n\n### II. La mujer\n\n- **A.** Israel (cf. Is. 54:1; 66:7-10; Miq. 5:3; Gén. 37:9-10)\n- **B.** María\n- **C.** La Iglesia\n\n### III. El dragón\n\n- **A.** La serpiente del jardín (cf. Gén. 3:1-15)\n- **B.** Leviatán (cf. Sal. 74:13-14; Is. 30:7)\n- **C.** Rahab, el monstruo (cf. Job 26:12-13; Sal. 89:10; Is. 51:9; 30:7 [texto incierto, pero a veces traducido: «Ciertamente los egipcios darán ayuda vana y vacía. Por tanto, he llamado a Egipto: ¡Rahab la inutilizada!»])\n\n### IV. El conflicto\n\n- **A.** La mujer y su hijo contra el dragón (12:1-6)\n  - **1.** La mujer está a punto de dar a luz (12:1-2)\n    - **a.** Cielo\n    - **b.** Sol, luna, estrellas (cf. Gén. 37:9)\n  - **2.** El dragón arrastra estrellas del cielo a la tierra y espera para devorar al niño (12:3-4; cf. Dn. 8:10)\n  - **3.** El niño nace y es arrebatado para Dios, la mujer huye al desierto donde es alimentada por Dios (12:5-6)\n    - **a.** Una versión corta de la historia\n    - **b.** El período de los 1260 días (cf. Dn. 7:25; 9:27; 12:7)\n- **B.** Guerra en el cielo: el dragón es lanzado del cielo (12:7-12)\n  - **1.** El arcángel Miguel (cf. Dn. 10:13, 21; 12:1; Testamento de Dan 6:2)\n  - **2.** La dimensión celestial del conflicto entre la mujer y el dragón\n  - **3.** La derrota y la cruz (Ap. 5:9-10; Mt. 12:28-29; Hch. 10:38; 2 Ti. 1:10; Heb. 2:14; 1 Jn. 3:8; Jn. 12:31)\n- **C.** El dragón ataca a la mujer (12:13-17)\n  - **1.** Desierto, y seguridad y peregrinaje; conflicto y desafío\n  - **2.** Imágenes del Éxodo (Éx. 19:4; Dt. 32:11; Núm. 16:30-33)",
+      "studyGuide": [
+        {
+          "part": "a",
+          "questions": [
+            "De acuerdo con el Dr. Whitacre, ¿cuál es el tema central de este interludio?",
+            "¿Cuál es la primera cita bíblica que habla del conflicto entre la mujer y el dragón?",
+            "Varias culturas antiguas tienen mitos sobre un príncipe que nacerá para derrotar el mal. ¿Por qué considera que esto es relevante?",
+            "De acuerdo con el Dr. Whitacre, ¿cuáles son las tres posibles interpretaciones sobre la identidad de la mujer?",
+            "¿Cuáles son los nombres de los monstruos con forma de serpiente que menciona la Biblia?",
+            "De acuerdo con el Dr. Whitacre, ¿por qué el período de protección (Ap. 12:6) y el período de tribulación (Ap. 11:2-3) duran la misma cantidad de tiempo?"
+          ]
+        },
+        {
+          "part": "b",
+          "questions": [
+            "¿Qué significado tiene que la batalla se libre también en la dimensión celestial?",
+            "De acuerdo con el Dr. Whitacre, ¿a qué hace referencia la imagen del dragón arrojado del cielo?, ¿en qué pasaje basa su afirmación?",
+            "De acuerdo con el Dr. Whitacre, ¿cuál es el evento principal del fin de los tiempos, según el Apocalipsis?",
+            "¿A qué imágenes del Éxodo hace referencia este capítulo? Enumérelas en orden.",
+            "De acuerdo con el Dr. Whitacre, ¿cuál es el papel del creyente en medio de este conflicto espiritual?"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": "Las dos bestias y el Cordero",
+      "passage": "Ap. 13-14",
+      "outlineMarkdown": "### I. Las dos bestias (Ap. 13)\n\n- **A.** Primera bestia: imperio político (13:1-10)\n  - **1.** Daniel 7:3\n  - **2.** Parodia de Dios y de Cristo\n- **B.** Segunda bestia: propaganda religiosa (13:11-18)\n  - **1.** Falso profeta (cf. 16:13)\n  - **2.** Relación con la primera bestia\n- **C.** Engaño y necesidad de discernimiento\n  - **1.** Parodia de Cristo (cf. Éx. 7-8; Mt. 7:15, 22-23; 24:24; 2 Tes. 2:9-10)\n  - **2.** La marca de la bestia (cf. Éx. 28:36)\n  - **3.** Comprar y vender (cf. 2:9-11, 14, 20-24; 6:5-6; 17-18)\n\n### II. Tercer interludio (Ap. 14)\n\n- **A.** El Cordero y los 144.000 (14:1-5)\n- **B.** Mensajes de los tres ángeles (14:6-20)\n  - **1.** Evangelio eterno (14:6-7)\n  - **2.** Anuncio de la caída de Babilonia (14:8)\n  - **3.** El lagar de la ira de Dios (14:9-20; cf. Jer. 25:15; Sal. 75:8)\n    - **a.** Condena a los adoradores de la (primera) bestia (14:9-11)\n    - **b.** Llamado a la perseverancia (14:12-13)\n    - **c.** La vendimia y el lagar de la ira de Dios (14:14-20)\n- **C.** La ira de Dios en relación con la bondad de Dios",
+      "studyGuide": [
+        {
+          "part": "a",
+          "questions": [
+            "De acuerdo con el Dr. Whitacre, ¿qué representa la primera bestia?, ¿de qué parte del Antiguo Testamento se toman estas imágenes?",
+            "¿Por qué se dice que la primera bestia es una parodia?",
+            "De acuerdo con el Dr. Whitacre, ¿cuál es el significado del número de la bestia?",
+            "De acuerdo con el Dr. Whitacre, ¿qué representa la segunda bestia?",
+            "¿Quién les da autoridad a las dos bestias?",
+            "En el contexto del apóstol Juan, la referencia a la segunda bestia estaba enmarcada en el culto al emperador. ¿Cuál cree usted que sería la referencia para esta época y para su entorno?"
+          ]
+        },
+        {
+          "part": "b",
+          "questions": [
+            "En su contexto, ¿qué cosa(s) (creencias, instituciones, líderes, etc.) podrían simular características de Cristo para engañar al creyente (Mt. 24:24; Mr. 13:22)?",
+            "De acuerdo con el Dr. Whitacre, ¿cuáles son los posibles significados de la marca de la bestia?",
+            "De acuerdo con el Dr. Whitacre, ¿cuál es el propósito de los interludios? En una frase, describa el propósito de cada uno de los tres interludios.",
+            "De acuerdo con el Dr. Whitacre, ¿cuáles son los posibles significados de «las primicias de los redimidos»?",
+            "¿Por qué cree usted que el juicio hace parte importante del Evangelio de Cristo?, ¿en qué aspectos cree que su comunidad necesita ser juzgada/transformada?",
+            "De acuerdo con el Dr. Whitacre, ¿qué representa Babilonia?"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "title": "Las siete copas y el Armagedón",
+      "passage": "Ap. 15-16",
+      "outlineMarkdown": "### I. Las siete copas\n\n- **A.** Relación con el sexto sello\n- **B.** Relación con los tres ayes\n- **C.** La copa de la ira de Dios (cf. Is. 51:17-22)\n\n### II. La preparación para las copas (Ap. 15)\n\n- **A.** Las siete plagas (15:1)\n- **B.** El canto del Cordero (15:2-4)\n  - **1.** Un interludio al principio y no al final\n    - **a.** No hay interludio entre la sexta y la séptima copas\n    - **b.** Séptima copa como una transición\n  - **2.** Canto de Moisés (Éx. 15:1-18)\n  - **3.** Mar de vidrio mezclado con fuego (cf. Dt. 4:24; 9:3; Sal. 97:3; Heb. 10:27; 12:29)\n  - **4.** Las naciones\n- **C.** El tabernáculo del testimonio (15:5-8)\n  - **1.** Símbolo de la presencia de Dios\n  - **2.** «El templo, es decir, el tabernáculo del Testigo»\n\n### III. Las imágenes de las copas (Ap. 16)\n\n- **A.** Las plagas (16:1-16)\n  - **1.** Afectan directamente a los seres humanos\n  - **2.** Paralelo con las cinco primeras plagas contra Egipto\n    - **a.** Primera copa = Sexta plaga, llagas (Éx. 9:10-11)\n    - **b.** Segunda y tercera copas = Primera plaga, agua en sangre (Éx. 7:14-21)\n    - **c.** Cuarta y quinta copas = Novena plaga, sol abrasa y oscurece (Éx. 10:21-22)\n- **B.** El deseo de arrepentimiento (16:9, 11)\n  - **1.** Deseo de Dios de que todas las personas sean salvas (1 Tim. 2:3-4)\n  - **2.** Paralelo con el endurecimiento del corazón del faraón\n    - **a.** Dios endureció el corazón del faraón (Éx. 4:21; 7:3; 9:12; 10:1, 20, 27; 11:10; 14:4, 8)\n    - **b.** El faraón endureció su propio corazón (Éx. 8:15, 32; 9:34)\n    - **c.** Endurecimiento como algo ambiguo (Éx. 7:13-14, 22-23; 8:19; 9:7, 35)\n- **C.** Armagedón (16:16)\n  - **1.** Har-Megiddo = Monte Meguido\n  - **2.** Ubicación de Meguido\n  - **3.** Lugar histórico de batallas (Jue. 5:19; 2 R. 23:29; 2 Cr. 35:22)\n  - **4.** Relación con la batalla escatológica (cf. Ez. 38:8; 39:2, 4, 17; Zac. 12:11)\n  - **5.** Lugar de la batalla profética (cf. 1 R. 18; cf. Ap. 19:15; 20:9)\n  - **6.** Relación entre la sexta copa y la batalla (cf. Ap. 19:19-21)\n- **D.** La séptima copa (16:17-21)\n  - **1.** Eco de la séptima plaga del Éxodo (cf. Éx. 9:13-26)\n  - **2.** La caída de Babilonia\n  - **3.** Imágenes apocalípticas\n  - **4.** «¡Hecho está!» (16:17; cf. 21:6; Jn. 19:30)",
+      "studyGuide": [
+        {
+          "part": "a",
+          "questions": [
+            "De acuerdo con el Dr. Whitacre, ¿qué representan los sellos en el libro/rollo?",
+            "De acuerdo con el Dr. Whitacre, ¿cuál es la función de los pasajes bíblicos que están entre la apertura del rollo (Ap. 8:1) y el juicio final?",
+            "¿Qué diferencia al sexto sello de los cinco primeros?, ¿esto qué representa?",
+            "De acuerdo con el Dr. Whitacre, ¿cuál es la relación entre las seis primeras copas y el tercer ay?",
+            "¿Cuáles son las referencias del Antiguo Testamento para hablar de la copa de la ira de Dios?, ¿cuál es el cambio que tiene esta imagen en el Apocalipsis?",
+            "Además de las plagas contra Egipto, ¿qué otros hechos del Éxodo sirven como referencia para comprender estos dos capítulos del Apocalipsis?"
+          ]
+        },
+        {
+          "part": "b",
+          "questions": [
+            "¿Cómo puede interpretarse la imagen del mar de vidrio mezclado con fuego?",
+            "¿Por qué cree usted que Dios hace tanto énfasis en la importancia del arrepentimiento?",
+            "En sus propias palabras, argumente cómo se puede relacionar el concepto de «el endurecimiento del corazón del faraón» con su propia vida.",
+            "¿Qué significa la palabra «Armagedón»?",
+            "¿Qué es significativo acerca de la llanura de Meguido?"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "title": "La derrota de Babilonia",
+      "passage": "Ap. 17-18",
+      "outlineMarkdown": "### I. La derrota de los enemigos de Dios – Introducción\n\n| | Enemigo | Pasaje |\n| --- | --- | --- |\n| **Introducción** A | Dragón | Ap. 12 |\n| B | Dos bestias | Ap. 13 |\n| C | Babilonia | Ap. 14 |\n| **Derrota** C’ | Babilonia | Ap. 17-18 |\n| B’ | Dos bestias | Ap. 19 |\n| A’ | Dragón | Ap. 20 |\n\n### II. La caída de Babilonia\n\n- **A.** La gran prostituta y la bestia (Ap. 17)\n  - **1.** La visión de la gran prostituta y la bestia (17:1-6a)\n    - **a.** Ecos del Antiguo Testamento (cf. Is. 23:15-17; Nah. 3:4-5; Is. 1:21; Jer. 3)\n    - **b.** Sentada sobre muchas aguas\n    - **c.** Imagen del desierto (cf. Is. 13:21)\n  - **2.** Explicación de la mujer y la bestia (17:6b-14)\n    - **a.** Fluidez de las imágenes\n    - **b.** Roma\n    - **c.** Bestia como octavo gobernante\n  - **3.** Explicación de la visión (17:15-18)\n    - **a.** Las aguas son los pueblos\n    - **b.** Conexión con Nerón\n    - **c.** La bestia y la alianza de los reyes contra Babilonia\n- **B.** Anuncio de la caída de Babilonia – Primera parte (18:1-3)\n  - **1.** Ecos del Antiguo Testamento (cf. Is. 13, 21, 47; Jr. 50-51; Ez. 26-27)\n  - **2.** Condición de Babilonia\n- **C.** Llamado a salir de Babilonia (18:4-8)\n  - **1.** Ecos del Antiguo Testamento (cf. Is. 48:20; Jr. 50:8; 51:6, 45)\n  - **2.** Devolver el doble a Babilonia (cf. Éx. 22:4)\n- **D.** Lamentación por la caída de Babilonia (18:9-24)\n  - **1.** Reyes (18:9-10)\n  - **2.** Mercaderes (18:11-17a)\n  - **3.** Capitanes y marineros (18:17b-20)\n- **E.** Anuncio de la caída de Babilonia – Segunda parte (18:21-24)\n  - **1.** Destrucción (cf. Jr. 51:63-64)\n  - **2.** Babilonia como una imagen completa (cf. «Ozymandias», de Shelley)\n\n> Conocí a un viajero de una tierra antigua  \n> quien dijo: «Dos enormes piernas pétreas, sin su tronco  \n> se yerguen en el desierto. A su lado, en la arena,  \n> semihundido, yace un rostro hecho pedazos, cuyo ceño  \n> y mueca en la boca, y desdén de frío dominio,  \n> cuentan que su escultor comprendió bien esas pasiones,  \n> las cuales aún sobreviven, grabadas en estos inertes objetos,  \n> a las manos que las tallaron y al corazón que las alimentó.  \n> Y en el pedestal se leen estas palabras:  \n> “Mi nombre es Ozymandias, rey de reyes:  \n> ¡Contemplad mis obras, poderosos, y desesperad!”  \n> Nada queda a su lado. Alrededor de la decadencia  \n> de estas colosales ruinas, infinitas y desnudas, se extienden,  \n> a lo lejos, las solitarias y llanas arenas».\n>\n> — Percy Bysshe Shelley, «Ozymandias»",
+      "studyGuide": [
+        {
+          "part": "a",
+          "questions": [
+            "¿Cuál es el orden en que se presentan los enemigos de Dios?, ¿en qué orden se dará su derrota?",
+            "¿La derrota de Babilonia hace parte de qué copa?",
+            "¿Qué simboliza Babilonia, considerando que se le culpa del derramamiento de «la sangre de los profetas y los santos, y de todos los que han sido muertos en la tierra» (Ap. 18:24)?",
+            "¿Qué simboliza la imagen de la prostituta?",
+            "¿Qué simboliza «las muchas aguas»?",
+            "En sus propias palabras, explique la relación entre Babilonia y la Roma del siglo I."
+          ]
+        },
+        {
+          "part": "b",
+          "questions": [
+            "Apocalipsis utiliza la imagen del desierto en dos sentidos: lugar de protección y morada de demonios. ¿Por qué cree el Dr. Whitacre que funciona en estos dos sentidos?",
+            "De acuerdo con el Dr. Whitacre, ¿por qué se dice que la bestia de Apocalipsis 17:8 es una parodia de Cristo y de Dios?",
+            "Apocalipsis 17:17 dice que «Dios ha puesto en sus corazones el ejecutar lo que él quiso» para referirse a la destrucción de Babilonia a manos de sus enemigos. ¿Por qué cree usted que Dios usa estas obras malignas para cumplir con sus propósitos?",
+            "¿Por qué es justa una doble retribución como juicio contra Babilonia (Ap. 18:6)?",
+            "La antigua Roma se ha descrito como un lugar con derroche de lujo, opulencia y riqueza. ¿Dónde podría aplicarse esta imagen en el contexto latinoamericano actual?"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "title": "Los cantos de victoria y derrota de las dos bestias",
+      "passage": "Ap. 19",
+      "outlineMarkdown": "### I. Cuarto interludio\n\n- **A.** Cantos de victoria en el cielo (19:1-8)\n  - **1.** Primer coro (19:1-3)\n    - **a.** Una gran multitud en el cielo (cf. Ap. 7:9; 11:16-18; 15:3-4)\n    - **b.** El juicio de Dios sobre la gran prostituta\n      - **①** ¡Aleluya!\n      - **②** Juicio y venganza\n  - **2.** Segundo coro (19:4)\n    - **a.** Los 24 ancianos y las cuatro criaturas vivientes\n    - **b.** ¡Amén! ¡Aleluya!\n  - **3.** Tercer coro (19:5-8)\n    - **a.** Una voz desde el trono llama a los esclavos de Dios a alabar a Dios\n    - **b.** Una gran multitud responde (cf. Ap. 11:18)\n    - **c.** La cena de las bodas del Cordero\n      - **①** El pueblo de Dios como esposa (cf. Is. 54:5; 61:10; Ez. 16:7-14; Os. 2:16-20)\n      - **②** Ella se ha preparado (cf. Ef. 5:25-27; Fil. 2:12-13)\n- **B.** Aliento a Juan y a sus oyentes/lectores (19:9-10)\n  - **1.** «Bienaventurados los que son llamados a la cena de las bodas del Cordero»\n  - **2.** Adorar a Dios, no a sus siervos (cf. Ap. 13:5-6, 15; 22:8-9)\n  - **3.** Aferrarse al testimonio de Jesús\n\n### II. El fin de la bestia y el falso profeta\n\n- **A.** Descripción del Rey de reyes (19:11-16)\n  - **1.** Títulos\n    - **a.** Fiel y Verdadero (cf. Ap. 1:5; 3:14)\n    - **b.** Nombre desconocido (cf. Ap. 2:17)\n    - **c.** El Verbo de Dios\n    - **d.** Rey de reyes y Señor de señores\n  - **2.** Imágenes militares, pastoriles y agrícolas (cf. Is. 49:2; 63:1-6; Sal. 2:9)\n  - **3.** Ropa teñida en sangre (cf. Ap. 1:5; 5:9; 7:14; Is. 63:1-6)\n- **B.** La derrota de la bestia y del falso profeta y sus seguidores (19:17-21)\n  - **1.** Gran cena de Dios para las aves carroñeras (19:17-18; cf. Ez. 39:4, 17-20)\n  - **2.** Captura y eliminación de la bestia y el falso profeta (19:19-20; cf. Ez. 38:22)\n  - **3.** La espada del Rey (19:21)\n    - **a.** La palabra profética de testimonio (cf. Jer. 1:9-10)\n    - **b.** El destino de los muertos",
+      "studyGuide": [
+        {
+          "part": "a",
+          "questions": [
+            "¿Cuál es la doble función que marca la séptima copa?",
+            "¿Qué significa la palabra «Aleluya»?",
+            "¿Por qué se alaba a Dios por la destrucción de Babilonia?",
+            "En este contexto, ¿qué significa la palabra «vengar»?",
+            "De acuerdo con el Dr. Whitacre, ¿cuál es una posible interpretación para los cuatro seres vivientes y los 24 ancianos?",
+            "¿Por qué cree usted que Dios utiliza la imagen del esposo y la esposa para referirse a Cristo y su Iglesia?"
+          ]
+        },
+        {
+          "part": "b",
+          "questions": [
+            "Apocalipsis 19:8 dice que a la novia «se le ha concedido» (un regalo de Dios) «que se vista de lino fino» (una acción que ella debe realizar). En sus propias palabras, explique cómo se pueden entrelazar estos dos conceptos.",
+            "Apocalipsis 19:10 nos muestra cómo Juan se ve tentado a adorar a un ángel, a pesar de la relación personal y el entendimiento que tenía de Dios. Para usted, ¿cuáles serían las tentaciones provenientes de las fortalezas de la Iglesia, en su contexto? Asimismo, el ángel le dice a Juan «Adora a Dios» como exhortación a su comportamiento. ¿Qué palabra podría servir de exhortación para usted?",
+            "De acuerdo con el Dr. Whitacre, ¿cuál es una posible interpretación para la frase «porque el testimonio de Jesús es el espíritu de la profecía»?",
+            "Profundice en uno de los títulos utilizados en este pasaje para referirse a Jesús (Fiel y Verdadero, nombre desconocido, Verbo de Dios, Rey de reyes y Señor de señores). ¿Por qué cree usted que se utilizan estos cuatro títulos dentro del mismo pasaje?",
+            "De acuerdo con el Dr. Whitacre, ¿cuáles son las posibles interpretaciones para la imagen de los muertos por la espada que salía de la boca de quien montaba el caballo (Ap. 19:21)?"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "title": "El milenio",
+      "passage": "Ap. 20:1-6",
+      "outlineMarkdown": "### I. Quinto interludio: El milenio (20:1-6)\n\n- **A.** Puntos de vista sobre el milenio\n  - **1.** Puntos de vista desde la Iglesia primitiva hasta hoy\n    - **a.** Justino Mártir, Diálogo con Trifón, 80-81; Ireneo, Contra las herejías, 5:32-35; Agustín, Ciudad de Dios, 20:7\n    - **b.** R. G. Clouse, El significado del Milenio: Cuatro puntos de vista (IVP, 1977; en inglés)\n  - **2.** Puntos de vista secuencial y no secuencial sobre el fluir de Apocalipsis 19-20\n    - **a.** Secuencial\n      - **①** Apocalipsis 19:11-20:3 – Derrota de los reyes y las bestias, y la atadura del dragón\n      - **②** Apocalipsis 20:4-6 – Reinado intermedio de Cristo en la tierra (entre la segunda venida y la derrota final de Satanás)\n      - **③** Apocalipsis 20:7-10 – Liberación y derrota de Satanás\n    - **b.** No secuencial\n      - **①** Apocalipsis 19:11-21 – Derrota de los reyes y las bestias\n      - **②** Apocalipsis 20:1-6 – Atadura de Satanás y reinado espiritual de Cristo hoy (antes de la segunda venida y la derrota de los enemigos de Dios)\n      - **③** Apocalipsis 20:7-10 – Derrota de Satanás, continuación de la escena desde Apocalipsis 19:11-21\n  - **3.** Secuencial: El milenio como penúltimo reinado intermedio\n    - **a.** Premilenialismo dispensacionalista\n      - **①** Cristo regresa antes del milenio, que dura mil años literales\n      - **②** El milenio es el reinado en la tierra de los judíos que aceptan a Cristo\n        - John MacArthur, Porque el tiempo sí está cerca. John MacArthur explica el libro del Apocalipsis (Portavoz, 2009)\n        - Craig Blaising y Darrell Bock, Dispensacionalismo progresivo (Bridgepoint Books, 1993)\n        - Vern Poythress, Understanding Dispensationalists (https://web.archive.org/web/20120207223246/http://www.frame-poythress.org/Poythress_books/bdisp/bd0.html)\n    - **b.** Premilenialismo histórico\n      - **①** Un largo período de tiempo que Cristo inaugura con su regreso\n      - **②** Los santos reinan sobre las naciones junto con Cristo\n        - Craig Keener, Apocalipsis, del texto bíblico a una aplicación contemporánea (Vida, 2000)\n        - Grant Osborne, Apocalipsis, versículo a versículo (Editorial Tesoro Bíblico, 2020, https://pdfcoffee.com/11-grant-r-osborne-apocalipsis-pdf-free.html)\n        - **J.** Ramsey Michaels, Revelation (IVP Academic, 2011)\n  - **4.** No secuencial: El milenio como un interludio\n    - **a.** Posmilenialismo\n      - **①** La Iglesia reina espiritualmente en la actualidad\n      - **②** La Iglesia debe lograr dominar el mundo como preparación para el regreso de Cristo\n      - **③** No existe el regreso de Cristo mencionado en el Apocalipsis\n        - David Chilton, Días de venganza: Una exposición del libro del Apocalipsis (Ediciones Sinaí, 2023)\n    - **b.** Amilenialismo o milenialismo inaugurado\n      - **①** El milenio es el reino espiritual actual de Cristo a través de su Iglesia\n      - **②** No son mil años literales, sino un período de tiempo significativo\n        - Gregory Beale, Apocalipsis, un comentario más breve (Eerdmans Publishing, 2023)\n        - Stephen Smalley, The Revelation to John: A Commentary on the Greek Text of the Apocalypse (IVP, 2005)\n        - Michael Wilcock, The Message of Revelation (IVP, 1984)\n- **B.** Comparación entre el premilenialismo histórico y el amilenialismo\n  - **1.** Atadura de Satanás (Ap. 20:2)\n    - **a.** Posición amilenialista (cf. Mr. 3:27; Lc. 10:18; 2 Ts. 2:7-10)\n    - **b.** Posición premilenialista histórica (cf. 2 Co. 4:4; 1 Ti. 3:7; Ef. 2:2)\n  - **2.** La resurrección (Ap. 20:4-5)\n    - **a.** Posición amilenialista (cf. Ap. 6:9-11; 2 Co. 5:1-8; Jn. 5:25, 28-29)\n    - **b.** Posición premilenialista histórica (ἔζησαν, ezēsan, «volvieron a la vida»)\n  - **3.** Evaluación\n    - **①** Posición del premilenialismo histórico\n    - **②** Posición del amilenialismo\n    - **③** Rompecabezas interpretativo: ¿cuál es el contexto?",
+      "studyGuide": [
+        {
+          "part": null,
+          "questions": [
+            "De acuerdo con el punto de vista secuencial, ¿cuál debe ser el orden de los tres eventos narrados en Apocalipsis 19-20?",
+            "¿Qué es «el gran paréntesis»?",
+            "¿Cuál es la diferencia entre el premilenialismo dispensacional y el premilenialismo histórico?",
+            "¿Cuál es la diferencia entre el posmilenialismo y el amilenialismo?",
+            "De acuerdo con su conocimiento sobre Dios, la Escritura y el Apocalipsis, ¿cuál de estas cuatro posiciones está más acorde con su forma de pensar?, ¿por qué?",
+            "En su opinión, ¿cómo se debe abordar un rompecabezas interpretativo?",
+            "¿Por qué cree usted que es tan importante tener en cuenta el contexto de un pasaje?"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "title": "Las imágenes del milenio, la derrota de Satanás y el juicio final",
+      "passage": "Ap. 20:7-15",
+      "outlineMarkdown": "### I. Imágenes del milenio\n\n- **A.** El jardín del Edén (Ap. 20:2-3, 8; Gén. 3)\n  - A – Caída de Satanás\n    - B – Jardín del Edén\n    - B’ – Reinado durante el milenio\n  - A’ – Derrota de Satanás\n- **B.** Sacerdotes que reinan (Ap. 20:6; 1:6; Éx. 19:6)\n- **C.** La segunda muerte (Ap. 20:6; Gén. 2:17; Lc. 15:24)\n\n### II. Consumación de la derrota de Satanás (20:7-10)\n\n- **A.** Después del milenio\n- **B.** Gog y Magog (cf. Ez. 37-48)\n- **C.** Derrota final de Satanás (cf. Mt. 25:41)\n\n### III. Juicio final (20:11-15)\n\n- **A.** La presencia de Aquel que está sentado en el trono\n  - **1.** Cielo (cf. Ap. 4-5)\n  - **2.** La tierra y el cielo huyen (cf. Is. 65:17-25; 2 P. 3:12-13)\n- **B.** El libro de las obras y el libro de la vida\n  - **1.** La muerte, el Hades y el mar (cf. Ap. 21:1)\n  - **2.** Los dos libros (cf. Testamento de Abraham 12-13)\n  - **3.** La fe y las obras (cf. Gá. 5:6; Ro. 14:12; 1 Co. 3:12-15; 2 Co. 5:10)\n- **C.** El lago de fuego\n  - **1.** Dios es fuego consumidor (cf. Dt. 4:24; 9:3; Heb. 12:29)\n  - **2.** Dios y el fuego (cf. Gén. 15:17; Éx. 3:2; 13:21; 19:18; Dn. 7:9-10; Mt. 3:10-12; 25:41; Mr. 9:49; Lc. 12:49; Hch. 7:30; 1 Co. 3:15)\n  - **3.** La muerte y el Hades (cf. 1 Co. 15:26)\n  - **4.** El fuego consumidor y el juicio\n  - **5.** Ira y amor (1 Jn. 4:8, 16; Lc. 13:22-30; 1 Co. 15:2; Heb. 6:4-6; 2 P. 1:10)",
+      "studyGuide": [
+        {
+          "part": "a",
+          "questions": [
+            "¿Cómo puede relacionar las imágenes del milenio con el jardín del Edén?",
+            "¿Por qué el Dr. Whitacre dice que esta conexión con el jardín puede ser un quiasmo?",
+            "De acuerdo con el Dr. Whitacre, ¿cuáles son las posibles definiciones para «la primera muerte»?, ¿qué referencias bíblicas utiliza para sustentarlo?",
+            "¿Por qué cree usted que Satanás será desatado de su prisión (Ap. 20:7)?",
+            "¿Qué imágenes de Apocalipsis 20 están referenciadas en Ezequiel (37-48)?",
+            "¿Por qué cree usted que Satanás debe utilizar el engaño para convencer a las personas en lugar de simplemente dominarlas?"
+          ]
+        },
+        {
+          "part": "b",
+          "questions": [
+            "¿Por qué cree usted que la derrota de Satanás se describe en medio verso únicamente?",
+            "De acuerdo con el Dr. Whitacre, ¿por qué la antigua creación no va a ser completamente destruida?",
+            "De acuerdo con el Dr. Whitacre, ¿por qué Juan especifica que «el mar entregó a los muertos que había en él»?",
+            "En sus propias palabras, ¿cómo puede explicar el juicio de Dios con base en la gracia y en las obras?",
+            "De acuerdo con el Dr. Whitacre, ¿cuáles son las posibles definiciones para «el lago de fuego»?, ¿qué referencias bíblicas utiliza para sustentarlo?",
+            "De acuerdo con el Dr. Whitacre, ¿cómo se puede conciliar la ira de Dios con su amor?"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "title": "Todo es renovado: un epílogo",
+      "passage": "Ap. 21-22",
+      "outlineMarkdown": "### I. Cielos nuevos, tierra nueva y la nueva Jerusalén (21:1-22:5)\n\n- **A.** El objetivo final de la Iglesia sufriente\n- **B.** La nueva Jerusalén\n  - **1.** Imágenes de la ciudad (cf. Ap. 17:1-4; 21:9-11)\n  - **2.** Recreación completa (Ap. 21:1; cf. Is. 65:17-25; Dn. 7:3; Ap. 13:1)\n  - **3.** Morada de Dios (Ap. 21:2-4; cf. Is. 54, 60; Jn. 14:2; Ap. 21:3: σκηνή, skēnē, tienda, morada)\n  - **4.** Dios habla (Ap. 21:5-8; cf. 1:8)\n  - **5.** Descripción de la ciudad (Ap. 21:9-21)\n    - **a.** Tamaño de la nueva Jerusalén (cf. Ez. 40-48)\n    - **b.** Forma de la ciudad (cf. 1 R. 6:20)\n    - **c.** Joyas (cf. Éx. 28:17-20; 39:8-14; Ap. 21:22-27)\n  - **6.** No hay templo, sol ni luna (Ap. 21:22-23)\n    - **a.** La gloria de Dios (cf. Ap. 21:8; 4:3; 21:11)\n    - **b.** Imágenes del templo (cf. Jn. 2:21; 1 Co. 3:16; 6:19)\n  - **7.** Alabanza de los verdaderos creyentes de todas las naciones (Ap. 21:24-27; 18)\n  - **8.** Los que no pueden entrar (Ap. 21:27; cf. 22:15; Mt. 19:26; Mr. 14:36; Lc. 1:37; Jer. 32:27)\n  - **9.** El cielo y el jardín\n    - **a.** Río de la vida (Ap. 22:1-2; cf. Gén. 2:10; Ez. 47:1-9; Zac. 14:8; Jl. 3:18)\n    - **b.** Los siervos de Dios adorando y reinando (Ap. 22:3-4; cf. 1 Jn. 3:2)\n\n### II. Epílogo (22:6-21)\n\n- **A.** Énfasis en la inspiración de este mensaje (Ap. 22:6-10)\n  - **1.** Afirmación de la fiabilidad de esta profecía\n  - **2.** «Vengo pronto» (Ap. 22:7, 12)\n- **B.** Llamado a la santidad\n  - **1.** Persistencia en la maldad o en la injusticia (Ap. 22:11; Dn. 12:10)\n  - **2.** Los de fuera (Ap. 22:15; cf. 21:27)\n- **C.** La imagen de Jesús (Ap. 22:13, 18; 1:8)\n- **D.** Etiqueta de advertencia (Ap. 22:18-19; Dt. 4:1-2; 12:32; 29:19-20)\n- **E.** Ven a Jesús (Ap. 22:17; cf. Is. 55:1; Jn. 7:37)\n- **F.** ¡Ven, Señor Jesús! (Ap. 22:20; cf. Didaché 10:5-7; 1 Co. 16:22)",
+      "studyGuide": [
+        {
+          "part": "a",
+          "questions": [
+            "De acuerdo con el Dr. Whitacre, ¿qué heredan los herederos?",
+            "Enumere los contrastes entre la antigua Babilonia y la nueva Jerusalén (Ap. 17:1-4 y Ap. 21:9-11).",
+            "De acuerdo con el Dr. Whitacre, ¿por qué se usa la imagen de la ciudad para referirse al cielo?, ¿por qué es sorprendente el uso de esta metáfora?",
+            "De acuerdo con el Dr. Whitacre, ¿qué significa la frase «el mar ya no existía más»?",
+            "¿Por qué cree usted que la nueva Jerusalén desciende del cielo?, ¿qué referencias bíblicas hacen alusión a este concepto?",
+            "¿A qué concepto del Antiguo Testamento hace alusión la palabra «morar»?",
+            "De acuerdo con el Dr. Whitacre, ¿cuál es la finalidad de dar las medidas de la ciudad?",
+            "¿Cuántos templos va a tener la nueva Jerusalén?"
+          ]
+        },
+        {
+          "part": "b",
+          "questions": [
+            "De acuerdo con el Dr. Whitacre, ¿cuál es un posible significado para las joyas que describen los cimientos de la ciudad?",
+            "¿Qué elementos del culto en el Antiguo Testamento puede encontrar en estos capítulos de Apocalipsis?, ¿qué diferencias encuentra entre el uso que se les dio en el Antiguo Testamento y el que tendrán al final de los tiempos?",
+            "¿Qué metáforas bíblicas sobre el templo menciona el Dr. Whitacre?, ¿qué referencias utiliza?",
+            "¿Qué explicación da el Dr. Whitacre para Apocalipsis 22:15?",
+            "De acuerdo con el Dr. Whitacre, ¿cuál es la diferencia entre el jardín del Edén y el cielo?",
+            "En sus propias palabras, explique uno de los nombres que usa Jesús para referirse a sí mismo en Apocalipsis 22:13, 16.",
+            "¿Cómo se puede ver el pacto de vasallaje en estos capítulos del Apocalipsis?",
+            "¿Por qué cree usted que Dios hace varios «llamados a venir» al final de este capítulo?"
+          ]
+        },
+        {
+          "part": "c",
+          "questions": [
+            "¿Qué significa la palabra «Maranatha»?",
+            "¿Qué de lo aprendido en este estudio impactó más su vida?, ¿por qué?",
+            "¿Por qué cree usted que la esperanza del cielo es parte fundamental de la fe cristiana?, ¿cómo puede esta esperanza impactar a las personas vulnerables en su contexto?"
+          ]
+        }
+      ]
+    }
+  ]
+}
