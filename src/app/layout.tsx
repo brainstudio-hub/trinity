@@ -1,44 +1,47 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
-import { Header } from "@/components/header";
-import { Sidebar } from "@/components/sidebar";
-import { auth } from "@/auth";
+import { EB_Garamond, Montserrat } from "next/font/google";
 import { Toaster } from "sonner";
+import "./globals.css";
 
-const plusJakartaSans = localFont({
-  src: "../../public/fonts/PlusJakartaSans-Variable.ttf",
-  variable: "--font-plus-jakarta-sans",
+const serif = EB_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-serif",
+  display: "swap",
+});
+
+const sans = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-sans",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Seminario Anglicano Trinity - LMS",
-  description: "Plataforma de aprendizaje para el Seminario Anglicano Trinity",
+  title: {
+    default: "Campus Virtual — Seminario Anglicano Trinity",
+    template: "%s · Campus Trinity",
+  },
+  description:
+    "Campus virtual del Seminario Anglicano Trinity: formación teológica en español para líderes anglicanos.",
+  icons: { icon: "/tas-logo.png" },
 };
 
-export default async function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  const session = await auth();
-  const role = session?.user?.role;
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es">
-      <body className={`${plusJakartaSans.className} bg-slate-50`}>
-        <div className="min-h-screen">
-          <Header />
-          <div className="flex pt-16">
-            <Sidebar role={role} />
-            <main className="flex-1 px-4 py-8 md:pl-72 md:pr-8">
-              <div className="max-w-6xl mx-auto">
-                {children}
-              </div>
-            </main>
-            <Toaster position="top-center" richColors />
-          </div>
-        </div>
+    <html lang="es" className={`${serif.variable} ${sans.variable}`}>
+      <body className="min-h-screen">
+        {children}
+        <Toaster
+          position="bottom-right"
+          toastOptions={{
+            classNames: {
+              toast: "!rounded-lg !border-border !shadow-lift !font-sans",
+              title: "!text-sm !font-semibold",
+            },
+          }}
+        />
       </body>
     </html>
   );

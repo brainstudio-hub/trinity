@@ -1,184 +1,189 @@
-import { db } from "@/lib/db";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BookOpen, Users, Megaphone, Calendar, UserCheck, PlusCircle, Pencil, Trash2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import type { Metadata } from "next";
 import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
-import { AdminCreationModals } from "@/components/admin/creation-modals";
+import { ArrowRight, BookOpen, ClipboardCheck, GraduationCap, Plus, UserPlus, Users } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Avatar, Card, CardContent, CardDescription, CardHeader, CardTitle, EmptyState, PageHeader, Progress, Stat } from "@/components/ui/primitives";
+import { AdminBreadcrumbs } from "@/components/admin/admin-shell";
+import { CourseStatusBadge } from "@/components/admin/labels";
+import { getAdminOverview, requireStaff } from "@/lib/queries/admin";
+import { formatRelative, pluralize } from "@/lib/utils";
 
-export default async function AdminPage() {
-  const courses = await db.course.findMany({
-    include: { modules: { include: { lessons: true } } },
-    orderBy: { createdAt: "desc" }
-  });
+export const metadata: Metadata = { title: "Resumen" };
 
-  const instructors = await db.instructor.findMany({
-    orderBy: { name: "asc" }
-  });
-
-  const announcements = await db.announcement.findMany({
-    orderBy: { createdAt: "desc" }
-  });
-
-  const events = await db.event.findMany({
-    orderBy: { date: "asc" }
-  });
-
-  const users = await db.user.findMany({
-    orderBy: { createdAt: "desc" },
-    select: { id: true, name: true, email: true, role: true, createdAt: true }
-  });
+export default async function AdminOverviewPage() {
+  const user = await requireStaff();
+  const { stats, recentEnrollments, pending, completion } = await getAdminOverview(user);
+  const firstName = user.name.split(" ")[0];
+  const isAdmin = user.role === "ADMIN";
 
   return (
-    <div className="space-y-8">
-      <div>
-        <h1 className="text-3xl font-bold text-brand-navy font-headline">Panel de Administración Global</h1>
-        <p className="text-muted-foreground font-body">Gestiona todos los aspectos de la plataforma educativa.</p>
+    <>
+      <AdminBreadcrumbs items={[{ label: "Resumen" }]} />
+      <PageHeader
+        eyebrow="Panel de administración"
+        title={`Hola, ${firstName}`}
+        description={
+          isAdmin
+            ? "Una mirada rápida a la vida académica del campus."
+            : "Una mirada rápida a tus cursos y estudiantes."
+        }
+        actions={
+          <Button asChild>
+            <Link href="/admin/cursos/nuevo">
+              <Plus /> Nuevo curso
+            </Link>
+          </Button>
+        }
+      />
+
+      <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <Stat label={isAdmin ? "Estudiantes activos" : "Estudiantes"} value={stats.students} icon={<Users />} />
+        <Stat label="Inscripciones activas" value={stats.activeEnrollments} icon={<UserPlus />} />
+        <Stat label="Cursos publicados" value={stats.publishedCourses} icon={<BookOpen />} />
+        <Stat
+          label="Por calificar"
+          value={stats.pendingCount}
+          icon={<ClipboardCheck />}
+          hint={stats.pendingCount > 0 ? "Entregas esperando revisión" : "Todo al día"}
+          className={stats.pendingCount > 0 ? "ring-1 ring-tas-gold/50" : undefined}
+        />
       </div>
 
-      <AdminCreationModals />
-
-      <Tabs defaultValue="courses" className="space-y-6">
-        <TabsList className="bg-surface-container-low p-1 rounded-xl w-fit flex-wrap h-auto">
-          <TabsTrigger value="courses" className="px-6 py-2.5 rounded-lg data-[state=active]:bg-slate-50 data-[state=active]:text-brand-navy font-bold text-sm">
-            <BookOpen className="h-4 w-4 mr-2" /> Cursos
-          </TabsTrigger>
-          <TabsTrigger value="faculty" className="px-6 py-2.5 rounded-lg data-[state=active]:bg-slate-50 data-[state=active]:text-brand-navy font-bold text-sm">
-            <Users className="h-4 w-4 mr-2" /> Facultad
-          </TabsTrigger>
-          <TabsTrigger value="announcements" className="px-6 py-2.5 rounded-lg data-[state=active]:bg-slate-50 data-[state=active]:text-brand-navy font-bold text-sm">
-            <Megaphone className="h-4 w-4 mr-2" /> Anuncios
-          </TabsTrigger>
-          <TabsTrigger value="calendar" className="px-6 py-2.5 rounded-lg data-[state=active]:bg-slate-50 data-[state=active]:text-brand-navy font-bold text-sm">
-            <Calendar className="h-4 w-4 mr-2" /> Calendario
-          </TabsTrigger>
-          <TabsTrigger value="users" className="px-6 py-2.5 rounded-lg data-[state=active]:bg-slate-50 data-[state=active]:text-brand-navy font-bold text-sm">
-            <UserCheck className="h-4 w-4 mr-2" /> Usuarios
-          </TabsTrigger>
-        </TabsList>
-
-        <TabsContent value="courses" className="space-y-4 animate-fade-in">
-          <div className="flex justify-end">
-            <Link href="/admin/courses/new">
-              <Button size="sm">
-                <PlusCircle className="h-4 w-4 mr-2" /> Nuevo Curso
+      <div className="mt-8 grid gap-6 lg:grid-cols-5">
+        <Card className="lg:col-span-3">
+          <CardHeader className="flex-row items-start justify-between gap-4">
+            <div>
+              <CardTitle>Entregas pendientes</CardTitle>
+              <CardDescription>Tareas y ensayos que esperan tu calificación, del más antiguo al más reciente.</CardDescription>
+            </div>
+            {pending.length > 0 && (
+              <Button asChild variant="ghost" size="sm" className="shrink-0">
+                <Link href="/admin/calificaciones">
+                  Ver todas <ArrowRight />
+                </Link>
               </Button>
-            </Link>
-          </div>
-          <div className="grid gap-4">
-            {courses.map((course) => (
-              <Card key={course.id} className="overflow-hidden border-outline-variant/10">
-                <CardHeader className="p-4">
-                  <div className="flex items-center justify-between">
-                    <div className="space-y-1">
-                      <div className="flex items-center gap-2">
-                        <span className="text-[10px] font-bold bg-brand-navy/10 text-brand-navy px-1.5 py-0.5 rounded uppercase">{course.code}</span>
-                        <CardTitle className="text-base font-headline">{course.title}</CardTitle>
-                        <Badge variant={course.isPublished ? "default" : "secondary"}>
-                          {course.isPublished ? "Publicado" : "Borrador"}
-                        </Badge>
+            )}
+          </CardHeader>
+          <CardContent>
+            {pending.length === 0 ? (
+              <EmptyState
+                icon={<ClipboardCheck />}
+                title="Sin entregas pendientes"
+                description="Cuando un estudiante envíe una tarea o un ensayo, aparecerá aquí."
+                className="py-10"
+              />
+            ) : (
+              <ul className="-mx-2 divide-y">
+                {pending.map((a) => (
+                  <li key={a.id}>
+                    <Link
+                      href={`/admin/calificaciones/${a.id}`}
+                      className="flex items-center gap-3 rounded-md px-2 py-3 transition hover:bg-secondary/60"
+                    >
+                      <Avatar name={a.user.name} src={a.user.avatarUrl} size={34} />
+                      <div className="min-w-0 flex-1">
+                        <p className="truncate text-sm font-semibold text-foreground">{a.quiz.lesson.title}</p>
+                        <p className="truncate text-xs text-muted-foreground">
+                          {a.user.name} · {a.quiz.lesson.module.course.title}
+                        </p>
                       </div>
-                      <p className="text-xs text-muted-foreground font-body">
-                        {course.category} • {course.modules.reduce((acc, m) => acc + m.lessons.length, 0)} lecciones
-                      </p>
-                    </div>
-                    <Link href={`/admin/courses/${course.id}`}>
-                      <Button variant="ghost" size="sm"><Pencil className="h-4 w-4" /></Button>
+                      <span className="shrink-0 text-xs text-muted-foreground">
+                        {a.submittedAt ? formatRelative(a.submittedAt) : "—"}
+                      </span>
                     </Link>
-                  </div>
-                </CardHeader>
-              </Card>
-            ))}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </CardContent>
+        </Card>
+
+        <Card className="lg:col-span-2">
+          <CardHeader>
+            <CardTitle>Inscripciones recientes</CardTitle>
+            <CardDescription>Últimos estudiantes que se unieron a un curso.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            {recentEnrollments.length === 0 ? (
+              <EmptyState icon={<UserPlus />} title="Aún no hay inscripciones" className="py-10" />
+            ) : (
+              <ul className="space-y-4">
+                {recentEnrollments.map((e) => (
+                  <li key={e.id} className="flex items-center gap-3">
+                    <Avatar name={e.user.name} src={e.user.avatarUrl} size={32} />
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-medium">{e.user.name}</p>
+                      <Link
+                        href={`/admin/cursos/${e.course.id}/estudiantes`}
+                        className="block truncate text-xs text-muted-foreground hover:text-tas-blue hover:underline"
+                      >
+                        {e.course.title}
+                      </Link>
+                    </div>
+                    <span className="shrink-0 text-xs text-muted-foreground">{formatRelative(e.createdAt)}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </CardContent>
+        </Card>
+      </div>
+
+      <Card className="mt-6">
+        <CardHeader className="flex-row items-start justify-between gap-4">
+          <div>
+            <CardTitle>Avance por curso</CardTitle>
+            <CardDescription>Progreso promedio de los estudiantes y porcentaje que ya terminó el curso.</CardDescription>
           </div>
-        </TabsContent>
-
-        <TabsContent value="faculty" className="space-y-4 animate-fade-in">
-           <div className="flex justify-between items-center">
-              <h3 className="text-lg font-bold font-headline">Miembros de la Facultad</h3>
-              <Button size="sm" variant="outline"><PlusCircle className="h-4 w-4 mr-2" /> Añadir Instructor</Button>
-           </div>
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {instructors.map((inst) => (
-                <Card key={inst.id} className="border-outline-variant/10">
-                  <CardHeader className="p-4">
-                    <CardTitle className="text-base">{inst.name}</CardTitle>
-                    <p className="text-xs text-brand-navy font-medium">{inst.department}</p>
-                  </CardHeader>
-                  <CardContent className="px-4 pb-4">
-                    <p className="text-xs text-muted-foreground line-clamp-2">{inst.bio}</p>
-                  </CardContent>
-                </Card>
+          <Button asChild variant="ghost" size="sm" className="shrink-0">
+            <Link href="/admin/cursos">
+              Cursos <ArrowRight />
+            </Link>
+          </Button>
+        </CardHeader>
+        <CardContent>
+          {completion.length === 0 ? (
+            <EmptyState
+              icon={<GraduationCap />}
+              title="Todavía no hay cursos"
+              description="Crea tu primer curso para empezar a ver estadísticas."
+              action={
+                <Button asChild>
+                  <Link href="/admin/cursos/nuevo">
+                    <Plus /> Crear curso
+                  </Link>
+                </Button>
+              }
+              className="py-10"
+            />
+          ) : (
+            <ul className="divide-y">
+              {completion.map((c) => (
+                <li key={c.id} className="grid gap-3 py-4 first:pt-0 last:pb-0 sm:grid-cols-[1fr_220px] sm:items-center sm:gap-8">
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-2">
+                      <Link href={`/admin/cursos/${c.id}`} className="truncate text-sm font-semibold text-tas-navy hover:underline">
+                        {c.title}
+                      </Link>
+                      <CourseStatusBadge status={c.status} className="shrink-0" />
+                    </div>
+                    <p className="mt-0.5 text-xs text-muted-foreground">
+                      {pluralize(c.enrolled, "estudiante")} · {c.completed} {c.completed === 1 ? "completó" : "completaron"} (
+                      {c.completionRate}%)
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Progress value={c.averageProgress} label={`Progreso promedio de ${c.title}`} className="h-2" />
+                    <span className="w-10 shrink-0 text-right text-sm font-semibold tabular-nums text-tas-navy">
+                      {c.averageProgress}%
+                    </span>
+                  </div>
+                </li>
               ))}
-           </div>
-        </TabsContent>
-
-        <TabsContent value="announcements" className="space-y-4 animate-fade-in">
-           <div className="flex justify-between items-center">
-              <h3 className="text-lg font-bold font-headline">Comunicados Estudiantiles</h3>
-              <Button size="sm" variant="outline"><PlusCircle className="h-4 w-4 mr-2" /> Crear Anuncio</Button>
-           </div>
-           <div className="space-y-3">
-              {announcements.map((ann) => (
-                <div key={ann.id} className="flex items-center justify-between p-4 bg-slate-50 border rounded-xl border-outline-variant/10 shadow-sm">
-                   <div>
-                      <h4 className="font-bold text-sm">{ann.title}</h4>
-                      <p className="text-xs text-muted-foreground">{new Date(ann.createdAt).toLocaleDateString()}</p>
-                   </div>
-                   <Badge variant={ann.isPublished ? "default" : "outline"}>{ann.isPublished ? "Visible" : "Borrador"}</Badge>
-                </div>
-              ))}
-           </div>
-        </TabsContent>
-
-        <TabsContent value="calendar" className="space-y-4 animate-fade-in">
-           <div className="flex justify-between items-center">
-              <h3 className="text-lg font-bold font-headline">Eventos Próximos</h3>
-              <Button size="sm" variant="outline"><Calendar className="h-4 w-4 mr-2" /> Programar Evento</Button>
-           </div>
-           <div className="space-y-3">
-              {events.map((event) => (
-                <div key={event.id} className="flex items-center gap-4 p-4 bg-slate-50 border rounded-xl border-outline-variant/10 shadow-sm">
-                   <div className="bg-brand-navy/5 text-brand-navy p-2 rounded-lg text-center min-w-[60px]">
-                      <p className="text-[10px] font-bold uppercase">{new Date(event.date).toLocaleString('es', { month: 'short' })}</p>
-                      <p className="text-lg font-semibold">{new Date(event.date).getDate()}</p>
-                   </div>
-                   <div>
-                      <h4 className="font-bold text-sm">{event.title}</h4>
-                      <p className="text-xs text-muted-foreground">{event.description || "Sin descripción"}</p>
-                   </div>
-                </div>
-              ))}
-           </div>
-        </TabsContent>
-
-        <TabsContent value="users" className="space-y-4 animate-fade-in">
-           <div className="bg-slate-50 border rounded-xl border-outline-variant/10 overflow-hidden shadow-sm">
-              <table className="w-full text-sm text-left">
-                <thead className="bg-surface-container-low text-on-surface-variant uppercase text-[10px] font-bold tracking-wider">
-                  <tr>
-                    <th className="px-6 py-3">Nombre</th>
-                    <th className="px-6 py-3">Email</th>
-                    <th className="px-6 py-3">Rol</th>
-                    <th className="px-6 py-3">Registro</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-outline-variant/10">
-                  {users.map((user) => (
-                    <tr key={user.id} className="hover:bg-slate-50 transition-colors">
-                      <td className="px-6 py-4 font-medium">{user.name}</td>
-                      <td className="px-6 py-4 text-muted-foreground">{user.email}</td>
-                      <td className="px-6 py-4">
-                        <Badge variant={user.role === "ADMIN" ? "default" : "outline"}>{user.role}</Badge>
-                      </td>
-                      <td className="px-6 py-4 text-xs text-muted-foreground">{new Date(user.createdAt).toLocaleDateString()}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-           </div>
-        </TabsContent>
-      </Tabs>
-    </div>
+            </ul>
+          )}
+        </CardContent>
+      </Card>
+    </>
   );
 }
