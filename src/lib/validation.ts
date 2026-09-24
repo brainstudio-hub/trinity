@@ -57,6 +57,16 @@ export function formDataToObject(formData: FormData): Record<string, string> {
 
 /** Solo rutas internas para evitar redirecciones abiertas. */
 export function safeRedirect(target: string | null | undefined, fallback = "/inicio"): string {
-  if (!target || !target.startsWith("/") || target.startsWith("//") || target.startsWith("/\\")) return fallback;
+  if (!target) return fallback;
+  // URL absoluta: se descarta el dominio y se conserva solo la ruta interna.
+  if (/^https?:\/\//i.test(target)) {
+    try {
+      const url = new URL(target);
+      target = `${url.pathname}${url.search}${url.hash}`;
+    } catch {
+      return fallback;
+    }
+  }
+  if (!target.startsWith("/") || target.startsWith("//") || target.startsWith("/\\")) return fallback;
   return target;
 }

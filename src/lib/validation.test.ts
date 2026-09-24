@@ -33,8 +33,13 @@ describe("safeRedirect", () => {
   it("permite rutas internas", () => {
     expect(safeRedirect("/aprender/curso/leccion")).toBe("/aprender/curso/leccion");
   });
+  it("de una URL absoluta conserva solo la ruta (el middleware envía URLs completas)", () => {
+    expect(safeRedirect("http://localhost:3000/admin?x=1")).toBe("/admin?x=1");
+    expect(safeRedirect("https://malicioso.com/robar")).toBe("/robar");
+  });
+
   it("bloquea redirecciones externas", () => {
-    expect(safeRedirect("https://malicioso.com")).toBe("/inicio");
+    expect(safeRedirect("javascript:alert(1)")).toBe("/inicio");
     expect(safeRedirect("//malicioso.com")).toBe("/inicio");
     expect(safeRedirect("/\\malicioso.com")).toBe("/inicio");
     expect(safeRedirect(null)).toBe("/inicio");
